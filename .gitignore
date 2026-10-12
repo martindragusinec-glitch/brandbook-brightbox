@@ -1,0 +1,11 @@
+.DS_Store
+.claude/
+__pycache__/
+# výstup pro zveřejnění na claude.ai (python3 tools/artifact.py)
+_artifact/
+_artifact_files.json
+# osobní údaje třetích osob a fotky s neověřenou totožností: do veřejného repa nepatří
+CONTENT.md
+assets/img/app/vizitky-nahled.png
+assets/img/people/michal-vavra.webp
+assets/img/people/tomas-baku.webp

@@ -1,0 +1,247 @@
+/* Manuál značky Brightbox - prezentace 1920 x 1080.
+   HTML → Figma (tools/fig_extract.mjs + fig_build.py) → PDF.
+   Pravidla převodu: světlo jen v .tp__bg (první potomek slidu, <i> s radial-gradient),
+   plochy = background-color / linear-gradient + jeden radius, text v blokových prvcích,
+   žádné pseudo-elementy, stíny, filtry, ořezové masky. Zaoblení fotky patří na <img>. */
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#2B2733}
+body{display:flex;flex-direction:column;align-items:center;gap:48px;padding:48px 0;font-family:Geist,sans-serif;color:#1B1432;-webkit-font-smoothing:antialiased}
+ol,ul{list-style:none}
+img{display:block;max-width:none}
+p,h1,h2,h3,li,dd{text-wrap:pretty}
+
+/* ---------- slide a pozadí ---------- */
+.sl{position:relative;overflow:hidden;flex:0 0 auto;width:1920px;height:1080px;background:#F4F1FA;color:#1B1432}
+.sl--lilac{background:#ECE6FA}
+.sl--blush{background:#FCEAF3}
+.sl--dawn{background:#F7EEFB}
+.sl--deep{background:linear-gradient(118deg,#140E33 0%,#2A1F5C 38%,#5B1F7A 68%,#B3127F 88%,#E50E81 100%);color:#fff}
+
+/* světlo: měkké pastelové záře a světlo zespodu (do Figmy jako vrstva pozadí) */
+.tp__bg{position:absolute;inset:0;pointer-events:none}
+.tp__bg i{position:absolute;border-radius:50%}
+.gp{background:radial-gradient(closest-side,rgba(255,95,178,.58),rgba(255,95,178,0))}
+.gv{background:radial-gradient(closest-side,rgba(200,75,216,.34),rgba(200,75,216,0))}
+.gl{background:radial-gradient(closest-side,rgba(142,123,240,.36),rgba(142,123,240,0))}
+.gw{background:radial-gradient(closest-side,rgba(255,255,255,.96),rgba(255,255,255,.62) 42%,rgba(255,255,255,0))}
+.gm{background:radial-gradient(closest-side,rgba(229,14,129,.26),rgba(200,75,216,.15) 42%,rgba(91,31,122,.05) 72%,rgba(91,31,122,0))}
+.gm2{background:radial-gradient(closest-side,rgba(229,14,129,.34),rgba(179,18,127,.17) 40%,rgba(91,31,122,.06) 70%,rgba(91,31,122,0))}
+.gd{background:radial-gradient(closest-side,rgba(229,14,129,.95),rgba(179,18,127,.62) 30%,rgba(91,31,122,.3) 62%,rgba(54,39,112,0))}
+.gd2{background:radial-gradient(closest-side,rgba(255,95,178,.5),rgba(255,95,178,.18) 55%,rgba(255,95,178,0))}
+
+/* ---------- mřížka: okraje 120, 12 sloupců, mezera 32 ---------- */
+.a{position:absolute}
+.x1{left:120px}.x2{left:262.67px}.x3{left:405.33px}.x4{left:548px}.x5{left:690.67px}.x6{left:833.33px}
+.x7{left:976px}.x8{left:1118.67px}.x9{left:1261.33px}.x10{left:1404px}.x11{left:1546.67px}.x12{left:1689.33px}
+.w1{width:110.67px}.w2{width:253.33px}.w3{width:396px}.w4{width:538.67px}.w5{width:681.33px}.w6{width:824px}
+.w7{width:966.67px}.w8{width:1109.33px}.w9{width:1252px}.w10{width:1394.67px}.w11{width:1537.33px}.w12{width:1680px}
+.g{position:absolute;left:120px;width:1680px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px}
+
+/* ---------- typografie ---------- */
+.lab{position:absolute;left:120px;top:104px;font:600 18px/1 Geist,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#5A5370;white-space:nowrap}
+.lab span{color:#8C86A0}
+.ft{position:absolute;bottom:88px;font:600 18px/1 Geist,sans-serif;color:#8C86A0;white-space:nowrap}
+.ft--l{left:120px}
+.ft--r{right:120px}
+.sl--deep .lab{color:rgba(255,255,255,.82)}
+.sl--deep .lab span{color:rgba(255,255,255,.56)}
+.sl--deep .ft{color:rgba(255,255,255,.6)}
+
+.T{font:600 112px/1 Sora,sans-serif;letter-spacing:-.045em;text-wrap:balance}
+.T--l{font-size:120px;line-height:.98}
+.T--m{font-size:96px;line-height:1.02}
+.st{font:600 200px/.88 Sora,sans-serif;letter-spacing:-.055em}
+.pe{font:400 30px/1.45 Geist,sans-serif;color:#5A5370}
+.tx{font:400 24px/1.45 Geist,sans-serif;color:#5A5370}
+.ca{font:400 20px/1.4 Geist,sans-serif;color:#5A5370}
+.h{font:600 40px/1.1 Sora,sans-serif;letter-spacing:-.035em}
+.h--m{font-size:32px;letter-spacing:-.03em}
+.h--s{font-size:28px;line-height:1.12;letter-spacing:-.025em}
+.k{font:600 18px/1.2 Geist,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8C86A0}
+.b{font:600 22px/1.35 Geist,sans-serif;color:#1B1432}
+.ink{color:#1B1432}
+.wh{color:#fff}
+.wh80{color:rgba(255,255,255,.82)}
+.wh60{color:rgba(255,255,255,.64)}
+.ctr{text-align:center}
+b{font-weight:600}
+
+/* plochy */
+.card{position:absolute;background:#fff;border-radius:28px}
+.tile{position:absolute;border-radius:28px}
+.deep{background:linear-gradient(118deg,#140E33 0%,#2A1F5C 38%,#5B1F7A 68%,#B3127F 88%,#E50E81 100%)}
+.pill{display:flex;align-items:center;border-radius:999px}
+
+/* ---------- 01 obálka ---------- */
+.meta{display:flex;gap:72px}
+.meta__k{font:600 18px/1.2 Geist,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8C86A0;margin-bottom:12px}
+.meta__v{font:600 30px/1.2 Geist,sans-serif;color:#1B1432}
+
+/* ---------- 02 obsah ---------- */
+.toc li{display:grid;grid-template-columns:112px minmax(0,1fr) auto;align-items:baseline;height:84px}
+.toc__n,.toc__p{font:600 20px/1 Geist,sans-serif;color:#8C86A0;font-variant-numeric:tabular-nums}
+.toc__t{font:600 56px/1 Sora,sans-serif;letter-spacing:-.04em}
+
+/* ---------- 03 manifest ---------- */
+.mani{font:600 78px/1.12 Sora,sans-serif;letter-spacing:-.04em}
+.mani span{color:#9C95B0}
+
+/* ---------- 05 kdo jsme ---------- */
+.num{font:600 128px/.9 Sora,sans-serif;letter-spacing:-.05em}
+.num__c{margin-top:20px;font:400 22px/1.4 Geist,sans-serif;color:#5A5370}
+
+/* ---------- 06 osobnost ---------- */
+.row{position:absolute;left:120px;width:1680px;height:120px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px;align-items:center}
+.row h3{grid-column:1/7;font:600 104px/1 Sora,sans-serif;letter-spacing:-.05em}
+.row p{grid-column:7/12;font:400 26px/1.45 Geist,sans-serif;color:#5A5370}
+
+/* ---------- 07 tón ---------- */
+.tc{position:absolute;width:824px;height:252px;padding:36px 40px;background:#fff;border-radius:28px;display:flex;flex-direction:column;justify-content:space-between}
+.tc__ne{font:400 22px/1.4 Geist,sans-serif;color:#8C86A0}
+.tc__ano{margin-top:12px;font:600 32px/1.15 Sora,sans-serif;letter-spacing:-.035em}
+
+/* ---------- 08 pravidla ---------- */
+.rule dt{font:600 44px/1.08 Sora,sans-serif;letter-spacing:-.035em}
+.rule dd{margin-top:18px;font:400 26px/1.45 Geist,sans-serif;color:#5A5370}
+
+/* ---------- 09 logo ---------- */
+.step h3{font:600 36px/1.1 Sora,sans-serif;letter-spacing:-.035em}
+.step p{margin-top:14px;font:400 22px/1.45 Geist,sans-serif;color:#5A5370}
+
+/* ---------- 10 verze ---------- */
+.vcap h3{font:600 32px/1.1 Sora,sans-serif;letter-spacing:-.03em}
+.vcap p{margin-top:12px;font:400 22px/1.45 Geist,sans-serif;color:#5A5370}
+
+/* ---------- 11 pozadí, 13 barevné verze ---------- */
+.bgcap{position:absolute;left:32px;bottom:28px;font:600 20px/1.3 Geist,sans-serif;color:#5A5370}
+.bgcap--w{color:rgba(255,255,255,.8)}
+.cvcap{position:absolute;left:32px;right:32px;bottom:28px}
+.cvcap h3{font:600 22px/1.3 Geist,sans-serif}
+.cvcap p{margin-top:4px;font:400 20px/1.4 Geist,sans-serif;color:#5A5370}
+.cvcap--w h3{color:#fff}
+.cvcap--w p{color:rgba(255,255,255,.76)}
+
+/* ---------- 12 zóna ---------- */
+.mins{position:absolute;height:100px;background:#fff;border-radius:16px}
+
+/* ---------- 14 zákazy ---------- */
+.dn{position:absolute;width:396px;height:196px;background:#fff;border-radius:28px}
+.dn.deep{background:linear-gradient(118deg,#140E33 0%,#2A1F5C 38%,#5B1F7A 68%,#B3127F 88%,#E50E81 100%)}
+.dn__c{position:absolute;width:396px;font:400 22px/1.4 Geist,sans-serif;color:#1B1432}
+.dn__font{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:14px}
+.dn__font span{font:300 46px/1 Geist,sans-serif;letter-spacing:.01em;color:#0F0B1E}
+.dn__stack{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+
+/* ---------- 15 skupina ---------- */
+.core{position:absolute;width:460px;height:290px;background:#fff;border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.core__l{margin-top:28px}
+.core__s{margin-top:12px;font:600 24px/1.35 Sora,sans-serif;letter-spacing:-.02em;text-align:center}
+.opill{position:absolute;height:80px;padding:0 32px 0 26px;gap:18px;background:#fff}
+.opill span{font:600 22px/1 Geist,sans-serif;color:#5A5370;white-space:nowrap}
+
+/* ---------- 16 skupina pravidla ---------- */
+.gr h3{font:600 40px/1.1 Sora,sans-serif;letter-spacing:-.035em;color:#fff}
+.gr p{margin-top:14px;font:400 24px/1.45 Geist,sans-serif;color:rgba(255,255,255,.8)}
+.lrow{display:flex;align-items:center;justify-content:center;gap:52px}
+.sig{font:600 24px/1 Geist,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+
+/* ---------- 17 paleta ---------- */
+.band{position:absolute;top:0;height:1080px}
+.bn{position:absolute;top:176px;width:253.33px;font:600 56px/1 Sora,sans-serif;letter-spacing:-.05em}
+.br{position:absolute;top:268px;width:253.33px;font:400 22px/1.4 Geist,sans-serif;opacity:.86}
+.bv{position:absolute;top:640px;width:253.33px;display:flex;flex-direction:column;gap:18px}
+.bv dt{font:600 18px/1.2 Geist,sans-serif;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.bv dd{margin-top:6px;font:600 24px/1.3 Geist,sans-serif}
+
+/* ---------- 18 poměr a přechody ---------- */
+.ratio{position:absolute;left:120px;width:1680px;height:88px;display:flex;gap:8px}
+.ratio p{height:88px;padding:20px 18px;border-radius:16px;font:600 20px/1 Geist,sans-serif;white-space:nowrap}
+.gt{position:absolute;width:396px;height:228px;border-radius:28px;padding:28px}
+.gt__in{position:absolute;left:28px;right:28px;bottom:26px}
+.gt h3{font:600 26px/1.15 Sora,sans-serif;letter-spacing:-.025em}
+.gt p{margin-top:6px;font:400 20px/1.4 Geist,sans-serif}
+.gt .gt__c{margin-top:8px;font:500 20px/1.4 Geist,sans-serif;opacity:.72}
+.sw{position:absolute;width:190px;height:106px;border-radius:16px}
+.sw p{position:absolute;left:18px;bottom:16px}
+.sw b{display:block;font:600 22px/1.2 Sora,sans-serif;letter-spacing:-.02em}
+.sw span{display:block;font:400 20px/1.3 Geist,sans-serif;color:#5A5370}
+
+/* ---------- 19 čitelnost ---------- */
+.ct{position:absolute;width:348.44px;height:366px;border-radius:28px}
+.ct__r{position:absolute;left:36px;top:36px;font:600 88px/1 Sora,sans-serif;letter-spacing:-.05em;white-space:nowrap}
+.ct__d{position:absolute;left:36px;right:36px;bottom:32px}
+.ct__d b{display:block;font:600 22px/1.3 Geist,sans-serif}
+.ct__d span{display:block;margin-top:4px;font:400 20px/1.4 Geist,sans-serif;opacity:.8}
+
+/* ---------- 20 písma ---------- */
+.spec{font:600 200px/.9 Sora,sans-serif;letter-spacing:-.05em}
+.spec--g{font-family:Geist,sans-serif;letter-spacing:-.04em}
+.chars{font:400 22px/1.5 Sora,sans-serif;letter-spacing:0;color:#5A5370}
+.wts{font:30px/1.2 Geist,sans-serif;display:flex;gap:40px}
+
+/* ---------- 21 hierarchie ---------- */
+.hier{position:absolute;padding:48px 56px;background:#fff;border-radius:28px;display:grid;grid-template-columns:470px minmax(0,1fr);column-gap:48px;row-gap:26px;align-items:start}
+.hs-k{font:600 18px/1.2 Geist,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#5A5370}
+.hs-t{font:600 56px/1.02 Sora,sans-serif;letter-spacing:-.045em}
+.hs-l{font:400 22px/1.45 Geist,sans-serif;color:#5A5370}
+.hs-n{font:600 104px/.9 Sora,sans-serif;letter-spacing:-.05em;color:#E50E81}
+.hs-c{font:400 20px/1.4 Geist,sans-serif;color:#5A5370}
+.note b{display:block;font:600 20px/1.3 Geist,sans-serif;color:#1B1432}
+.note span{display:block;margin-top:4px;font:400 20px/1.4 Geist,sans-serif;color:#5A5370}
+.cz{display:flex;flex-direction:column;gap:22px}
+.cz dt{font:600 22px/1.3 Geist,sans-serif}
+.cz dd{margin-top:4px;font:400 20px/1.4 Geist,sans-serif;color:#5A5370}
+
+/* ---------- 22 prvky ---------- */
+.mod h3{font:600 28px/1.12 Sora,sans-serif;letter-spacing:-.025em}
+.mod p{margin-top:8px;font:400 20px/1.4 Geist,sans-serif;color:#5A5370}
+.pcard{position:absolute;width:538.67px;height:200px;padding:30px 32px;border-radius:28px}
+.pcard__t{margin-top:10px;font:600 28px/1.1 Sora,sans-serif;letter-spacing:-.03em;color:#fff}
+.btn{display:flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;font:600 18px/1 Geist,sans-serif;white-space:nowrap}
+.btn img{width:20px;height:20px}
+.btn--w{background:#fff;color:#0F0B1E;height:44px;margin-top:20px;align-self:flex-start;display:inline-flex}
+.btn--ink{background:#1B1432;color:#F4F1FA}
+.btn--line{border:1.5px solid rgba(27,20,50,.22);color:#1B1432}
+.tag{display:block;height:36px;padding:0 16px;border-radius:999px;background:#ECE6FA;color:#362770;font:600 18px/36px Geist,sans-serif}
+.shapes{position:absolute;width:400px;height:210px;padding:28px;background:#fff;border-radius:28px;display:flex;flex-wrap:wrap;gap:12px;align-content:center}
+.motion{position:absolute;width:400px;height:210px;padding:34px 36px;background:#fff;border-radius:28px}
+.motion p{font:600 34px/1.18 Sora,sans-serif;letter-spacing:-.035em}
+
+/* ---------- 23 fotografie ---------- */
+.ph{position:absolute;border-radius:16px;object-fit:cover}
+.yn h3{font:600 28px/1.12 Sora,sans-serif;letter-spacing:-.025em;margin-bottom:16px}
+.yn p{font:400 20px/1.4 Geist,sans-serif;margin-bottom:12px}
+.ic{position:absolute;width:56px;height:56px;border-radius:50%;background:#fff}
+.ic img{position:absolute;left:14px;top:14px;width:28px;height:28px}
+
+/* ---------- 24 aplikace ---------- */
+.web{position:absolute;background:#fff;border-radius:16px}
+.web__bar{position:absolute;left:24px;top:13px;font:500 18px/1 Geist,sans-serif;color:#8C86A0}
+.web__img{position:absolute;left:12px;top:44px;border-radius:8px;object-fit:cover;object-position:50% 0%}
+.app{position:absolute;width:300px;height:168px;border-radius:16px}
+.app__c{position:absolute;width:353.33px}
+.app__c h3{font:600 22px/1.3 Geist,sans-serif}
+.app__c p{margin-top:6px;font:400 20px/1.4 Geist,sans-serif;color:#5A5370}
+.vz{position:absolute;width:176px;height:102.56px;border-radius:8px;object-fit:cover}
+.msig{position:absolute;left:24px;top:16px;width:252px;height:136px;padding:18px 20px;background:#fff;border-radius:12px}
+.msig__n{font:600 18px/1.25 Sora,sans-serif;letter-spacing:-.02em}
+.msig__r{font:400 14px/1.3 Geist,sans-serif;color:#5A5370}
+.msig__c{margin:6px 0 12px;font:600 14px/1.3 Geist,sans-serif;color:#C00B6C}
+.mini{position:absolute;width:300px;height:168px;border-radius:12px;padding:20px}
+.mini__t{position:absolute;left:20px;top:56px;width:250px;font:600 22px/1.1 Sora,sans-serif;letter-spacing:-.035em;color:#fff}
+.mini__m{position:absolute;left:20px;bottom:16px;font:400 14px/1.2 Geist,sans-serif;color:rgba(255,255,255,.75)}
+
+/* ---------- 25 ke stažení ---------- */
+.dl{position:absolute;padding:40px;border-radius:28px;background:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.dl h3{font:600 36px/1.1 Sora,sans-serif;letter-spacing:-.035em}
+.dl p{font:400 22px/1.45 Geist,sans-serif;color:#5A5370;max-width:560px}
+.dl__t{position:absolute;top:40px;right:40px;height:36px;padding:0 14px;border-radius:999px;background:#F4F1FA;color:#5A5370;font:600 18px/36px Geist,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.dl.dl--deep{background:linear-gradient(118deg,#140E33 0%,#2A1F5C 38%,#5B1F7A 68%,#B3127F 88%,#E50E81 100%)}
+.dl--deep h3{color:#fff}
+.dl--deep p{color:rgba(255,255,255,.8)}
+.dl--deep .dl__t{background:rgba(255,255,255,.16);color:#fff}
+.mail{font:600 80px/1 Sora,sans-serif;letter-spacing:-.045em;color:#C00B6C}
+/* anatomie fotky: číslo pravidla v kruhu Záře */
+.nm{position:absolute;width:32px;height:32px;border-radius:50%;background:#E50E81;color:#fff;font:600 15px/32px Geist,sans-serif;text-align:center}
+.ca--n b{font-weight:600;color:#1B1432}

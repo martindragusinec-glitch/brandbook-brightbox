@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Šablony v&nbsp;plné velikosti - Brightbox</title>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/tpl.css">
+<style>
+  body{margin:0;background:#D9D4E2;font-family:Geist,sans-serif}
+  .lib{display:flex;flex-wrap:wrap;gap:80px;padding:80px;align-items:flex-start}
+  .show-safe .tp__safe{display:flex}
+  /* prohlížení: každá šablona zmenšená na šířku okna; ?native = 1:1 pro export */
+  .fit .lib{gap:32px;padding:32px 16px}
+  .fit .tp{zoom:var(--z,1)}
+</style>
+</head>
+<body>
+<div class="lib">
+<!-- ŠABLONY SOCIÁLNÍCH SÍTÍ, směr „Světlo a fotka" (A + B, 12. 10. 2026). Nativní rozměry.
+     data-tpl = id, data-w/h = rozměr, data-name = název ve Figmě. Fakta a texty jen z CONTENT.md a z webu v5.
+     Fotka = <img class="tp__photo"> s&nbsp;výřezem v&nbsp;px. Světlo = .tp__bg (elipsy a&nbsp;pásy). Texty a&nbsp;loga jako editovatelné vrstvy. -->
+
+<!-- ============ FEED 4:5, 1080 × 1350 (Instagram, LinkedIn, Facebook) ============ -->
+
+<div class="tp tp--photo" data-tpl="feed-lide" data-w="1080" data-h="1350" data-name="Feed 4:5 - Lidé" style="width:1080px;height:1350px">
+  <img class="tp__photo" src="assets/img/people/jakub-stehno.webp" alt="Jakub Stehno" style="width:1150px;left:-4px;top:-87px">
+  <div class="tp__bg" style="--h:560px"><i class="l-lift"></i><i class="l-rise"></i><i class="l-src"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-group-white.svg" alt="Brightbox Group"><p class="tp__kick">Lidé</p></div>
+  <div class="tp__foot"><p class="th th-m"><b>Jakub Stehno</b><br>CEO a&nbsp;zakladatel</p></div>
+</div>
+
+<div class="tp" data-tpl="feed-myslenka" data-w="1080" data-h="1350" data-name="Feed 4:5 - Myšlenka" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:75%;--rw:800px;--rh:1080px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Princip</p></div>
+  <div class="tp__head"><p class="th th-m"><b>Platíte pět dodavatelů.</b><br>Kdo z&nbsp;nich odpovídá<br>za&nbsp;výsledek?</p></div>
+  <div class="tp__foot"><p class="tlead">Za&nbsp;celek odpovídáme my.</p></div>
+</div>
+
+<div class="tp tp--serik" data-tpl="feed-princip" data-w="1080" data-h="1350" data-name="Feed 4:5 - Princip" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:25%;--side:1;--rw:800px;--rh:900px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Princip</p></div>
+  <div class="tp__foot"><p class="th th-l"><b>Nejdřív směr,</b><br>potom kampaně.</p><p class="tlead tsp40">Strategie rozhoduje o&nbsp;tom, co nebudete dělat.<br>Plán aktivit uvádí jen&nbsp;to, co dělat budete.</p></div>
+</div>
+
+<div class="tp tp--deep" data-tpl="feed-cislo" data-w="1080" data-h="1350" data-name="Feed 4:5 - Číslo" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:900px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-white.svg" alt="Brightbox"><p class="tp__kick">Případová studie</p></div>
+  <div class="tp__head"><p class="tnum">+50&nbsp;%</p><p class="th th-m tsp56"><b>konverzí u&nbsp;JK šperků</b><br>v&nbsp;testu Interscrolleru.</p></div>
+  <div class="tp__foot"><p class="tmeta">Změna mezi 14&nbsp;dny před a&nbsp;po&nbsp;spuštění, mobil, GA4. Test Brightbox a&nbsp;Sklik, zveřejnil blog Seznamu 6.&nbsp;10.&nbsp;2025.</p></div>
+</div>
+
+<div class="tp tp--photo" data-tpl="feed-citat" data-w="1080" data-h="1350" data-name="Feed 4:5 - Citát" style="width:1080px;height:1350px">
+  <img class="tp__photo" src="assets/img/people/tomas-sykora.webp" alt="Tomáš Sýkora" style="width:1126px;left:-23px;top:0">
+  <div class="tp__bg" style="--h:640px"><i class="l-lift"></i><i class="l-rise"></i><i class="l-src"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-group-white.svg" alt="Brightbox Group"><p class="tp__kick">Citát</p></div>
+  <div class="tp__foot"><p class="th th-m"><b>„Výkon vás uživí dnes,</b><br>ale brand zítra.“</p><p class="twho tsp40"><b>Tomáš Sýkora</b><br>v&nbsp;době studie Head of Digital v&nbsp;Brightboxu, dnes CEO Growtix</p></div>
+</div>
+
+<div class="tp" data-tpl="feed-manifest" data-w="1080" data-h="1350" data-name="Feed 4:5 - Manifest" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:1080px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Jak pracujeme</p></div>
+  <div class="tp__head"><p class="th th-m"><b>Jeden tým.</b><br>Jedna odpovědnost.</p></div>
+  <div class="tp__foot"><p class="tlead">Jedno vedení, jeden plán, jeden report.</p></div>
+</div>
+
+<div class="tp" data-tpl="feed-nabidka" data-w="1080" data-h="1350" data-name="Feed 4:5 - Nabídka" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:50%;--rw:860px;--rh:1080px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Nabídka</p></div>
+  <div class="tp__head"><p class="th th-m"><b>Návrh strategie zdarma.</b><br><span class="nw">E-mailem</span>, bez&nbsp;schůzky,<br>tři otázky.</p></div>
+  <div class="tp__foot"><p class="tlead">Odpovězte na&nbsp;tři otázky. Návrh strategie vám pošleme <span class="nw">e-mailem</span>.</p><p class="tmeta tsp24"><b>Odkaz v&nbsp;profilu</b></p></div>
+</div>
+
+<div class="tp tp--serik" data-tpl="feed-nabor" data-w="1080" data-h="1350" data-name="Feed 4:5 - Nábor" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:75%;--side:-1;--rw:800px;--rh:900px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-group-color.svg" alt="Brightbox Group"><p class="tp__kick">Kariéra</p></div>
+  <div class="tp__head"><p class="tmeta tover">Hledáme grafika nebo grafičku</p><p class="th th-l"><b>Dělej marketing,</b><br>který jde změřit.</p></div>
+  <div class="tp__foot"><ul class="tfacts tfacts--s"><li><b>Obor</b><span>Výkonnostní grafika</span></li><li><b>Forma</b><span>HPP nebo fakturace</span></li><li><b>Výběr</b><span>Čtyři kroky, zkušební zadání placené</span></li></ul></div>
+</div>
+
+<div class="tp" data-tpl="feed-skupina" data-w="1080" data-h="1350" data-name="Feed 4:5 - Skupina" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:760px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-group-color.svg" alt="Brightbox Group"><p class="tp__kick">Skupina</p></div>
+  <div class="tp__head"><p class="th th-l"><b>Jedna skupina.</b><br>Čtyři specialisté.</p></div>
+  <div class="tp__foot"><ul class="tags">
+    <li><img class="ag--gx" src="assets/logos/growtix-color.svg" alt="Growtix"><span>Výkonnostní marketing</span></li>
+    <li><img class="ag--sp" src="assets/logos/sparkee-color.webp" alt="Sparkee"><span>Obsah a&nbsp;sociální sítě</span></li>
+    <li><img class="ag--wl" src="assets/logos/weblantis-color.svg" alt="Weblantis"><span>Weby</span></li>
+    <li><img class="ag--p4" src="assets/logos/p4-blue.svg" alt="Print4You"><span>Tisk</span></li>
+  </ul></div>
+</div>
+
+<!-- ============ CAROUSEL, PŘÍPADOVÁ STUDIE (IG carousel a dokument na LinkedInu), 7 × 1080 × 1350 ============ -->
+
+<div class="tp" data-tpl="car-1" data-w="1080" data-h="1350" data-name="Případovka 1/7 - Obálka" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:100%;--side:-1;--rw:800px;--rh:1000px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__swipe">Listujte<img src="assets/icons/arrow-right.svg" alt=""></p></div>
+  <div class="tp__foot"><p class="tmeta tover">Případová studie, Brightbox a&nbsp;Sklik</p><p class="th th-l"><b>Seznam zveřejnil<br>náš test.</b><br>Noví uživatelé<br>+51&nbsp;až&nbsp;+118&nbsp;%.</p></div>
+</div>
+
+<div class="tp" data-tpl="car-2" data-w="1080" data-h="1350" data-name="Případovka 2/7 - Metoda" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:0%;--side:1;--rw:800px;--rh:900px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__page">2&nbsp;/ 7</p></div>
+  <div class="tp__head"><p class="th th-l"><b>Jak jsme měřili.</b></p></div>
+  <div class="tp__foot"><ul class="tfacts">
+      <li><b>14&nbsp;+ 14</b><span>dní před&nbsp;spuštěním a&nbsp;po&nbsp;něm, data z&nbsp;GA4&nbsp;na&nbsp;mobilu</span></li>
+      <li><b>4</b><span>klienti z&nbsp;odlišných oborů</span></li>
+      <li><b>3&nbsp;× 2</b><span>kampaně v&nbsp;každém účtu, každá ve&nbsp;dvou kreativních variantách</span></li>
+    </ul><p class="tlead tsp56">Rozpočet, délka, optimalizace i&nbsp;bidding byly totožné.</p></div>
+</div>
+
+<div class="tp" data-tpl="car-3" data-w="1080" data-h="1350" data-name="Případovka 3/7 - Výsledky" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:75%;--side:-1;--rw:800px;--rh:900px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__page">3&nbsp;/ 7</p></div>
+  <div class="tp__head"><p class="th th-m"><b>Noví uživatelé</b><br>u&nbsp;všech čtyř klientů.</p></div>
+  <div class="tp__foot"><ul class="trows">
+      <li><span>JK šperky</span><b>+75&nbsp;%</b></li>
+      <li><span>Pinoys</span><b>+81&nbsp;%</b></li>
+      <li><span>Anjolie</span><b>+118&nbsp;%</b></li>
+      <li><span>Magic Planet Online</span><b>+51&nbsp;%</b></li>
+    </ul><p class="tmeta tsp56">Změna mezi 14&nbsp;dny před a&nbsp;po&nbsp;spuštění, mobil, GA4.</p></div>
+</div>
+
+<div class="tp tp--deep" data-tpl="car-4" data-w="1080" data-h="1350" data-name="Případovka 4/7 - Číslo" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:25%;--rw:800px;--rh:900px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-white.svg" alt="Brightbox"><p class="tp__page">4&nbsp;/ 7</p></div>
+  <div class="tp__head"><p class="tnum">+50&nbsp;%</p><p class="th th-m tsp56"><b>konverzí u&nbsp;JK šperků</b><br>v&nbsp;testu Interscrolleru.</p></div>
+  <div class="tp__foot"><p class="tlead">Hodnota konverzí rostla pomaleji než&nbsp;jejich počet.</p></div>
+</div>
+
+<div class="tp" data-tpl="car-5" data-w="1080" data-h="1350" data-name="Případovka 5/7 - Na co myslet" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:25%;--side:1;--rw:800px;--rh:900px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__page">5&nbsp;/ 7</p></div>
+  <div class="tp__head"><p class="th th-l"><b>Na&nbsp;co myslet.</b></p></div>
+  <div class="tp__foot"><ul class="tfacts">
+      <li><b>CARE</b><span>Nejvyšší CTR ze&nbsp;všech fází měl retargeting.</span></li>
+      <li><b>3×</b><span>Proklik vychází až&nbsp;3× dráž než&nbsp;u&nbsp;běžných bannerů.</span></li>
+      <li><b>Mobil</b><span>Interscroller běží jen&nbsp;na&nbsp;mobilu.</span></li>
+    </ul></div>
+</div>
+
+<div class="tp tp--photo" data-tpl="car-6" data-w="1080" data-h="1350" data-name="Případovka 6/7 - Citát" style="width:1080px;height:1350px">
+  <img class="tp__photo" src="assets/img/people/tomas-sykora.webp" alt="Tomáš Sýkora" style="width:1126px;left:-23px;top:0">
+  <div class="tp__bg" style="--h:700px;--sx:30%"><i class="l-lift"></i><i class="l-rise"></i><i class="l-src"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-white.svg" alt="Brightbox"><p class="tp__page">6&nbsp;/ 7</p></div>
+  <div class="tp__foot"><p class="th th-m"><b>„Brand a&nbsp;výkon spolu<br>musí hrát dohromady.“</b></p><p class="twho tsp40"><b>Tomáš Sýkora</b><br>v&nbsp;době studie Head of Digital v&nbsp;Brightboxu, dnes CEO Growtix</p></div>
+</div>
+
+<div class="tp" data-tpl="car-7" data-w="1080" data-h="1350" data-name="Případovka 7/7 - Výzva" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:50%;--rw:860px;--rh:1000px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__page">7&nbsp;/ 7</p></div>
+  <div class="tp__head"><p class="th th-l"><b>Uložte si&nbsp;to</b><br>k&nbsp;příštímu<br>plánu kampaní.</p></div>
+  <div class="tp__foot"><p class="tlead">Celá studie je na&nbsp;brightbox.cz a&nbsp;na&nbsp;blogu Seznamu.</p><p class="tmeta tsp24"><b>Odkaz v&nbsp;komentáři</b></p></div>
+</div>
+
+<!-- ============ CAROUSEL, ČLÁNEK Z MAGAZÍNU, 6 × 1080 × 1350 ============ -->
+
+<div class="tp" data-tpl="mag-1" data-w="1080" data-h="1350" data-name="Článek 1/6 - Obálka" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:100%;--side:-1;--rw:800px;--rh:1000px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__swipe">Listujte<img src="assets/icons/arrow-right.svg" alt=""></p></div>
+  <div class="tp__foot"><p class="tmeta tover">Magazín, 5&nbsp;minut čtení</p><p class="th th-m"><b>Marketingová strategie,<br>nebo jen&nbsp;plán aktivit?</b><br>Jak poznat rozdíl.</p></div>
+</div>
+
+<div class="tp" data-tpl="mag-2" data-w="1080" data-h="1350" data-name="Článek 2/6 - Rozdíl" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:0%;--side:1;--rw:800px;--rh:1000px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__page">2&nbsp;/ 6</p></div>
+  <div class="tp__head"><p class="th th-l"><b>Plán aktivit říká,<br>co dělat.</b><br>Strategie říká,<br>komu a&nbsp;proč.</p></div>
+  <div class="tp__foot"><p class="tlead">Pokud lze z&nbsp;dokumentu odstranit část o&nbsp;cílech a&nbsp;cílových skupinách a&nbsp;zbytek zůstane beze změny, jde o&nbsp;plán aktivit.</p></div>
+</div>
+
+<div class="tp" data-tpl="mag-3" data-w="1080" data-h="1350" data-name="Článek 3/6 - Pět součástí" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:75%;--side:-1;--rw:800px;--rh:760px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__page">3&nbsp;/ 6</p></div>
+  <div class="tp__head"><p class="th th-m"><b>Pět součástí strategie.</b><br>Každá vychází<br>z&nbsp;předchozí.</p>
+    <ol class="tlist tlist--tight tsp56">
+      <li><b>01</b><div><strong>Data a&nbsp;výchozí stav</strong><span>Kde se&nbsp;firma nachází.</span></div></li>
+      <li><b>02</b><div><strong>Segmenty</strong><span>Kdo jsou zákazníci, kteří přinášejí největší hodnotu.</span></div></li>
+      <li><b>03</b><div><strong>Positioning</strong><span>V&nbsp;čem a&nbsp;proč se&nbsp;firma liší v&nbsp;očích vybraného segmentu.</span></div></li>
+      <li><b>04</b><div><strong>Cíle a&nbsp;KPI</strong><span>Měřitelné cíle navázané na&nbsp;obchodní výsledek.</span></div></li>
+      <li><b>05</b><div><strong>Priority a&nbsp;rozdělení zdrojů</strong><span>Co se&nbsp;bude dělat nejdříve, co později a&nbsp;co vůbec ne.</span></div></li>
+    </ol></div>
+</div>
+
+<div class="tp" data-tpl="mag-4" data-w="1080" data-h="1350" data-name="Článek 4/6 - Kontrolní seznam 1" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:25%;--side:1;--rw:800px;--rh:760px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__page">4&nbsp;/ 6</p></div>
+  <div class="tp__head"><p class="th th-m"><b>Sedm otázek,</b><br>zda strategii máte.</p>
+    <ol class="tlist tlist--q tsp56">
+      <li><b>1</b><p>Dokáže vedení jednou větou říct, komu firma prodává a&nbsp;proč si&nbsp;ji zákazník vybírá?</p></li>
+      <li><b>2</b><p>Vychází dokument z&nbsp;dat o&nbsp;dosavadních výsledcích, nikoli z&nbsp;odhadů?</p></li>
+      <li><b>3</b><p>Jsou v&nbsp;něm pojmenované segmenty, které mají přednost?</p></li>
+      <li><b>4</b><p>Má každý cíl výchozí hodnotu, cílovou hodnotu a&nbsp;termín?</p></li>
+    </ol></div>
+</div>
+
+<div class="tp" data-tpl="mag-5" data-w="1080" data-h="1350" data-name="Článek 5/6 - Kontrolní seznam 2" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:75%;--side:-1;--rw:800px;--rh:900px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__page">5&nbsp;/ 6</p></div>
+  <div class="tp__head"><ol class="tlist tlist--q" start="5">
+      <li><b>5</b><p>Uvádí dokument, co se&nbsp;dělat nebude?</p></li>
+      <li><b>6</b><p>Sčítají se&nbsp;cíle jednotlivých kanálů do&nbsp;společného obchodního výsledku?</p></li>
+      <li><b>7</b><p>Byl dokument v&nbsp;posledním roce upraven na&nbsp;základě výsledků?</p></li>
+    </ol></div>
+  <div class="tp__foot"><p class="th th-m"><b>Každé „ne“<br>označuje místo,</b><br>které vaše<br>strategie neřeší.</p></div>
+</div>
+
+<div class="tp" data-tpl="mag-6" data-w="1080" data-h="1350" data-name="Článek 6/6 - Výzva" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--rx:50%;--rw:860px;--rh:1000px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__page">6&nbsp;/ 6</p></div>
+  <div class="tp__head"><p class="th th-l"><b>Chcete strategii<br>své firmy</b><br>projít s&nbsp;námi?</p></div>
+  <div class="tp__foot"><p class="tlead">Návrh strategie zdarma. <span class="nw">E-mailem</span>, bez&nbsp;schůzky, tři otázky.</p><p class="tmeta tsp24"><b>Odkaz v&nbsp;profilu</b></p></div>
+</div>
+
+<!-- ============ STORIES A REEL, 1080 × 1920 (nahoře 250, dole 340 px zóny Instagramu) ============ -->
+
+<div class="tp tp--story" data-tpl="story-myslenka" data-w="1080" data-h="1920" data-name="Story - Myšlenka" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:1536px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Princip</p></div>
+  <div class="tp__head"><p class="th th-xl"><b>Máte lidi,</b><br>chybí směr.</p></div>
+  <div class="tp__foot"><p class="tlead">Dobrý marketingový tým ještě není dobrý marketing.</p></div>
+  <div class="tp__safe" style="top:0;height:250px">Horní lišta</div><div class="tp__safe" style="bottom:0;height:340px">Odpověď a&nbsp;reakce</div>
+</div>
+
+<div class="tp tp--story" data-tpl="story-clanek" data-w="1080" data-h="1920" data-name="Story - Nový článek" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:75%;--side:-1;--rw:800px;--rh:1290px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Nový článek</p></div>
+  <div class="tp__head"><p class="th th-m"><b>Jak číst měsíční<br>marketingový report.</b><br>7&nbsp;otázek pro&nbsp;vedení.</p><p class="tmeta tsp40">Řízení a&nbsp;reporting, 5&nbsp;minut čtení</p></div>
+  <div class="tp__sticker" data-fig="guide" style="top:1260px;width:560px;height:140px"><img src="assets/icons/link-simple.svg" alt="">Sem nálepku s&nbsp;odkazem</div>
+  <div class="tp__safe" style="top:0;height:250px">Horní lišta</div><div class="tp__safe" style="bottom:0;height:340px">Odpověď a&nbsp;reakce</div>
+</div>
+
+<div class="tp tp--story" data-tpl="story-cislo" data-w="1080" data-h="1920" data-name="Story - Číslo" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:1290px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Případová studie</p></div>
+  <div class="tp__head"><p class="tnum">+118&nbsp;%</p><p class="th th-m tsp56"><b>nových uživatelů</b><br>u&nbsp;značky Anjolie.</p><p class="tlead tsp40">Konverze ve&nbsp;stejném testu +5,26&nbsp;%.</p></div>
+  <div class="tp__foot"><p class="tmeta">Změna mezi 14&nbsp;dny před a&nbsp;po&nbsp;spuštění, mobil, GA4. Test Brightbox a&nbsp;Sklik, zveřejnil blog Seznamu 6.&nbsp;10.&nbsp;2025.</p></div>
+  <div class="tp__safe" style="top:0;height:250px">Horní lišta</div><div class="tp__safe" style="bottom:0;height:340px">Odpověď a&nbsp;reakce</div>
+</div>
+
+<div class="tp tp--story" data-tpl="story-anketa" data-w="1080" data-h="1920" data-name="Story - Otázka pro vedení" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:25%;--side:1;--rw:800px;--rh:1290px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Otázka</p></div>
+  <div class="tp__head"><p class="th th-m"><b>Marketingová strategie,</b><br>nebo jen&nbsp;plán aktivit?</p></div>
+  <div class="tp__sticker" data-fig="guide" style="top:1100px;width:620px;height:300px">Sem nálepku s&nbsp;anketou</div>
+  <div class="tp__safe" style="top:0;height:250px">Horní lišta</div><div class="tp__safe" style="bottom:0;height:340px">Odpověď a&nbsp;reakce</div>
+</div>
+
+<div class="tp tp--story" data-tpl="story-nabidka" data-w="1080" data-h="1920" data-name="Story - Nabídka" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:50%;--rw:860px;--rh:1400px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Nabídka</p></div>
+  <div class="tp__head"><p class="th th-m"><b>Návrh strategie zdarma.</b><br><span class="nw">E-mailem</span>, bez&nbsp;schůzky,<br>tři otázky.</p></div>
+  <div class="tp__sticker" data-fig="guide" style="top:1260px;width:560px;height:140px"><img src="assets/icons/link-simple.svg" alt="">Sem nálepku s&nbsp;odkazem</div>
+  <div class="tp__safe" style="top:0;height:250px">Horní lišta</div><div class="tp__safe" style="bottom:0;height:340px">Odpověď a&nbsp;reakce</div>
+</div>
+
+<div class="tp tp--story tp--serik" data-tpl="story-nabor" data-w="1080" data-h="1920" data-name="Story - Nábor" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:75%;--side:-1;--rw:800px;--rh:1290px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-group-color.svg" alt="Brightbox Group"><p class="tp__kick">Kariéra</p></div>
+  <div class="tp__head"><p class="th th-l"><b>Dělej marketing,</b><br>který jde změřit.</p>
+    <ul class="tlist tsp56"><li><b>01</b><div><strong>Grafik nebo grafička</strong><span>Výkonnostní grafika</span></div></li><li><b>02</b><div><strong>HPP nebo fakturace</strong><span>Praha a&nbsp;Brno</span></div></li><li><b>03</b><div><strong>Zkušební zadání</strong><span>Asi 3&nbsp;hodiny, placené</span></div></li></ul></div>
+  <div class="tp__sticker" data-fig="guide" style="top:1260px;width:560px;height:140px"><img src="assets/icons/link-simple.svg" alt="">Sem nálepku s&nbsp;odkazem</div>
+  <div class="tp__safe" style="top:0;height:250px">Horní lišta</div><div class="tp__safe" style="bottom:0;height:340px">Odpověď a&nbsp;reakce</div>
+</div>
+
+<div class="tp tp--story tp--reel" data-tpl="reel-obalka" data-w="1080" data-h="1920" data-name="Reel - Obálka" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:1290px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><span></span></div>
+  <div class="tp__foot"><p class="tmeta tover">Jak číst měsíční report, jedna ze&nbsp;7&nbsp;otázek</p><p class="th th-l"><b>Je to trend,</b><br>nebo výkyv?</p></div>
+  <div class="tp__safe" style="top:0;height:240px">Mimo mřížku</div><div class="tp__safe" style="bottom:0;height:440px">Popisek a&nbsp;tlačítka</div><div class="tp__safe" style="top:240px;bottom:440px;left:auto;width:140px">Akce</div>
+</div>
+
+<!-- ============ PROFIL A HIGHLIGHTY ============ -->
+
+<div class="tp tp-avatar" data-tpl="profil-avatar" data-w="1080" data-h="1080" data-name="Profilová fotka" style="width:1080px;height:1080px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:720px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <img class="tp__mk" src="assets/logos/kit/bb-mark-color.svg" alt="">
+</div>
+
+<div class="tp tp-hl" data-tpl="hl-prace" data-w="1080" data-h="1920" data-name="Highlight - Práce" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:1290px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <img class="tp__ico" src="assets/icons/briefcase.svg" alt="">
+</div>
+<div class="tp tp-hl" data-tpl="hl-tym" data-w="1080" data-h="1920" data-name="Highlight - Tým" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:1290px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <img class="tp__ico" src="assets/icons/users-three.svg" alt="">
+</div>
+<div class="tp tp-hl" data-tpl="hl-magazin" data-w="1080" data-h="1920" data-name="Highlight - Magazín" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:1290px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <img class="tp__ico" src="assets/icons/book-open-text.svg" alt="">
+</div>
+<div class="tp tp-hl" data-tpl="hl-kariera" data-w="1080" data-h="1920" data-name="Highlight - Kariéra" style="width:1080px;height:1920px">
+  <div class="tp__bg" style="--rx:50%;--rw:800px;--rh:1290px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <img class="tp__ico" src="assets/icons/user-plus.svg" alt="">
+</div>
+
+<!-- ============ LINKEDIN A FACEBOOK ============ -->
+
+<div class="tp tp--cover tp-lif" data-tpl="li-firma" data-w="1512" data-h="256" data-name="LinkedIn - Cover firemní stránky" style="width:1512px;height:256px">
+  <div class="tp__bg" style="--rx:82%;--side:-1;--rw:1119px;--rh:205px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><p class="tp__kick">Strategická marketingová agentura</p></div>
+  <div class="tp__foot"><p class="th th-s"><b>Váš marketing.</b> Náš tým.</p></div>
+  <div class="tp__safe" style="left:0;right:auto;top:auto;bottom:0;width:520px;height:120px">Logo stránky</div>
+</div>
+
+<div class="tp tp--deep tp--cover tp-lio" data-tpl="li-osobni" data-w="1584" data-h="396" data-name="LinkedIn - Cover osobního profilu" style="width:1584px;height:396px">
+  <div class="tp__bg" style="--rx:80%;--side:-1;--rw:1172px;--rh:380px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-group-white.svg" alt="Brightbox Group"><span></span></div>
+  <div class="tp__foot"><p class="th th-s"><b>Strategie a&nbsp;kreativa uvnitř.</b><br>Specialisté kolem.</p></div>
+  <div class="tp__safe" style="left:0;right:auto;top:auto;bottom:0;width:570px;height:265px">Profilová fotka</div>
+</div>
+
+<div class="tp tp-link" data-tpl="li-odkaz" data-w="1200" data-h="627" data-name="Odkaz 1,91:1 - Článek" style="width:1200px;height:627px">
+  <div class="tp__bg" style="--rx:80%;--side:-1;--rw:888px;--rh:560px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Magazín</p></div>
+  <div class="tp__foot"><p class="th th-s"><b>Marketingová strategie,<br>nebo jen&nbsp;plán aktivit?</b><br>Jak poznat rozdíl.</p></div>
+</div>
+
+<div class="tp tp--cover tp-fb" data-tpl="fb-cover" data-w="1920" data-h="1080" data-name="Facebook - Cover stránky" style="width:1920px;height:1080px">
+  <div class="tp__bg" style="--rx:70%;--side:-1;--rw:1420px;--rh:860px"><i class="lt-side"></i><i class="lt-glow"></i><i class="lt-core"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="assets/logos/kit/bb-group-color.svg" alt="Brightbox Group"><span></span></div>
+  <div class="tp__foot"><p class="th th-l"><b>Váš marketing.</b><br>Náš tým.</p></div>
+  <div class="tp__safe" style="top:0;height:140px">Mobil ořízne</div><div class="tp__safe" style="bottom:0;height:140px">Mobil ořízne</div>
+</div>
+
+</div>
+<script>
+const q = new URLSearchParams(location.search);
+if (q.has('safe')) document.body.classList.add('show-safe');
+if (!q.has('native')) {
+  document.body.classList.add('fit');
+  const fit = () => {
+    const room = document.documentElement.clientWidth - 32;
+    document.querySelectorAll('.lib > .tp').forEach(t => t.style.setProperty('--z', Math.min(1, room / parseFloat(getComputedStyle(t).width)).toFixed(4)));
+  };
+  fit(); addEventListener('resize', fit);
+}
+</script>
+</body>
+</html>

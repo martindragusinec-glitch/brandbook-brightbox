@@ -1,0 +1,173 @@
+/* Šablony sociálních sítí Brightbox. Směr „Světlo a fotka" (A + B, vybráno 12. 10. 2026).
+   Nativní px (1080 = šířka postu), okraj 72 px. Vrstvy zdola: plocha nebo fotka > světlo (.tp__bg) > logo a texty.
+   Podpis sady: SVĚTLO ZESPODU. Zdroj leží pod spodní hranou plátna, vidíme jen jeho svit.
+   Nikdy shora, ze strany, uprostřed plochy, pod logem, jako prstenec ani obrys.
+   Světlo je složené z elips a pásů: každá elipsa vyplňuje svůj rámeček (closest-side), aby šla 1:1 do Figmy. */
+
+.tp{--m:72px;--top:72px;--bot:72px;--head:232px;
+  --ink:#1B1432;--ink2:#5A5370;--body:#3F385A;--mlha:#F4F1FA;--serik:#ECE6FA;--zare:#E50E81;
+  position:relative;overflow:hidden;flex:0 0 auto;background:var(--mlha);color:var(--ink);
+  font-family:Geist,sans-serif;-webkit-font-smoothing:antialiased;text-align:left}
+.tp *{box-sizing:border-box;margin:0;padding:0;text-wrap:wrap}
+.tp img{display:block;max-width:none}
+.tp--serik{background:var(--serik)}
+.tp--deep{background:linear-gradient(118deg,#140E33 0%,#2A1F5C 38%,#5B1F7A 68%,#B3127F 88%,#E50E81 100%);color:#fff}
+.tp--photo{background:#2A1F5C;color:#fff}
+
+/* fotka: výřez v px přímo na <img> (left, top, width), nikdy object-fit. Lidé nejvýš 1,35×, architektura 1,6×. */
+.tp__photo{position:absolute;height:auto}
+/* práce klienta v lehkém rámu: kreativa nebo záběr leží na Mlze, nic se neořezává do hlavy ani do textu */
+.tp__frame{position:absolute;left:var(--m);right:var(--m);border-radius:16px;overflow:hidden;z-index:2}
+.tp__frame img{width:100%;height:auto}
+
+/* ===== SVĚTLO ZESPODU ===== */
+.tp__bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.tp--photo .tp__bg{z-index:1}
+.tp__bg i{position:absolute;display:block}
+
+/* Na fotce (ze směru B): fialový pás, magentový zdroj vpravo dole, růžový nádech, který světlo prolne do fotky.
+   --h = výška světla (feed 560-700, story 1250, cover 360). --sx = zdroj na spodní hraně (výchozí 74 %).
+   Bílý titulek má i v nejsvětlejších 10 % pixelů kontrast aspoň 4,6 : 1. Brada je aspoň 120 px nad místem, kde světlo přesáhne 10 %. */
+.l-rise,.l-lift{left:0;right:0;bottom:0}
+.l-rise{height:calc(var(--h) * .72);background:linear-gradient(0deg,
+  rgba(42,31,92,.94) 0%,rgba(44,31,95,.92) 14%,rgba(52,31,101,.86) 28%,rgba(64,31,110,.74) 42%,
+  rgba(76,31,117,.56) 56%,rgba(85,31,121,.36) 70%,rgba(90,31,122,.17) 84%,rgba(91,31,122,.05) 94%,rgba(91,31,122,0) 100%)}
+.l-lift{height:calc(var(--h) * 1.18);background:linear-gradient(0deg,
+  rgba(255,95,178,.2) 0%,rgba(255,95,178,.17) 40%,rgba(255,95,178,.1) 66%,rgba(255,95,178,.04) 86%,rgba(255,95,178,0) 100%)}
+.l-src{width:144%;left:calc(var(--sx,74%) - 72%);height:calc(var(--h) * 2);bottom:calc(var(--h) * -1);background:radial-gradient(closest-side,
+  rgba(229,14,129,.72) 0%,rgba(229,14,129,.56) 20%,rgba(229,14,129,.36) 42%,rgba(229,14,129,.17) 64%,rgba(229,14,129,.05) 84%,rgba(229,14,129,0) 100%)}
+
+/* Na Mlze a Šeříku (ze směru A): pastelově. --rx zdroj na spodní hraně (25 / 50 / 75 %, carousel na švu 0 / 100 %),
+   --rw poloměr do šířky (0,74 × šířka = poměr koule a krychle v logu), --rh výška, --side strana fialového boku (1 vpravo, -1 vlevo).
+   Text ve světle je Inkoust. */
+.lt-side{width:calc(var(--rw) * 2.4);height:calc(var(--rh) * 2.1);left:calc(var(--rx) + var(--rw) * .55 * var(--side,1) - var(--rw) * 1.2);bottom:calc(var(--rh) * -1.05);
+  background:radial-gradient(closest-side,rgba(142,123,240,.52) 0%,rgba(142,123,240,.2) 48%,rgba(142,123,240,0) 88%)}
+.lt-glow{width:calc(var(--rw) * 2);height:calc(var(--rh) * 2);left:calc(var(--rx) - var(--rw));bottom:calc(var(--rh) * -1);
+  background:radial-gradient(closest-side,rgba(255,95,178,.66) 0%,rgba(255,95,178,.4) 28%,rgba(200,75,216,.15) 60%,rgba(200,75,216,0) 90%)}
+.lt-core{width:var(--rw);height:calc(var(--rh) * .6);left:calc(var(--rx) - var(--rw) * .5);bottom:calc(var(--rh) * -.3);
+  background:radial-gradient(closest-side,rgba(229,14,129,.46) 0%,rgba(255,95,178,.22) 55%,rgba(255,95,178,0) 100%)}
+
+/* Na hlubokém přechodu sytě (jen důkaz: číslo, výsledek; v mřížce nejvýš 1 z 9). Text bílý. */
+.tp--deep .lt-side{width:calc(var(--rw) * 3.4);height:calc(var(--rh) * 2.32);left:calc(var(--rx) - var(--rw) * 1.7);bottom:calc(var(--rh) * -1.16);
+  background:radial-gradient(closest-side,rgba(54,39,112,.62) 0%,rgba(54,39,112,.22) 55%,rgba(54,39,112,0) 100%)}
+.tp--deep .lt-glow{width:calc(var(--rw) * 2.6);height:calc(var(--rh) * 2.16);left:calc(var(--rx) + var(--rw) * .5 * var(--side,1) - var(--rw) * 1.3);bottom:calc(var(--rh) * -1.08);
+  background:radial-gradient(closest-side,rgba(91,31,122,.94) 0%,rgba(91,31,122,.46) 50%,rgba(91,31,122,0) 100%)}
+.tp--deep .lt-core{width:calc(var(--rw) * 2);height:calc(var(--rh) * 2);left:calc(var(--rx) - var(--rw));bottom:calc(var(--rh) * -1);
+  background:radial-gradient(closest-side,rgba(229,14,129,.96) 0%,rgba(229,14,129,.64) 30%,rgba(170,20,128,.28) 62%,rgba(91,31,122,0) 100%)}
+
+/* ===== RÁM: logo vlevo nahoře, rubrika nebo strana vpravo. Stejné kotvy v celé sadě. ===== */
+.tp__mast{position:absolute;left:var(--m);right:var(--m);top:var(--top);height:48px;display:flex;justify-content:space-between;align-items:center;z-index:3}
+.tp__logo{height:44px;width:auto}
+.tp__kick,.tp__page,.tp__swipe{font:600 30px/1 Geist,sans-serif;color:var(--ink2)}
+.tp__kick{letter-spacing:.14em;text-transform:uppercase}
+.tp__page{font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.tp__swipe{display:flex;align-items:center;gap:14px;color:var(--ink)}
+.tp__swipe img{width:36px;height:36px}
+.tp--photo .tp__kick,.tp--deep .tp__kick,.tp--photo .tp__page,.tp--deep .tp__page{color:rgba(255,255,255,.88)}
+.tp--photo .tp__swipe,.tp--deep .tp__swipe{color:#fff}
+/* fotka se světlou horní částí (obloha, bílá zeď): rám v inkoustu a barevné logo */
+.tp--sky .tp__kick,.tp--sky .tp__page{color:var(--ink2)}
+.tp--sky .tp__swipe{color:var(--ink)}
+
+/* ===== BLOKY: nahoře (myšlenka, seznam) a dole (titulek ve světle) ===== */
+.tp__head{position:absolute;left:var(--m);right:var(--m);top:var(--head);z-index:2}
+.tp__foot{position:absolute;left:var(--m);right:var(--m);bottom:var(--bot);z-index:2}
+.tp--photo .tp__foot{z-index:2}
+
+/* ===== TYPOGRAFICKÁ ŠKÁLA (px na šířce 1080): 330 / 148 / 112 / 84 / 56 / 40 / 30 =====
+   Titulek ve dvou řezech stejné velikosti a barvy: Sora SemiBold <b> nese tvrzení, Sora Regular dovětek. Nikdy barvení slov.
+   Zlomy ručně po celcích, bez osiřelých slov. Nevejde-li se, o stupeň níž. */
+.th{font-family:Sora,sans-serif;font-weight:400;white-space:nowrap}
+.th b{font-weight:600}
+.th *{white-space:nowrap}
+.th-xl{font-size:148px;line-height:.96;letter-spacing:-.05em;margin-left:-.06em}
+.th-l{font-size:112px;line-height:.98;letter-spacing:-.05em;margin-left:-.05em}
+.th-m{font-size:84px;line-height:1.02;letter-spacing:-.048em}
+.th-s{font-size:56px;line-height:1.06;letter-spacing:-.04em}
+.tnum{font:600 330px/.8 Sora,sans-serif;letter-spacing:-.065em;color:var(--zare);margin-left:-.06em;white-space:nowrap}
+.tp--deep .tnum{color:#fff}
+.tlead{font:400 40px/1.35 Geist,sans-serif;color:var(--body)}
+.tmeta{font:500 30px/1.4 Geist,sans-serif;color:var(--ink2)}
+.tmeta b{font-weight:600;color:var(--ink)}
+.tp--photo .tlead,.tp--deep .tlead{color:rgba(255,255,255,.92)}
+.tp--photo .tmeta,.tp--deep .tmeta{color:rgba(255,255,255,.84)}
+.tp--photo .tmeta b,.tp--deep .tmeta b{color:#fff}
+
+/* mezery jen 24 / 40 / 56 */
+.tsp24{margin-top:24px}.tsp40{margin-top:40px}.tsp56{margin-top:56px}
+.tover{margin-bottom:24px}
+
+/* seznam: číslo v Záři (aspoň 40 px kvůli kontrastu na Mlze), položka a vysvětlení. Bez odrážek a linek. */
+.tlist{list-style:none;display:flex;flex-direction:column;gap:40px}
+.tlist li{display:grid;grid-template-columns:96px minmax(0,1fr);align-items:baseline}
+.tlist b{font:600 40px/1 Sora,sans-serif;letter-spacing:-.01em;color:var(--zare);font-variant-numeric:tabular-nums}
+.tlist strong{display:block;font:400 56px/1.06 Sora,sans-serif;letter-spacing:-.04em;color:var(--ink)}
+.tlist span{display:block;margin-top:12px;font:400 30px/1.4 Geist,sans-serif;color:var(--body)}
+.tlist--q{gap:40px}
+.tlist--tight{gap:24px}
+.tlist--q p{font:400 40px/1.35 Geist,sans-serif;color:var(--ink)}
+
+/* řádky s čísly (výsledky po klientech): název vlevo, číslo vpravo */
+.trows{list-style:none;display:flex;flex-direction:column;gap:24px}
+.trows li{display:flex;justify-content:space-between;align-items:baseline;gap:40px}
+.trows span{font:400 40px/1.2 Geist,sans-serif;color:var(--ink)}
+.trows b{font:600 84px/1 Sora,sans-serif;letter-spacing:-.045em;color:var(--zare);white-space:nowrap}
+
+/* fakta s číslem (metoda testu): číslo Sora v Záři, popis Geist */
+.tfacts{list-style:none;display:flex;flex-direction:column;gap:40px}
+.tfacts li{display:grid;grid-template-columns:280px minmax(0,1fr);align-items:baseline}
+.tfacts b{font:600 84px/1 Sora,sans-serif;letter-spacing:-.045em;color:var(--zare);white-space:nowrap}
+.tfacts span{font:400 40px/1.3 Geist,sans-serif;color:var(--ink)}
+
+/* agentury skupiny 2 × 2: logo v barvách agentury a obor, bez karet */
+.tags{list-style:none;display:grid;grid-template-columns:1fr 1fr;row-gap:72px;column-gap:72px}
+.tags li{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:24px}
+.tags img{width:auto}
+/* optická velikost: nápisy agentur stejně vysoké jako verzálky */
+.ag--gx{height:56px}.ag--sp{height:116px;margin-bottom:-8px}.ag--wl{height:60px}.ag--p4{height:30px;margin-block:13px}
+.tags span{font:500 30px/1.3 Geist,sans-serif;color:var(--ink2)}
+
+/* podpis výroku: jméno a role */
+.twho{font:500 30px/1.4 Geist,sans-serif;color:rgba(255,255,255,.84)}
+.twho b{font-weight:600;color:#fff}
+
+
+/* ve světle na Mlze a Šeříku nese drobný text a čísla Inkoust (Záře a šedá by na růžovém svitu neměly kontrast) */
+.tp:not(.tp--photo):not(.tp--deep) .tp__foot :is(.tmeta,.tags span,.tlist span){color:var(--body)}
+.tp:not(.tp--photo):not(.tp--deep) .tp__foot :is(.trows b,.tfacts b,.tlist b){color:var(--ink)}
+.tp--deep .tmeta{color:rgba(255,255,255,.94)}
+/* fakta s krátkým štítkem (nábor) */
+.tfacts--s{gap:24px}
+.tfacts--s li{grid-template-columns:200px minmax(0,1fr)}
+.tfacts--s b{font:600 30px/1.3 Geist,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.tfacts--s span{font:400 40px/1.3 Geist,sans-serif}
+
+/* ===== STORY 1080 × 1920: nahoře 250 a dole 340 px zóny Instagramu, text končí 40 px nad zónou ===== */
+.tp--story{--top:250px;--bot:380px;--head:430px}
+/* obálka reelu: v mřížce jen pás y 240-1680, vpravo 140 a dole 440 px tlačítka */
+.tp--reel{--top:280px;--bot:480px}
+.tp--reel .tp__foot{right:140px}
+
+/* místo pro nálepku (odkaz, anketa): jen vodítko v náhledu se zónami, do exportu nejde */
+.tp__sticker{position:absolute;left:var(--m);border-radius:28px;border:3px dashed rgba(27,20,50,.32);display:flex;align-items:center;justify-content:center;gap:14px;font:600 30px/1 Geist,sans-serif;color:#5A5370;z-index:4}
+.tp__sticker img{width:36px;height:36px}
+
+/* ===== PROFIL A HIGHLIGHTY ===== */
+.tp-avatar .tp__mk{position:absolute;left:315px;top:290px;width:450px;height:auto;z-index:2}
+.tp-hl .tp__ico{position:absolute;left:390px;top:810px;width:300px;height:300px;z-index:2}
+
+/* ===== COVERY ===== */
+.tp--cover{--m:72px}
+.tp-lif .tp__mast{left:640px;top:72px;justify-content:flex-start}
+.tp-lif .tp__foot{left:640px;bottom:64px}
+.tp-lio{--top:64px;--bot:64px}
+.tp-lio .tp__mast,.tp-lio .tp__foot{left:640px}
+.tp-link{--bot:80px}
+.tp-link .tp__foot{right:260px}
+.tp-fb{--m:160px;--top:200px;--bot:200px}
+
+/* vodítka (jen náhled s ?safe nebo přepínačem): zóny UI a místa pro nálepky */
+.tp__safe{position:absolute;left:0;right:0;background:repeating-linear-gradient(135deg,rgba(229,14,129,.16) 0 6px,rgba(229,14,129,.06) 6px 18px);display:none;align-items:center;justify-content:center;font:600 26px Geist,sans-serif;color:#C00B6C;z-index:5}
+.show-safe .tp__safe{display:flex}
+.tp__sticker{visibility:hidden}
+.show-safe .tp__sticker{visibility:visible}

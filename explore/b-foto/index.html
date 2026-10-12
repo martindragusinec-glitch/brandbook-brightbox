@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Směr B - Fotografie první</title>
+<link rel="stylesheet" href="../../assets/css/fonts.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  body{margin:0;background:#D9D4E2;font-family:Geist,sans-serif}
+  .lib{display:flex;flex-wrap:wrap;gap:80px;padding:80px;align-items:flex-start}
+</style>
+</head>
+<body>
+<div class="lib">
+<!-- SMĚR B - FOTOGRAFIE PRVNÍ. Nativní rozměry. data-tpl = id, data-w/h = rozměr, data-name = název ve Figmě.
+     Fotka = <img> s výřezem v px. Světlo = .tp__bg (jedna vrstva; u fotky leží nad fotkou v normálním krytí). Texty a loga jako editovatelné vrstvy. -->
+
+<!-- ===== FEED 4:5 - LIDÉ (fotka) ===== -->
+<div class="tp tp--photo tp--dark-top" data-tpl="feed-lide" data-w="1080" data-h="1350" data-name="Feed 4:5 - Lidé" style="width:1080px;height:1350px">
+  <img class="tp__photo" src="../../assets/img/people/jakub-stehno.webp" alt="Jakub Stehno" style="width:1150px;left:-4px;top:-87px">
+  <div class="tp__bg" style="--h:560px"><i class="l-lift"></i><i class="l-rise"></i><i class="l-src"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="../../assets/logos/kit/bb-group-white.svg" alt="Brightbox Group"><p class="tp__kick">Lidé</p></div>
+  <div class="tp__text"><p class="t1">Jakub Stehno</p><p class="t2">CEO a&nbsp;zakladatel</p></div>
+</div>
+
+<!-- ===== FEED 4:5 - MYŠLENKA (fotka místa) ===== -->
+<div class="tp tp--photo" data-tpl="feed-myslenka" data-w="1080" data-h="1350" data-name="Feed 4:5 - Myšlenka" style="width:1080px;height:1350px">
+  <img class="tp__photo" src="../../assets/img/place/praha.webp" alt="Kancelář Praha, myhive Pankrác House" style="width:2026px;left:-72px;top:0">
+  <div class="tp__bg" style="--h:660px"><i class="l-lift"></i><i class="l-rise"></i><i class="l-src"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="../../assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Princip</p></div>
+  <div class="tp__text"><p class="tp__over">Kancelář Praha, myhive Pankrác House</p><p class="t1">Nejdřív směr,</p><p class="t2">potom kampaně.</p></div>
+</div>
+
+<!-- ===== FEED 4:5 - ČÍSLO (sazba, náznak světla) ===== -->
+<div class="tp tp--set" data-tpl="feed-cislo" data-w="1080" data-h="1350" data-name="Feed 4:5 - Číslo" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--h:620px"><i class="l-lift"></i><i class="l-rise"></i><i class="l-src"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="../../assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Případová studie</p></div>
+  <div class="tp__top"><p class="tp__num">+118&nbsp;%</p><div class="tp__head"><p class="t1">nových uživatelů</p><p class="t2">u&nbsp;značky Anjolie</p></div></div>
+  <div class="tp__text"><p class="tp__lead">Test formátu Interscroller u&nbsp;4&nbsp;klientů z&nbsp;odlišných oborů.</p><p class="tp__src">Změna mezi 14&nbsp;dny před a&nbsp;po spuštění, mobil, GA4. Test Brightbox a&nbsp;Sklik, zveřejnil blog Seznamu 6.&nbsp;10.&nbsp;2025.</p></div>
+</div>
+
+<!-- ===== CAROUSEL - OBÁLKA (fotka) ===== -->
+<div class="tp tp--photo" data-tpl="car-obalka" data-w="1080" data-h="1350" data-name="Carousel 1 - Obálka" style="width:1080px;height:1350px">
+  <img class="tp__photo" src="../../assets/img/place/brno.webp" alt="Kancelář Brno, Czechner Factory Park" style="width:2240px;left:-1160px;top:0">
+  <div class="tp__bg" style="--h:640px"><i class="l-lift"></i><i class="l-rise"></i><i class="l-src"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="../../assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Magazín</p></div>
+  <div class="tp__text tp__text--long"><p class="t1">Marketingová strategie,<br>nebo jen plán aktivit?</p><p class="t2">Jak poznat rozdíl.</p></div>
+  <img class="tp__swipe" src="../../assets/icons/arrow-right-white.svg" alt="">
+</div>
+
+<!-- ===== CAROUSEL - VNITŘNÍ SLIDE (sazba) ===== -->
+<div class="tp tp--set" data-tpl="car-vnitrni" data-w="1080" data-h="1350" data-name="Carousel 2 - Vnitřní slide" style="width:1080px;height:1350px">
+  <div class="tp__bg" style="--h:560px"><i class="l-lift"></i><i class="l-rise"></i><i class="l-src"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="../../assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><p class="tp__kick">Magazín</p></div>
+  <div class="tp__top"><div class="tp__head"><p class="t1">Pět součástí strategie.</p><p class="t2">Každá vychází z&nbsp;předchozí.</p></div></div>
+  <div class="tp__text"><ol class="tp__list"><li><b>01</b>Data a&nbsp;výchozí stav</li><li><b>02</b>Segmenty</li><li><b>03</b>Positioning</li><li><b>04</b>Cíle a&nbsp;KPI</li><li><b>05</b>Priority a&nbsp;rozdělení zdrojů</li></ol></div>
+</div>
+
+<!-- ===== STORY 9:16 (fotka práce) ===== -->
+<div class="tp tp--photo tp--story tp--dark-top" data-tpl="story-prace" data-w="1080" data-h="1920" data-name="Story - Práce skupiny" style="width:1080px;height:1920px">
+  <img class="tp__photo" src="../../assets/img/work/anjolie.webp" alt="UGC video pro Anjolie" style="width:1081px;left:0;top:0">
+  <div class="tp__bg" style="--h:1250px"><i class="l-lift"></i><i class="l-rise"></i><i class="l-src"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="../../assets/logos/kit/bb-logo-white.svg" alt="Brightbox"><span></span></div>
+  <div class="tp__text"><p class="tp__over">Sparkee, agentura skupiny. UGC video pro Anjolie.</p><p class="t1">Obsah, u&nbsp;kterého</p><p class="t2">lidé zastaví scroll.</p></div>
+  <div class="tp__safe" style="top:0;height:250px">Horní lišta</div><div class="tp__safe" style="bottom:0;height:340px">Odpověď a&nbsp;reakce</div>
+</div>
+
+<!-- ===== LINKEDIN - COVER OSOBNÍHO PROFILU 1584 × 396 (fotka místa) ===== -->
+<div class="tp tp--photo tp--cover" data-tpl="li-osobni" data-w="1584" data-h="396" data-name="LinkedIn - Cover osobního profilu" style="width:1584px;height:396px">
+  <img class="tp__photo" src="../../assets/img/place/praha.webp" alt="Kancelář Praha, myhive Pankrác House" style="width:1584px;left:0;top:0">
+  <div class="tp__bg" style="--h:360px"><i class="l-lift"></i><i class="l-rise"></i><i class="l-src"></i></div>
+  <div class="tp__mast"><img class="tp__logo" src="../../assets/logos/kit/bb-logo-color.svg" alt="Brightbox"><span></span></div>
+  <div class="tp__text"><p class="t1">Váš marketing.</p><p class="t2">Náš tým.</p></div>
+  <div class="tp__safe" style="left:0;right:auto;top:auto;bottom:0;width:570px;height:265px">Profilová fotka</div>
+</div>
+
+</div>
+<script>if (new URLSearchParams(location.search).has('safe')) document.body.classList.add('show-safe');</script>
+</body>
+</html>

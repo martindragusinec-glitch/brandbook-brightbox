@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="cs">
+<head>
+{{> head}}
+<title>Směry šablon - Manuál značky Brightbox</title>
+<meta name="description" content="Čtyři směry šablon pro sociální sítě Brightbox k výběru.">
+<style>
+  .sm-hero{padding:calc(var(--nav) + var(--s8)) 0 var(--s6)}
+  .sm-hero .lead{margin-top:var(--s4)}
+  .smer{padding-block:var(--s7)}
+  .smer__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4) var(--s7);align-items:end;margin-bottom:var(--s5)}
+  .smer__tag{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:var(--ink);color:#fff;font:600 14px Geist,sans-serif;margin-bottom:var(--s3)}
+  .smer__idea{font-size:clamp(18px,1.5vw,21px);line-height:1.5;color:var(--ink70);max-width:46ch}
+  .smer__pts{display:grid;gap:10px;margin-top:var(--s3)}
+  .smer__pts li{font-size:16.5px;line-height:1.5}
+  .smer__img{display:block;border-radius:var(--r-l);overflow:hidden;background:#E9E4F0}
+  .smer__img img{width:100%;height:auto}
+  .smer__links{display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)}
+  .verdict{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3)}
+  .verdict>div{background:#fff;border-radius:var(--r-l);padding:clamp(24px,3vw,44px)}
+  .verdict ul{display:grid;gap:10px;margin-top:var(--s3)}
+  .verdict li{font-size:16.5px;line-height:1.5;color:var(--ink70)}
+  .verdict b{color:var(--ink)}
+  .rec{margin-top:var(--s3);background:var(--grad-deep);color:#fff;border-radius:var(--r-l);padding:clamp(28px,4vw,56px)}
+  .rec .h3{max-width:22ch}
+  .rec p{margin-top:var(--s3);color:rgba(255,255,255,.86);max-width:62ch}
+  @media (max-width:900px){.smer__head,.verdict{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="social">
+{{> nav}}
+<main id="obsah">
+<section class="sm-hero" data-chapter="Směry šablon" data-bg="mist">
+  <div class="wrap">
+    <p class="label">Sociální sítě, jak jsme vybírali</p>
+    <h1 class="h1">Čtyři směry šablon.</h1>
+    <p class="lead">Vybráno 12.&nbsp;10.&nbsp;2026: spojení směrů A a&nbsp;B. Světlo zespodu a&nbsp;kompozice podle obsahu ze směru A, portréty lidí ze skupiny ze směru B. Fotky budov a&nbsp;reklamy klientů v&nbsp;sadě nejsou.</p>
+    <div class="smer__links"><a class="btn btn--sm" href="socialni-site.html#sablony">Hotová sada šablon <i class="ph ph-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<section class="smer" id="smer-0" data-chapter="Směr 0, současná sada" data-bg="mist">
+  <div class="wrap">
+    <div class="smer__head">
+      <div>
+        <span class="smer__tag">Směr 0</span>
+        <h2 class="h2">Současná sada v manuálu</h2>
+      </div>
+      <div>
+        <p class="smer__idea">Mlha s pastelovou září, titulek vlevo dole, hluboký přechod pro čísla a manifest. Čistá a světlá, ale podle kritiků v mřížce splývá a drobné texty jsou na telefonu pod 11 px. Z ní zůstal hluboký přechod na coveru LinkedInu.</p>
+      </div>
+    </div>
+    <a class="smer__img" href="assets/img/smery/smer-0.jpg"><img src="assets/img/smery/smer-0.jpg" alt="Směr 0: šablony a mřížka Instagramu" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="smer" id="smer-a" data-chapter="Směr A, světlo zespodu" data-bg="blush">
+  <div class="wrap">
+    <div class="smer__head">
+      <div>
+        <span class="smer__tag">Směr A</span>
+        <h2 class="h2">Evoluce: světlo zespodu</h2>
+      </div>
+      <div>
+        <p class="smer__idea">Koule světla z loga leží těsně pod spodní hranou a její svit stoupá k obsahu. Každý post je krabice, do které zespodu svítí světlo.</p>
+        <ul class="smer__pts">
+          <li>Jedno světlo s jasným zdrojem, pozná se i na malém náhledu v mřížce.</li>
+          <li>Kompozice podle obsahu: titulek nahoře, číslo na ose, titulek dole ve světle.</li>
+          <li>Titulky ve dvou řezech (SemiBold a Regular), fotka přes celou plochu se světlem zespodu.</li>
+        </ul>
+        <div class="smer__links"><a class="btn btn--line btn--sm" href="explore/a-evoluce/index.html">Šablony v plné velikosti <i class="ph ph-arrow-up-right"></i></a></div>
+      </div>
+    </div>
+    <a class="smer__img" href="assets/img/smery/smer-a.jpg"><img src="assets/img/smery/smer-a.jpg" alt="Směr A: šablony a mřížka Instagramu" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="smer" id="smer-b" data-chapter="Směr B, fotografie první" data-bg="lit">
+  <div class="wrap">
+    <div class="smer__head">
+      <div>
+        <span class="smer__tag">Směr B</span>
+        <h2 class="h2">Fotografie první</h2>
+      </div>
+      <div>
+        <p class="smer__idea">Hlavní roli hrají skutečné fotky lidí, kanceláří a práce. Zespodu do nich stoupá světlo v barvách značky a nese bílý titulek, jako u starých postů Brightboxu.</p>
+        <ul class="smer__pts">
+          <li>Nejvíc emocí a lidskosti, nejblíž původním postům Brightboxu se světlem zespodu.</li>
+          <li>Typografické šablony jako kontrapunkt mezi fotkami.</li>
+          <li>Pozor: vlastních fotek je zatím málo, systém bude chtít pravidelné focení.</li>
+        </ul>
+        <div class="smer__links"><a class="btn btn--line btn--sm" href="explore/b-foto/index.html">Šablony v plné velikosti <i class="ph ph-arrow-up-right"></i></a></div>
+      </div>
+    </div>
+    <a class="smer__img" href="assets/img/smery/smer-b.jpg"><img src="assets/img/smery/smer-b.jpg" alt="Směr B: šablony a mřížka Instagramu" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="smer" id="smer-c" data-chapter="Směr C, jasno v číslech" data-bg="lilac">
+  <div class="wrap">
+    <div class="smer__head">
+      <div>
+        <span class="smer__tag">Směr C</span>
+        <h2 class="h2">Jasno v číslech</h2>
+      </div>
+      <div>
+        <p class="smer__idea">Jedno obří číslo nebo výrok na klidné Mlze, světlo značky dopadá jen na to, co má čtenář vidět první. Přísná mřížka a stejné kotvy v celé sadě.</p>
+        <ul class="smer__pts">
+          <li>Nejsilnější pro LinkedIn a vedení firem: čísla s metodikou a zdrojem.</li>
+          <li>Obří čísla jsou čitelná i v mřížce profilu, nejmenší text 30 px.</li>
+          <li>Nejméně emocí, fotka jen jako modul mřížky.</li>
+        </ul>
+        <div class="smer__links"><a class="btn btn--line btn--sm" href="explore/c-cisla/index.html">Šablony v plné velikosti <i class="ph ph-arrow-up-right"></i></a></div>
+      </div>
+    </div>
+    <a class="smer__img" href="assets/img/smery/smer-c.jpg"><img src="assets/img/smery/smer-c.jpg" alt="Směr C: šablony a mřížka Instagramu" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="ch" id="kritika" data-chapter="Kritika a doporučení" data-bg="mist">
+  <div class="wrap">
+    <header class="ch__head">
+      <p class="label">Kritika</p>
+      <h2 class="h2">Co našli kritici na současné sadě.</h2>
+    </header>
+    <div class="verdict">
+      <div>
+        <h3 class="h4">Stratég sociálních sítí</h3>
+        <ul>
+          <li><b>Háčky místo sloganů.</b> Nejsilnější věta webu „Platíte pět dodavatelů. Kdo z nich odpovídá za výsledek?“ v šablonách chybí.</li>
+          <li><b>Čísla s metodikou.</b> U testu Interscroller vždy „14 dní před a po spuštění, mobil, GA4“. Pro vedení vést obchodní metrikou (+50 % konverzí u JK šperků).</li>
+          <li><b>Carousel s hodnotou.</b> Sedm kontrolních otázek z článku přímo ve slidech, ne jen odkaz.</li>
+          <li><b>Chybí typy:</b> případová studie jako dokument, nabídka (návrh strategie zdarma), práce klienta, osobní post vedení, anketa.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="h4">QA art director</h3>
+        <ul>
+          <li><b>23 velikostí písma.</b> Sjednotit na sedm stupňů, nejmenší text 32 px (11 px na telefonu).</li>
+          <li><b>Osiřelá slova</b> v pěti titulcích, ruční zlomy podle změřených šířek.</li>
+          <li><b>Bezpečné zóny:</b> adresa ve stories a titulek reelu zasahují do ovládání aplikace.</li>
+          <li><b>Kontrast:</b> malá značka na růžové záři a šedá čísla stran. Pravidla pomlček a předložek jsou bez chyby.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rec">
+      <p class="label label--w">Rozhodnutí</p>
+      <h3 class="h3">Světlo zespodu ze směru A, portréty ze směru B.</h3>
+      <p>Hotová sada má 38 šablon: devět příspěvků do mřížky, případovou studii a článek jako carousel, sedm stories a obálku reelu, profil, highlighty a covery. Zapracované jsou všechny body kritiky: háčky z webu, čísla s metodikou, kontrolní seznam přímo ve slidech, sedm velikostí písma od 30 px, ruční zlomy bez osiřelých slov a texty mimo bezpečné zóny.</p>
+    </div>
+  </div>
+</section>
+</main>
+{{> foot}}
+</body>
+</html>

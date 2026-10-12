@@ -1,0 +1,65 @@
+/* Směr C - Jasno v číslech. Šablony v nativních pixelech.
+   Mřížka (šířka 1080): okraj 72, 6 sloupců 136 + mezera 24 (krok 160), 3 pole po 2 sloupcích (296) na x = 72 / 392 / 712.
+   Svisle stejný krok 160 od horního okraje: řádky 72, 232, 392, 552, 712, 872, 1032. Kotvy: A 72 (hlavička), B 232 (hrdina),
+   C 872 (data, jméno), D spodní okraj (patička). Text je oříznutý na verzálku a účaří, takže hrany sedí přesně na linkách mřížky.
+   Typografická škála (krok ~1,45): 30 / 44 / 64 / 88 / 128 / 184 / 256 / 400. */
+
+.tp{--m:72px;--mlha:#F4F1FA;--ink:#1B1432;--mute:#5A5370;
+  position:relative;overflow:hidden;flex:0 0 auto;background:var(--mlha);color:var(--ink);
+  font-family:Geist,sans-serif;-webkit-font-smoothing:antialiased;text-align:left;font-variant-numeric:lining-nums}
+.tp *{box-sizing:border-box;margin:0;padding:0}
+.tp img{display:block;max-width:none}
+.tp p,.tp li{text-box:trim-both cap alphabetic}
+
+/* světlo: jediný reflektor na klíčové číslo nebo slovo (do Figmy jako jedna rastrová vrstva pozadí) */
+.tp__bg{position:absolute;inset:0;pointer-events:none}
+.tp__bg i{position:absolute;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,95,178,.66) 0%,rgba(255,95,178,.46) 22%,rgba(200,75,216,.22) 50%,rgba(142,123,240,.08) 76%,rgba(142,123,240,0) 100%)}
+
+/* rám: hlavička (kotva A) a patička (kotva D) ve třech polích */
+.tp__meta,.tp__foot{position:absolute;left:var(--m);right:var(--m);display:grid;grid-template-columns:repeat(3,296px);column-gap:24px}
+.tp__meta{top:var(--m);align-items:start}
+.tp__foot{bottom:var(--m);align-items:end}
+.tp__meta p,.tp__foot p{font:500 30px/1.3 Geist,sans-serif;color:var(--mute)}
+.tp__meta p:first-child{color:var(--ink);font-weight:600}
+.tp__logo{height:40px;width:auto}
+.tp__foot .tp__logo{margin-bottom:-11px}   /* účaří slova Brightbox sedí na účaří textu patičky, krychle visí pod ním jako dotah */
+.tp__go img{display:inline-block;width:32px;height:32px;vertical-align:-5px}
+
+/* typografie */
+.t-400{font:600 400px/1 Sora,sans-serif;letter-spacing:-.055em}
+.t-256{font:600 256px/1 Sora,sans-serif;letter-spacing:-.055em}
+.t-184{font:600 184px/1 Sora,sans-serif;letter-spacing:-.05em}
+.t-128{font:600 128px/.96 Sora,sans-serif;letter-spacing:-.05em}
+.t-88{font:600 88px/1 Sora,sans-serif;letter-spacing:-.045em}
+.t-64{font:600 64px/1.06 Sora,sans-serif;letter-spacing:-.04em}
+.t-44{font:400 44px/1.27 Geist,sans-serif}
+.t-30{font:500 30px/1.3 Geist,sans-serif;color:var(--mute)}
+.u{font-size:128px;letter-spacing:-.03em;margin-left:20px}   /* jednotka u obřího čísla, sedí na účaří */
+.u--s{font-size:88px;margin-left:14px}
+.u--xs{font-size:44px;margin-left:8px;letter-spacing:-.02em}
+
+/* bloky na mřížce */
+.tp__b{position:absolute}
+.x1{left:72px}.x2{left:232px}.x3{left:392px}.x5{left:712px}
+.w2{width:296px}.w4{width:616px}.w6{width:936px}
+
+/* datová řada: tři pole, hodnota nad popiskem */
+.tp__data{position:absolute;left:var(--m);right:var(--m);display:grid;grid-template-columns:repeat(3,296px);column-gap:24px}
+.tp__data div{display:flex;flex-direction:column;gap:24px}
+
+/* seznam (carousel) a tabulka (story): číslo v poli 1, text od dalšího sloupce, bez linek */
+.tp__rows{position:absolute;left:var(--m);right:var(--m);list-style:none}
+.tp__rows li{display:grid;align-items:baseline}
+
+/* Lidé */
+.tp__photo{position:absolute;object-fit:cover}
+
+/* vodítka (jen náhled: ?grid ukáže mřížku, ?safe bezpečné zóny) */
+.tp__safe{position:absolute;left:0;right:0;background:repeating-linear-gradient(135deg,rgba(229,14,129,.16) 0 6px,rgba(229,14,129,.06) 6px 18px);display:none;align-items:center;justify-content:center;font:600 26px Geist,sans-serif;color:#C00B6C;z-index:5}
+.show-safe .tp__safe{display:flex}
+.show-grid .tp::after{content:"";position:absolute;inset:0;z-index:6;pointer-events:none;
+  background:
+    repeating-linear-gradient(90deg,rgba(0,170,255,.13) 0 136px,transparent 136px 160px) 72px 0/calc(100% - 144px) 100% no-repeat,
+    repeating-linear-gradient(180deg,rgba(0,170,255,.10) 0 136px,transparent 136px 160px) 0 var(--gy,72px)/100% calc(100% - var(--gy,72px)) no-repeat}
+.tp--story{--gy:250px}

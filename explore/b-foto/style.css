@@ -1,0 +1,89 @@
+/* Směr B - Fotografie první. Nativní pixely (1080 = šířka postu), okraj 72 px.
+   Vrstvy zdola: fotka (<img>) > světlo (.tp__bg, jediná vrstva, normální krytí) > logo a texty.
+   U sazby bez fotky je .tp__bg pozadí (mlha + pastelový náznak světla). */
+
+.tp{--m:72px;--ink:#1B1432;--ink2:#5A5370;--mlha:#F4F1FA;--zare:#E50E81;
+  position:relative;overflow:hidden;flex:0 0 auto;background:var(--mlha);color:var(--ink);
+  font-family:Geist,sans-serif;-webkit-font-smoothing:antialiased;text-align:left}
+.tp *{box-sizing:border-box;margin:0;padding:0}
+.tp img{display:block;max-width:none}
+
+/* fotka: výřez daný v px přímo na <img> (left, top, width), nikdy object-fit */
+.tp__photo{position:absolute;height:auto}
+
+/* ===== SVĚTLO ZESPODU =====
+   Stoupá ze spodní hrany. Tři gradienty v jedné vrstvě:
+   .l-rise  fialový základ (#2A1F5C > #5B1F7A), krytí s náběhem (ease-out), nese čitelnost bílého textu
+   .l-src   zdroj magenty #E50E81 pod spodní hranou vpravo (jako hluboký přechod značky 118°: fialová vlevo, magenta vpravo)
+   .l-lift  slabý růžový nádech #FF5FB2 nad horní hranou světla, tím se světlo prolne do fotky
+   Výška zóny světla = proměnná --h na .tp__bg (u postu 4:5 cca 40 % plátna). */
+.tp__bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.tp--photo .tp__bg{z-index:1}
+.tp__bg i{position:absolute;left:0;right:0;bottom:0}
+.l-rise{height:calc(var(--h) * .72);background:linear-gradient(0deg,
+  rgba(42,31,92,.94) 0%,rgba(44,31,95,.92) 14%,rgba(52,31,101,.86) 28%,rgba(64,31,110,.74) 42%,
+  rgba(76,31,117,.56) 56%,rgba(85,31,121,.36) 70%,rgba(90,31,122,.17) 84%,rgba(91,31,122,.05) 94%,rgba(91,31,122,0) 100%)}
+.l-src{height:var(--h);background:radial-gradient(ellipse 72% 100% at 74% 100%,
+  rgba(229,14,129,.72) 0%,rgba(229,14,129,.56) 20%,rgba(229,14,129,.36) 42%,rgba(229,14,129,.17) 64%,rgba(229,14,129,.05) 84%,rgba(229,14,129,0) 100%)}
+.l-lift{height:calc(var(--h) * 1.18);background:linear-gradient(0deg,
+  rgba(255,95,178,.2) 0%,rgba(255,95,178,.17) 40%,rgba(255,95,178,.1) 66%,rgba(255,95,178,.04) 86%,rgba(255,95,178,0) 100%)}
+
+/* pastelový náznak na mlze (sazba bez fotky): stejný tvar, světlé tóny */
+.tp--set .l-rise{background:linear-gradient(0deg,
+  rgba(200,75,216,.22) 0%,rgba(200,75,216,.18) 20%,rgba(190,90,225,.12) 42%,rgba(170,110,235,.06) 66%,rgba(142,123,240,0) 100%)}
+.tp--set .l-src{background:radial-gradient(ellipse 62% 100% at 80% 100%,
+  rgba(255,95,178,.5) 0%,rgba(255,95,178,.34) 30%,rgba(255,95,178,.14) 62%,rgba(255,95,178,0) 100%)}
+.tp--set .l-lift{background:radial-gradient(ellipse 70% 100% at 18% 100%,
+  rgba(142,123,240,.2) 0%,rgba(142,123,240,.1) 50%,rgba(142,123,240,0) 100%)}
+
+/* ===== HLAVIČKA: logo vlevo, rubrika vpravo (horní kotva 72 px) ===== */
+.tp__mast{position:absolute;left:var(--m);right:var(--m);top:var(--m);height:44px;display:flex;justify-content:space-between;align-items:center;z-index:2}
+.tp__logo{height:40px;width:auto}
+.tp__kick{font:600 22px/1 Geist,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.tp--dark-top .tp__kick{color:#fff}
+
+/* ===== TITULEK VE DVOU ŘEZECH (dolní kotva 72 px) =====
+   1. řez Sora SemiBold = tvrzení, 2. řez Sora Regular = dovětek. Stejná velikost, žádná barva navíc. */
+.tp__text{position:absolute;left:var(--m);right:var(--m);bottom:var(--m);z-index:2}
+.tp--photo .tp__text{color:#fff}
+.t1,.t2{font-family:Sora,sans-serif;font-size:84px;line-height:1;letter-spacing:-.045em}
+.t1{font-weight:600}
+.t2{font-weight:400;letter-spacing:-.04em}
+.tp__over{font:500 28px/1.35 Geist,sans-serif;color:rgba(255,255,255,.84);margin-bottom:28px}
+.tp--set .tp__over{color:var(--ink2)}
+
+/* ===== SAZBA (bez fotky) ===== */
+.tp__top{position:absolute;left:var(--m);right:var(--m);top:200px;z-index:2}
+.tp__num{font:600 330px/.8 Sora,sans-serif;letter-spacing:-.065em;color:var(--zare);margin-left:-14px}
+.tp__num + .tp__head{margin-top:56px}
+.tp__head .t1,.tp__head .t2{font-size:72px;line-height:1.02;letter-spacing:-.04em}
+.tp__lead{font:400 32px/1.38 Geist,sans-serif;color:var(--ink);max-width:860px}
+.tp__src{font:500 26px/1.45 Geist,sans-serif;color:var(--ink2);max-width:880px;margin-top:20px}
+
+/* seznam (vnitřní slide carouselu): číslo Záře + položka, bez odrážek a linek */
+.tp__list{list-style:none;display:flex;flex-direction:column;gap:30px}
+.tp__list li{display:flex;align-items:baseline;gap:28px;font:400 52px/1.1 Sora,sans-serif;letter-spacing:-.035em;white-space:nowrap}
+.tp__list b{flex:0 0 68px;font:600 32px/1 Sora,sans-serif;letter-spacing:-.01em;color:var(--zare)}
+
+/* šipka listování u obálky carouselu */
+.tp__swipe{position:absolute;right:var(--m);bottom:calc(var(--m) + 18px);width:48px;height:48px;z-index:2}
+
+/* ===== STORY 1080 × 1920: horní kotva 250, dolní 340 (zóny UI Instagramu) ===== */
+.tp--story .tp__mast{top:250px}
+.tp--story .tp__text{bottom:340px}
+.tp--story .t1,.tp--story .t2{font-size:96px}
+.tp--story .tp__over{font-size:32px;margin-bottom:32px}
+/* dlouhý titulek (víc než 2 řádky při 84 px) jde o stupeň níž */
+.tp__text--long .t1,.tp__text--long .t2{font-size:72px;line-height:1.02;letter-spacing:-.04em}
+
+/* ===== LINKEDIN COVER 1584 × 396 (profilovka vlevo dole 570 × 265) ===== */
+.tp--cover .tp__mast{left:640px;right:72px;top:64px}
+.tp--cover .tp__text{left:640px;bottom:64px}
+.tp--cover .t1,.tp--cover .t2{font-size:60px;letter-spacing:-.04em}
+
+/* vodítka (jen náhled s ?safe) */
+.tp__safe{position:absolute;left:0;right:0;background:repeating-linear-gradient(135deg,rgba(229,14,129,.18) 0 6px,rgba(229,14,129,.06) 6px 18px);display:none;align-items:center;justify-content:center;font:600 26px Geist,sans-serif;color:#C00B6C;z-index:5}
+.show-safe .tp__safe{display:flex}
+
+/* manifest v sazbě: dvě krátké věty, nejvyšší stupeň */
+.tp__head--xl .t1,.tp__head--xl .t2{font-size:96px;line-height:1;letter-spacing:-.05em}

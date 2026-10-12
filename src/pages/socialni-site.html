@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="cs">
+<head>
+{{> head}}
+<link rel="stylesheet" href="assets/css/tpl.css">
+<link rel="stylesheet" href="assets/css/social.css">
+<title>Sociální sítě - Manuál značky Brightbox</title>
+<meta name="description" content="Jak Brightbox vypadá a mluví na LinkedInu, Instagramu a Facebooku. Principy, šablony, rozměry a psaní příspěvků.">
+</head>
+<body data-page="social">
+{{> nav}}
+<main id="obsah">
+
+<!-- ÚVOD -->
+<section class="shero" id="uvod" data-chapter="Sociální sítě" data-bg="mist">
+  <div class="shero__light" aria-hidden="true"><i></i><i></i></div>
+  <div class="wrap shero__grid">
+    <div class="shero__text">
+      <p class="label">Manuál značky, druhá část</p>
+      <h1 class="shero__title" data-lines>Sociální sítě</h1>
+      <p class="shero__lead">Jak Brightbox vypadá a mluví na LinkedInu, Instagramu a Facebooku. Všechny šablony z této stránky jsou ve Figmě připravené k úpravě.</p>
+      <ul class="shero__nets"><li><a href="#linkedin">LinkedIn</a></li><li><a href="#instagram">Instagram</a></li><li><a href="#facebook">Facebook</a></li></ul>
+    </div>
+    <div class="phone" aria-label="Ukázka profilu na Instagramu">
+      <div class="phone__screen">
+        <div class="ig">
+          <div class="ig__head">
+            <div class="ig__ava" data-slot="profil-avatar" data-fit="cover"></div>
+            <div><p class="ig__name">brightbox.cz</p><p class="ig__bio">Strategická marketingová agentura.<br>Váš marketing. Náš tým. Praha a Brno.</p><p class="ig__link">brightbox.cz</p></div>
+          </div>
+          <ul class="ig__hl">
+            <li><span data-slot="hl-prace" data-fit="cover"></span>Práce</li>
+            <li><span data-slot="hl-tym" data-fit="cover"></span>Tým</li>
+            <li><span data-slot="hl-magazin" data-fit="cover"></span>Magazín</li>
+            <li><span data-slot="hl-kariera" data-fit="cover"></span>Kariéra</li>
+          </ul>
+          <div class="ig__grid">
+            <div data-slot="feed-lide" data-fit="cover"></div>
+            <div data-slot="feed-myslenka" data-fit="cover"></div>
+            <div data-slot="feed-princip" data-fit="cover"></div>
+            <div data-slot="car-1" data-fit="cover"></div>
+            <div data-slot="feed-cislo" data-fit="cover"></div>
+            <div data-slot="feed-skupina" data-fit="cover"></div>
+            <div data-slot="feed-citat" data-fit="cover"></div>
+            <div data-slot="feed-manifest" data-fit="cover"></div>
+            <div data-slot="feed-nabor" data-fit="cover"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPY -->
+<section class="ch" id="principy" data-chapter="Principy" data-bg="mist">
+  <div class="wrap">
+    <header class="ch__head">
+      <p class="label">Principy</p>
+      <h2 class="h2" data-lines>Pět pravidel, než cokoli zveřejníte.</h2>
+    </header>
+    <ol class="rows rows--num">
+      <li class="row"><h3 class="row__t">Jedna myšlenka.</h3><p class="row__d">Kdo scrolluje, dá vám dvě vteřiny. Jeden příspěvek nese jedno sdělení a titulek má nejvýš dvanáct slov.</p></li>
+      <li class="row"><h3 class="row__t">Lidé a výsledky.</h3><p class="row__d">Nejvíc funguje skutečný člověk ze skupiny a skutečné číslo z naší práce. Fotky jen portréty lidí ze skupiny, žádné fotobanky, budovy ani cizí reklamy.</p></li>
+      <li class="row"><h3 class="row__t">Světlo zespodu.</h3><p class="row__d">Příspěvek poznáte podle světla, které stoupá ze spodní hrany, Mlhy a písma Sora. Logo stojí malé vlevo nahoře, nikdy uprostřed.</p></li>
+      <li class="row"><h3 class="row__t">Čísla se zdrojem.</h3><p class="row__d">Každé číslo má pod sebou, odkud pochází. Bez zdroje ho nezveřejňujeme.</p></li>
+      <li class="row"><h3 class="row__t">Stejný hlas.</h3><p class="row__d">Na sítích mluvíme stejně jako na webu. Vykáme, píšeme krátce, bez vykřičníků a zdí hashtagů.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- TŘI PLOCHY -->
+<section class="ch amount" data-bg="lilac">
+  <div class="wrap">
+    <header class="ch__head ch__head--split">
+      <div>
+        <p class="label">Plochy</p>
+        <h2 class="h2" data-lines>Tři plochy, jedno světlo.</h2>
+      </div>
+      <p class="lead">Většina příspěvků stojí na Mlze. Fotka patří lidem, hluboký přechod jen důkazu. V&nbsp;každé řadě mřížky nejvýš jedna sytá dlaždice, mřížka tak zůstává světlá.</p>
+    </header>
+    <ol class="amount__list">
+      <li>
+        <div class="amount__vis" data-slot="feed-myslenka"></div>
+        <h3 class="h4">Mlha</h3>
+        <p>Výchozí plocha pro myšlenky, články, nabídku a nábor. Pastelové světlo, text v&nbsp;Inkoustu.</p>
+      </li>
+      <li>
+        <div class="amount__vis" data-slot="feed-lide"></div>
+        <h3 class="h4">Portrét</h3>
+        <p>Jen skuteční lidé ze skupiny. Světlo končí pod bradou, logo vlevo nahoře, jméno bíle ve světle.</p>
+      </li>
+      <li>
+        <div class="amount__vis" data-slot="feed-cislo"></div>
+        <h3 class="h4">Hluboký přechod</h3>
+        <p>Jen důkaz: číslo nebo výsledek se zdrojem. V&nbsp;mřížce nejvýš jednou za devět příspěvků.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ŠABLONY -->
+<section class="ch tpls" id="sablony" data-chapter="Šablony" data-bg="mist">
+  <div class="wrap">
+    <header class="ch__head ch__head--split">
+      <div>
+        <p class="label">Šablony</p>
+        <h2 class="h2" data-lines>Šablony pro každý den.</h2>
+        <p class="tpls__draft">Směr vybraný 12.&nbsp;10.&nbsp;2026: světlo zespodu a&nbsp;portréty. <a href="smery.html">Jak jsme vybírali <i class="ph ph-arrow-right"></i></a></p>
+      </div>
+      <div class="tpls__ui">
+        <div class="chips chips--plain" role="group" aria-label="Filtr šablon">
+          <button type="button" aria-pressed="true" data-f="all">Vše</button>
+          <button type="button" aria-pressed="false" data-f="feed">Příspěvky</button>
+          <button type="button" aria-pressed="false" data-f="car">Carousel</button>
+          <button type="button" aria-pressed="false" data-f="story">Stories</button>
+          <button type="button" aria-pressed="false" data-f="profil">Profil a covery</button>
+        </div>
+        <label class="toggle"><input type="checkbox" data-safe-toggle> <span>Bezpečné zóny</span></label>
+      </div>
+    </header>
+
+    <div class="tg">
+      <figure class="tc" data-k="feed"><div class="tc__v" data-slot="feed-myslenka"></div><figcaption><b>Myšlenka</b><span>Otázka nebo věta z&nbsp;webu nahoře, pointa dole.</span><em>4:5</em></figcaption></figure>
+      <figure class="tc" data-k="feed"><div class="tc__v" data-slot="feed-princip"></div><figcaption><b>Princip</b><span>Věta značky ve světle, pod ní vysvětlení. Šeřík.</span><em>4:5</em></figcaption></figure>
+      <figure class="tc" data-k="feed"><div class="tc__v" data-slot="feed-nabidka"></div><figcaption><b>Nabídka</b><span>Jeden krok: návrh strategie zdarma. Jednou za čtyři až šest týdnů.</span><em>4:5</em></figcaption></figure>
+      <figure class="tc" data-k="feed"><div class="tc__v" data-slot="feed-cislo"></div><figcaption><b>Číslo</b><span>Výsledek z&nbsp;případové studie, vždy se zdrojem. Hluboký přechod.</span><em>4:5</em></figcaption></figure>
+      <figure class="tc" data-k="feed"><div class="tc__v" data-slot="feed-lide"></div><figcaption><b>Lidé</b><span>Portrét člověka ze skupiny, jméno a&nbsp;role ve světle.</span><em>4:5</em></figcaption></figure>
+      <figure class="tc" data-k="feed"><div class="tc__v" data-slot="feed-citat"></div><figcaption><b>Citát</b><span>Výrok člověka ze skupiny, vždy s&nbsp;jeho portrétem, jménem a&nbsp;rolí.</span><em>4:5</em></figcaption></figure>
+      <figure class="tc" data-k="feed"><div class="tc__v" data-slot="feed-manifest"></div><figcaption><b>Manifest</b><span>Jak pracujeme, ve dvou větách.</span><em>4:5</em></figcaption></figure>
+      <figure class="tc" data-k="feed"><div class="tc__v" data-slot="feed-skupina"></div><figcaption><b>Skupina</b><span>Čtyři agentury v&nbsp;jejich barvách pod logem skupiny.</span><em>4:5</em></figcaption></figure>
+      <figure class="tc" data-k="feed"><div class="tc__v" data-slot="feed-nabor"></div><figcaption><b>Nábor</b><span>Volná pozice, tykání, tři fakta. Šeřík.</span><em>4:5</em></figcaption></figure>
+      <figure class="tc tc--wide" data-k="car">
+        <div class="car" aria-label="Carousel případové studie, sedm slidů" tabindex="0">
+          <div class="car__track">
+            <div class="tc__v" data-slot="car-1"></div><div class="tc__v" data-slot="car-2"></div><div class="tc__v" data-slot="car-3"></div><div class="tc__v" data-slot="car-4"></div><div class="tc__v" data-slot="car-5"></div><div class="tc__v" data-slot="car-6"></div><div class="tc__v" data-slot="car-7"></div>
+          </div>
+        </div>
+        <figcaption><b>Carousel, případová studie</b><span>Obálka, metoda, výsledky, číslo, na co myslet, citát a&nbsp;výzva. Na LinkedInu jako dokument v&nbsp;PDF.</span><em>7 × 4:5</em></figcaption>
+      </figure>
+      <figure class="tc tc--wide" data-k="car">
+        <div class="car" aria-label="Carousel článku, šest slidů" tabindex="0">
+          <div class="car__track">
+            <div class="tc__v" data-slot="mag-1"></div><div class="tc__v" data-slot="mag-2"></div><div class="tc__v" data-slot="mag-3"></div><div class="tc__v" data-slot="mag-4"></div><div class="tc__v" data-slot="mag-5"></div><div class="tc__v" data-slot="mag-6"></div>
+          </div>
+        </div>
+        <figcaption><b>Carousel, článek z&nbsp;magazínu</b><span>Obálka, rozdíl, pět součástí, kontrolní seznam na dvou slidech a&nbsp;výzva. Hodnota je v&nbsp;carouselu, ne za odkazem.</span><em>6 × 4:5</em></figcaption>
+      </figure>
+      <figure class="tc tc--story" data-k="story"><div class="tc__v" data-slot="story-myslenka"></div><figcaption><b>Story, myšlenka</b><span>Krátká věta přes celou obrazovku.</span><em>9:16</em></figcaption></figure>
+      <figure class="tc tc--story" data-k="story"><div class="tc__v" data-slot="story-clanek"></div><figcaption><b>Story, článek</b><span>Titulek a&nbsp;místo pro nálepku s&nbsp;odkazem.</span><em>9:16</em></figcaption></figure>
+      <figure class="tc tc--story" data-k="story"><div class="tc__v" data-slot="story-cislo"></div><figcaption><b>Story, číslo</b><span>Výsledek se zdrojem a&nbsp;druhým číslem pro kontext.</span><em>9:16</em></figcaption></figure>
+      <figure class="tc tc--story" data-k="story"><div class="tc__v" data-slot="story-anketa"></div><figcaption><b>Story, otázka</b><span>Otázka pro vedení a&nbsp;místo pro anketu.</span><em>9:16</em></figcaption></figure>
+      <figure class="tc tc--story" data-k="story"><div class="tc__v" data-slot="story-nabidka"></div><figcaption><b>Story, nabídka</b><span>Návrh strategie zdarma a&nbsp;nálepka s&nbsp;odkazem.</span><em>9:16</em></figcaption></figure>
+      <figure class="tc tc--story" data-k="story"><div class="tc__v" data-slot="story-nabor"></div><figcaption><b>Story, nábor</b><span>Pozice, tři fakta a&nbsp;nálepka s&nbsp;odkazem.</span><em>9:16</em></figcaption></figure>
+      <figure class="tc tc--story" data-k="story"><div class="tc__v" data-slot="reel-obalka"></div><figcaption><b>Obálka reelu</b><span>Titulek v&nbsp;pásu, který mřížka ukáže jako 3:4.</span><em>9:16</em></figcaption></figure>
+      <figure class="tc" data-k="profil"><div class="tc__v" data-slot="profil-avatar"></div><figcaption><b>Profilová fotka</b><span>Pro všechny tři sítě stejná. Značka na Mlze, pod ní světlo.</span><em>1:1</em></figcaption></figure>
+      <figure class="tc tc--hl" data-k="profil">
+        <div class="hls"><span data-slot="hl-prace" data-fit="cover"></span><span data-slot="hl-tym" data-fit="cover"></span><span data-slot="hl-magazin" data-fit="cover"></span><span data-slot="hl-kariera" data-fit="cover"></span></div>
+        <figcaption><b>Výběry na Instagramu</b><span>Inkoustová ikona na Mlze se světlem. Práce, Tým, Magazín, Kariéra.</span><em>9:16</em></figcaption>
+      </figure>
+      <figure class="tc tc--full" data-k="profil"><div class="tc__v" data-slot="li-firma"></div><figcaption><b>LinkedIn, cover firemní stránky</b><span>Text vpravo od loga stránky, které cover překrývá vlevo dole.</span><em>1512 × 256</em></figcaption></figure>
+      <figure class="tc tc--full" data-k="profil"><div class="tc__v" data-slot="li-osobni"></div><figcaption><b>LinkedIn, cover osobního profilu</b><span>Pro vedení a&nbsp;obchod. Hluboký přechod se světlem, levý dolní roh patří profilové fotce.</span><em>1584 × 396</em></figcaption></figure>
+      <figure class="tc tc--half" data-k="profil"><div class="tc__v" data-slot="li-odkaz"></div><figcaption><b>Obrázek odkazu</b><span>Náhled článku při sdílení na LinkedInu i Facebooku.</span><em>1200 × 627</em></figcaption></figure>
+      <figure class="tc tc--half" data-k="profil"><div class="tc__v" data-slot="fb-cover"></div><figcaption><b>Facebook, cover stránky</b><span>Obsah v pásu uprostřed, mobil horní a spodní okraj ořízne.</span><em>1920 × 1080</em></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="ch ch--open net" id="instagram" data-chapter="Instagram" data-bg="blush">
+  <div class="wrap">
+    <header class="open">
+      <p class="label">Instagram</p>
+      <h2 class="h1" data-lines>Lidé a výsledky.</h2>
+      <p class="lead" data-reveal>Instagram ukazuje, kdo za Brightboxem stojí a co vzniká. Portréty lidí ze skupiny střídá typografie se světlem. Šablony drží rytmus mřížky.</p>
+    </header>
+    <div class="net__grid">
+      <div class="crop">
+        <div class="crop__stage" data-mode="post">
+          <div class="crop__post" data-slot="feed-myslenka"></div>
+          <div class="crop__mask" aria-hidden="true"><i></i><i></i></div>
+        </div>
+        <div class="seg crop__seg" role="group" aria-label="Náhled">
+          <button type="button" aria-pressed="true" data-crop="post">Celý příspěvek 4:5</button>
+          <button type="button" aria-pressed="false" data-crop="grid">V mřížce profilu 3:4</button>
+        </div>
+      </div>
+      <div class="net__rules">
+        <h3 class="h3">Mřížka se plánuje po třech.</h3>
+        <p>Příspěvky nahráváme ve formátu 4:5 (1080 × 1350 px). Mřížka profilu je ale 3:4, takže z každé strany zmizí asi 34 px. Text a značka proto nikdy nesahají k bočním okrajům.</p>
+        <dl class="facts-list">
+          <div><dt>Rytmus</dt><dd>V každé řadě tři různé typy: portrét, typografie, přechod.</dd></div>
+          <div><dt>Přechod</dt><dd>Hluboký přechod nejvýš jednou na řadu, ať mřížka zůstane světlá.</dd></div>
+          <div><dt>Obálky reelů</dt><dd>Titulek v pásu mezi 240 a 1680 px výšky, mimo něj se v mřížce nezobrazí.</dd></div>
+          <div><dt>Stories</dt><dd>Nahoře 250 px a dole 340 px volných, u reelů dole 440 px a vpravo 140 px.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINKEDIN -->
+<section class="ch ch--open net" id="linkedin" data-chapter="LinkedIn" data-bg="mist">
+  <div class="wrap">
+    <header class="open">
+      <p class="label">LinkedIn</p>
+      <h2 class="h1" data-lines>Pro vedení firem.</h2>
+      <p class="lead" data-reveal>Na LinkedInu čtou majitelé, jednatelé a marketingoví ředitelé. Mluvíme s nimi o řízení marketingu, výsledcích a lidech. Firemní stránka a profily vedení hrají spolu.</p>
+    </header>
+    <div class="li">
+      <div class="li__page">
+        <div class="li__cover" data-slot="li-firma"></div>
+        <div class="li__row">
+          <div class="li__logo" data-slot="profil-avatar" data-fit="cover"></div>
+          <div class="li__meta"><p class="li__n">Brightbox</p><p class="li__t">Strategická marketingová agentura. Váš marketing. Náš tým.</p><p class="li__s">Marketing a reklama, Praha</p></div>
+        </div>
+      </div>
+      <article class="li__post">
+        <header class="li__ph"><div class="li__pa" data-slot="profil-avatar" data-fit="cover"></div><div><p class="li__n">Brightbox</p><p class="li__s">Strategická marketingová agentura</p></div></header>
+        <div class="li__text">
+          <p><b>Report není účet za odvedenou práci. Je to podklad pro rozhodnutí.</b></p>
+          <p>Měsíční marketingový report má desítky ukazatelů. Vedení z něj potřebuje vyčíst odpovědi na pár otázek: splnili jsme cíle, kolik nás to stálo a je to trend, nebo výkyv?</p>
+          <p>V článku jsme sepsali sedm otázek, které z reportu dělají podklad pro rozhodnutí.</p>
+          <p class="li__tags">#marketing #reporting #rizenimarketingu</p>
+        </div>
+        <div class="li__img" data-slot="li-odkaz"></div>
+      </article>
+    </div>
+    <div class="cols3 net__cols">
+      <div><h3 class="h4">Firemní stránka</h3><p>Články z magazínu, výsledky se zdrojem, nábor a dění ve skupině. Dokumenty v PDF ze šablony carouselu.</p></div>
+      <div><h3 class="h4">Profily vedení</h3><p>Jakub Stehno a šéfové agentur píšou vlastním hlasem a za sebe. Cover ze šablony, profilová fotka skutečná.</p></div>
+      <div><h3 class="h4">Formáty</h3><p>Obrázek 4:5 (1080 × 1350 px), dokument se stejnými stránkami, odkaz 1200 × 627 px. Video bez textu u okrajů.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FACEBOOK -->
+<section class="ch ch--open net" id="facebook" data-chapter="Facebook" data-bg="dawn">
+  <div class="wrap">
+    <header class="open">
+      <p class="label">Facebook</p>
+      <h2 class="h1" data-lines>Kariéra, akce a komunita.</h2>
+      <p class="lead" data-reveal>Facebook přebírá formáty z Instagramu. Navíc se na něm vyplatí nábor, pozvánky na akce a sdílení článků. Cover se na mobilu ořízne jinak než na počítači.</p>
+    </header>
+    <div class="fbc">
+      <div class="fbc__stage" data-mode="desktop">
+        <div class="fbc__img" data-slot="fb-cover"></div>
+        <div class="fbc__band" aria-hidden="true"><i></i><i></i></div>
+        <div class="fbc__ava" aria-hidden="true"></div>
+      </div>
+      <div class="seg" role="group" aria-label="Zařízení">
+        <button type="button" aria-pressed="true" data-fb="desktop">Počítač 16:9</button>
+        <button type="button" aria-pressed="false" data-fb="mobile">Mobil 2,4:1</button>
+      </div>
+      <p class="fbc__note">Nahrávejte 1920 × 1080 px. Titulek a logo držte v pásu uprostřed, levý dolní roh nechte profilové fotce.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PSANÍ -->
+<section class="ch write" id="psani" data-chapter="Psaní příspěvků" data-bg="lit">
+  <div class="wrap">
+    <header class="ch__head">
+      <p class="label">Psaní příspěvků</p>
+      <h2 class="h2" data-lines>První řádek rozhodne, jestli čtou dál.</h2>
+    </header>
+    <div class="anat">
+      <ol class="anat__parts">
+        <li><b>Háček</b><span>První věta nese celé sdělení. Před „více“ se na Instagramu ukáže asi 125 znaků, na LinkedInu asi 140 na mobilu a 210 na počítači.</span></li>
+        <li><b>Tělo</b><span>Dva až tři krátké odstavce. Jeden fakt, jeden příklad, jedno číslo se zdrojem.</span></li>
+        <li><b>Výzva</b><span>Jedna věc, kterou má čtenář udělat: přečíst článek, uložit si post, poslat ho kolegovi, napsat si o návrh strategie zdarma.</span></li>
+      </ol>
+      <div class="anat__sample">
+        <p class="anat__h"><mark>Strategie rozhoduje o tom, co nebudete dělat.</mark></p>
+        <p class="anat__b">Mnoho firem má dokument, kterému říká marketingová strategie. Často je to ale kalendář kampaní. Plán aktivit říká, co dělat. Strategie říká, komu a proč.</p>
+        <p class="anat__c">Pět součástí strategie a sedm kontrolních otázek najdete v článku „Marketingová strategie, nebo jen plán aktivit?“. Na Instagramu odkaz v profilu, na LinkedInu v prvním komentáři.</p>
+      </div>
+    </div>
+    <div class="mix">
+      <div>
+        <h3 class="h4">Co publikujeme</h3>
+        <ul class="mix__list">
+          <li><b>Názor vedení a články</b><span>Jak řídit marketing, podle čeho se rozhodovat. Z magazínu a z praxe.</span></li>
+          <li><b>Výsledky</b><span>Případové studie se zdrojem a čísla z naší práce.</span></li>
+          <li><b>Lidé ze skupiny</b><span>Kdo na zakázkách pracuje a co si myslí. Portrét, jméno, role.</span></li>
+          <li><b>Nabídka a nábor</b><span>Návrh strategie zdarma, volné pozice, agentury skupiny.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="h4">Co měříme</h3>
+        <ul class="mix__list">
+          <li><b>Uložení a sdílení</b><span>Ukazují, že post má hodnotu i po prvním přečtení.</span></li>
+          <li><b>Komentáře rozhodovatelů</b><span>Majitelé, jednatelé a ředitelé mají větší váhu než počet lajků.</span></li>
+          <li><b>Návštěvy profilu a webu</b><span>Kolik lidí chce vědět víc než jeden post.</span></li>
+          <li><b>Poptávky</b><span>Návrhy strategie a schůzky, které přišly ze sítí.</span></li>
+        </ul>
+      </div>
+    </div>
+    <dl class="rules__list write__rules">
+      <div><dt>Hashtagy</dt><dd>LinkedIn nejvýš tři, Instagram tři až pět. Česky a k věci, na konec textu.</dd></div>
+      <div><dt>Emoji</dt><dd>Nepoužíváme. Ani místo slova, ani jako odrážky. Odrážky jsou pomlčky.</dd></div>
+      <div><dt>Odkazy</dt><dd>Na LinkedInu raději v prvním komentáři nebo jako dokument, odkaz v textu snižuje dosah. Facebook v textu. Instagram v profilu a v nálepce ve story.</dd></div>
+      <div><dt>Označování</dt><dd>Klienty a partnery označujeme jen s jejich souhlasem. Lidi z týmu vždy.</dd></div>
+      <div><dt>Komentáře</dt><dd>Odpovídáme do jednoho pracovního dne, věcně a jménem člověka, který píše.</dd></div>
+      <div><dt>Rytmus</dt><dd>Pravidelnost je víc než množství. Raději dva dobré příspěvky týdně než pět slabých.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ROZMĚRY -->
+<section class="ch sizes" id="rozmery" data-chapter="Rozměry" data-bg="mist">
+  <div class="wrap">
+    <header class="ch__head ch__head--split">
+      <div>
+        <p class="label">Tahák rozměrů</p>
+        <h2 class="h2" data-lines>Všechny formáty na jednom místě.</h2>
+      </div>
+      <p class="lead">Ověřeno v nápovědách LinkedInu a Mety v říjnu 2026. Sítě rozměry mění, před velkou kampaní je zkontrolujte.</p>
+    </header>
+    <div class="sz">
+      <table>
+        <thead><tr><th>Síť</th><th>Formát</th><th>Rozměr</th><th>Na co dát pozor</th></tr></thead>
+        <tbody>
+          <tr><td>Všechny</td><td>Příspěvek a carousel</td><td>1080 × 1350 px</td><td>Poměr 4:5. Na Instagramu se v mřížce ořízne na 3:4.</td></tr>
+          <tr><td>Všechny</td><td>Profilová fotka</td><td>1080 × 1080 px</td><td>Zobrazí se v kruhu, značka uvnitř střední části.</td></tr>
+          <tr><td>Instagram, Facebook</td><td>Story</td><td>1080 × 1920 px</td><td>Nahoře 250 px a dole 340 px bez textu.</td></tr>
+          <tr><td>Instagram</td><td>Reel a obálka</td><td>1080 × 1920 px</td><td>Dole 440 px a vpravo 140 px bez textu. V mřížce jen pás 240 až 1680 px.</td></tr>
+          <tr><td>Instagram</td><td>Výběry</td><td>1080 × 1920 px</td><td>Ikona uprostřed, zobrazí se v malém kruhu.</td></tr>
+          <tr><td>LinkedIn</td><td>Cover firemní stránky</td><td>1512 × 256 px</td><td>Logo stránky překrývá levý dolní roh.</td></tr>
+          <tr><td>LinkedIn</td><td>Cover osobního profilu</td><td>1584 × 396 px</td><td>Levých dolních 570 × 265 px patří profilové fotce.</td></tr>
+          <tr><td>LinkedIn</td><td>Dokument</td><td>1080 × 1350 px</td><td>PDF, všechny stránky stejně velké.</td></tr>
+          <tr><td>LinkedIn, Facebook</td><td>Obrázek odkazu</td><td>1200 × 627 px</td><td>Poměr 1,91:1, zobrazí se celý.</td></tr>
+          <tr><td>Facebook</td><td>Cover stránky</td><td>1920 × 1080 px</td><td>Na mobilu jen pás 2,4:1 uprostřed, vlevo dole profilová fotka.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- NEDĚLEJTE -->
+<section class="ch donts" data-bg="blush">
+  <div class="wrap">
+    <header class="ch__head">
+      <p class="label">Čemu se vyhnout</p>
+      <h2 class="h2" data-lines>Co na našich sítích nebude.</h2>
+    </header>
+    <ul class="nolist">
+      <li><i class="ph ph-x"></i><p><b>Fotobanky, AI lidé a budovy.</b>Raději typografie se světlem než cizí úsměv nebo fasáda.</p></li>
+      <li><i class="ph ph-x"></i><p><b>Velké logo uprostřed.</b>Značku nese profil a světlo, ne razítko přes obrázek.</p></li>
+      <li><i class="ph ph-x"></i><p><b>Jiná písma.</b>Žádné Canva fonty, kurzívy ani ručně psané písmo. Jen Sora a Geist.</p></li>
+      <li><i class="ph ph-x"></i><p><b>Víc září a přechodů naráz.</b>Jedno světlo na obrázek. Hluboký přechod nejvýš jednou na řadu mřížky.</p></li>
+      <li><i class="ph ph-x"></i><p><b>Text přes obličej.</b>Na portrétu patří text do spodní části, do světla pod bradou.</p></li>
+      <li><i class="ph ph-x"></i><p><b>Memy a trendy pro trend.</b>Jen když k nim máme co říct a sedí k tónu skupiny.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- KE STAŽENÍ -->
+<section class="ch dl" id="ke-stazeni" data-chapter="Ke stažení" data-bg="lilac">
+  <div class="wrap">
+    <header class="ch__head">
+      <p class="label">Ke stažení</p>
+      <h2 class="h1" data-lines>Šablony do práce.</h2>
+    </header>
+    <ul class="dl__grid">
+      <li><a class="dlc dlc--logo" href="https://www.figma.com/design/cCBA0U2obORaBppiZ7cMI0" rel="noopener"><i class="ph ph-figma-logo"></i><b>Figma soubor</b><span>Manuál jako prezentace, šablony sítí, logo a ikony jako komponenty. Editovatelná sada šablon se doplní po volbě směru.</span><em>Figma</em></a></li>
+      <li><a class="dlc" href="downloads/brightbox-socialni-site.zip" download><i class="ph ph-images"></i><b>Náhledy šablon</b><span>Všechny šablony v plné velikosti (JPG) jako vzor pro kontrolu.</span><em>ZIP</em></a></li>
+      <li><a class="dlc" href="downloads/profilova-fotka-1080.png" download><i class="ph ph-user-circle"></i><b>Profilová fotka</b><span>Značka na Mlze se světlem, 1080 × 1080 px.</span><em>PNG</em></a></li>
+      <li><a class="dlc" href="index.html"><i class="ph ph-book-open"></i><b>Manuál značky</b><span>Logo, barvy, písmo a tón hlasu.</span><em>Web</em></a></li>
+      <li><a class="dlc" href="index.html#ke-stazeni"><i class="ph ph-package"></i><b>Logo a písma</b><span>Všechny verze loga a odkazy na písma.</span><em>ZIP</em></a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+<template id="tpl-lib">
+{{> templates}}
+</template>
+{{> foot}}
+<script src="assets/js/social.js" defer></script>
+</body>
+</html>
