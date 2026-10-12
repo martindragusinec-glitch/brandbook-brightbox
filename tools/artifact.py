@@ -20,7 +20,7 @@ EXPLORE = ["explore/a-evoluce", "explore/b-foto", "explore/c-cisla"]
 SKIP = {".DS_Store"}
 
 for d in DIRS:
-    shutil.copytree(ROOT / d, OUT / d, ignore=shutil.ignore_patterns("*.DS_Store", "smer-*.png", "vizitky-nahled.png"))
+    shutil.copytree(ROOT / d, OUT / d, ignore=shutil.ignore_patterns("*.DS_Store", "smer-*.png", "vizitky-nahled.png", "michal-vavra.webp", "tomas-baku.webp", "akce-konference.webp", "aspena-stanek.webp", "betterbarber-salon.webp", "digilive-tym.webp", "jk-sperky-prsten.webp", "korejska-kosmetika.webp", "magicplanet.webp", "nase-cesko-tisk.webp", "ona-dnes.webp", "pinoys-*.webp", "og-blog-*.jpg"))
 for d in EXPLORE:
     src = ROOT / d
     if not src.exists():
