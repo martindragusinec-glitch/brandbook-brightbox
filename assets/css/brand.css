@@ -455,21 +455,21 @@ a.opill:hover{transform:translateY(-3px)}
 
 /* ---------- fotografie ---------- */
 /* anatomie fotky: vzorový rám bez konkrétního člověka, čísla odkazují na pravidla */
-.anat{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);align-items:center}
-.anat__frame{position:relative;aspect-ratio:4/5;border-radius:var(--r-l);overflow:hidden;background:linear-gradient(180deg,#3B3940,#4A484F)}
-.anat__sil{position:absolute;inset:0;width:100%;height:100%;fill:#605D68;filter:blur(6px)}
-.anat__light{position:absolute;inset:auto 0 0;height:44%;
+.fa{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);align-items:center}
+.fa__frame{position:relative;aspect-ratio:4/5;border-radius:var(--r-l);overflow:hidden;background:linear-gradient(180deg,#3B3940,#4A484F)}
+.fa__sil{position:absolute;inset:0;width:100%;height:100%;fill:#605D68;filter:blur(6px)}
+.fa__light{position:absolute;inset:auto 0 0;height:44%;
   background:radial-gradient(72% 100% at 74% 100%,rgba(229,14,129,.72),rgba(229,14,129,.3) 45%,rgba(229,14,129,0) 100%),linear-gradient(0deg,rgba(42,31,92,.94),rgba(64,31,110,.72) 32%,rgba(85,31,121,.32) 66%,rgba(91,31,122,0))}
-.anat__logo{position:absolute;left:6.7%;top:5.3%;width:30%;height:auto}
-.anat__title{position:absolute;left:6.7%;bottom:6.7%;display:flex;flex-direction:column;font:400 clamp(20px,2.4vw,34px)/1.04 Sora,sans-serif;letter-spacing:-.045em;color:#fff}
-.anat__title b{font-weight:600}
-.anat__n{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;display:grid;place-items:center;background:var(--zare);color:#fff;font:600 14px/1 Geist,sans-serif;box-shadow:0 0 0 4px rgba(229,14,129,.22)}
-.anat__text .h3{margin-bottom:var(--s4)}
-.anat__list{list-style:none;counter-reset:a;display:grid;gap:var(--s3)}
-.anat__list li{counter-increment:a;position:relative;padding-left:52px;font-size:17px;line-height:1.5;color:var(--ink70)}
-.anat__list li::before{content:counter(a);position:absolute;left:0;top:-2px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--zare);color:#fff;font:600 14px/1 Geist,sans-serif}
-.anat__list b{color:var(--ink);font-weight:600}
-@media (max-width:900px){.anat{grid-template-columns:1fr}.anat__frame{max-width:440px}}
+.fa__logo{position:absolute;left:6.7%;top:5.3%;width:30%;height:auto}
+.fa__title{position:absolute;left:6.7%;bottom:6.7%;display:flex;flex-direction:column;font:400 clamp(20px,2.4vw,34px)/1.04 Sora,sans-serif;letter-spacing:-.045em;color:#fff}
+.fa__title b{font-weight:600}
+.fa__n{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;display:grid;place-items:center;background:var(--zare);color:#fff;font:600 14px/1 Geist,sans-serif;box-shadow:0 0 0 4px rgba(229,14,129,.22)}
+.fa__text .h3{margin-bottom:var(--s4)}
+.fa__list{list-style:none;counter-reset:a;display:grid;gap:var(--s3)}
+.fa__list li{counter-increment:a;position:relative;padding-left:52px;font-size:17px;line-height:1.5;color:var(--ink70)}
+.fa__list li::before{content:counter(a);position:absolute;left:0;top:-2px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--zare);color:#fff;font:600 14px/1 Geist,sans-serif}
+.fa__list b{color:var(--ink);font-weight:600}
+@media (max-width:900px){.fa{grid-template-columns:1fr}.fa__frame{max-width:440px}}
 .yn{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-top:var(--s6)}
 .yn__col{padding:clamp(24px,3vw,44px);border-radius:var(--r-l);background:#fff}
 .yn__col h3{display:flex;align-items:center;gap:12px;margin-bottom:var(--s3)}

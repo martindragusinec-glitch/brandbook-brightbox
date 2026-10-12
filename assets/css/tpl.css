@@ -164,7 +164,7 @@
 .tp-lio .tp__mast,.tp-lio .tp__foot{left:640px}
 .tp-link{--bot:80px}
 .tp-link .tp__foot{right:260px}
-.tp-fb{--m:160px;--top:200px;--bot:200px}
+.tp-fb{--m:160px;--top:200px;--head:340px}
 
 /* vodítka (jen náhled s ?safe nebo přepínačem): zóny UI a místa pro nálepky */
 .tp__safe{position:absolute;left:0;right:0;background:repeating-linear-gradient(135deg,rgba(229,14,129,.16) 0 6px,rgba(229,14,129,.06) 6px 18px);display:none;align-items:center;justify-content:center;font:600 26px Geist,sans-serif;color:#C00B6C;z-index:5}
