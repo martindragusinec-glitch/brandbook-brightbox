@@ -102,7 +102,7 @@ ul,ol{padding:0;list-style:none}
 /* ---------- NAV ---------- */
 .nav{position:fixed;inset:0 0 auto;z-index:100;height:var(--nav);display:flex;align-items:center;gap:24px;padding-inline:var(--gut);transition:background-color .4s}
 .nav.is-scrolled{background:rgba(244,241,250,.82);-webkit-backdrop-filter:saturate(1.4) blur(18px);backdrop-filter:saturate(1.4) blur(18px)}
-.nav__brand{display:flex;align-items:center;flex:none}
+.nav__brand{display:flex;align-items:center;flex:none;min-height:44px}
 .nav__brand img{width:132px;height:auto}
 .nav__links{flex:1;display:flex;justify-content:center;gap:4px}
 .nav__links a{padding:9px 14px;border-radius:999px;font:500 15px/1 Geist,system-ui,sans-serif;color:var(--ink70);text-decoration:none;transition:background-color .3s,color .3s}
@@ -197,10 +197,10 @@ ul,ol{padding:0;list-style:none}
 .week svg{flex:none;width:18px;height:18px;fill:var(--sp-lilac7)}
 .months{margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media (max-width:1100px){.months{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:600px){.months{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:160px;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1*var(--gut));padding-inline:var(--gut);scroll-padding-inline:var(--gut)}.months::-webkit-scrollbar{display:none}.mo{scroll-snap-align:start;min-height:0;padding:14px 16px}.mo .e{font-size:17px}}
+@media (max-width:600px){.months{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(52vw,210px);gap:10px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1*var(--gut));padding-inline:var(--gut);scroll-padding-inline:var(--gut)}.months::-webkit-scrollbar{display:none}.months .mo{scroll-snap-align:start;min-height:0;padding:14px 16px}.months .mo .e{font-size:17px}.months .mo .m{font-size:13px}}
 .mo{background:#fff;border-radius:20px;padding:16px 18px 18px;min-height:104px}
 .mo .m{font:600 12px/1 Geist,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink50)}
-.mo .e{margin-top:10px;font:600 19px/1.2 Sora,system-ui,sans-serif;letter-spacing:-.025em}
+.mo .e{margin-top:10px;font:600 19px/1.2 Sora,system-ui,sans-serif;letter-spacing:-.025em;overflow-wrap:anywhere}
 .mo--hi{background:var(--holo);border:2px solid var(--sp-ink);box-shadow:4px 4px 0 var(--sp-ink)}
 .mo--hi .m{color:var(--sp-ink)}
 
@@ -323,7 +323,7 @@ ul,ol{padding:0;list-style:none}
 @media (max-width:900px){.group{grid-template-columns:1fr}}
 .stats{display:flex;flex-wrap:wrap;gap:24px 56px}
 .stat b{display:block;font:600 clamp(64px,7vw,104px)/.88 Sora,system-ui,sans-serif;letter-spacing:-.05em}
-.stat b.z{color:var(--zare)}
+.stat b.z{color:var(--ink)}
 .stat span{display:block;margin-top:12px;color:var(--ink70);max-width:14em}
 .group .src{margin-top:18px}
 .group .lead{margin-top:32px}
@@ -372,7 +372,7 @@ ul,ol{padding:0;list-style:none}
 .toggle span{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 18px;border-radius:999px;background:var(--mlha);font:600 15px/1 Geist,system-ui,sans-serif;transition:background-color .25s,color .25s,box-shadow .25s}
 .toggle span::before{content:"";width:18px;height:18px;border-radius:6px;box-shadow:inset 0 0 0 2px #8F88A3;background:#fff;transition:all .25s}
 .toggle input:checked + span{background:var(--ink);color:#fff}
-.toggle input:checked + span::before{box-shadow:inset 0 0 0 2px #fff;background:var(--zare)}
+.toggle input:checked + span::before{box-shadow:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231B1432' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat}
 .toggle input:focus-visible + span{outline:3px solid var(--zare);outline-offset:2px}
 .frow{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .frow--1{grid-template-columns:1fr}
@@ -388,7 +388,7 @@ ul,ol{padding:0;list-style:none}
 .fld input:user-invalid ~ .err{display:block}
 .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
 .consent{margin-top:20px;font-size:14px;line-height:1.5;color:var(--ink50)}
-.consent a{color:var(--zare-t)}
+.consent a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 .fsubmit{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
 .fsubmit .btn{height:56px;padding:0 28px}
 @media (max-width:560px){.fsubmit .btn{width:100%;height:auto;min-height:56px;padding:14px 22px;white-space:normal;text-align:center}}
@@ -406,14 +406,14 @@ ul,ol{padding:0;list-style:none}
 .foot{background:var(--noc);color:rgba(255,255,255,.72);padding-block:48px calc(48px + env(safe-area-inset-bottom));font-size:15px}
 .foot__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:flex-start}
 .foot__brand img{width:170px}
-.foot__part{margin-top:22px;font:600 12px/1 Geist,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.foot__part{margin-top:22px;font:600 13px/1 Geist,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
 .foot__ags{margin-top:14px;display:flex;align-items:center;flex-wrap:wrap;gap:16px 26px}
 .foot__brand .foot__ags img{width:auto}
 .foot__col a{display:inline-flex;align-items:center;min-height:44px;color:#fff;text-decoration:none}
 .foot__col a:hover{text-decoration:underline}
 .foot__col p + p{margin-top:0}
 .foot__col p:not(:has(a)){min-height:28px}
-.foot__legal{margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;line-height:1.6;color:rgba(255,255,255,.6)}
+.foot__legal{margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;line-height:1.6;color:rgba(255,255,255,.6)}
 .foot__legal a{color:rgba(255,255,255,.8)}
 
 /* mobilní lišta s výzvou */
@@ -424,6 +424,13 @@ ul,ol{padding:0;list-style:none}
 @media (max-width:760px){.sticky{display:flex;visibility:hidden;transform:translateY(140%);transition:transform .5s var(--ease),visibility 0s .5s}.sticky.on{visibility:visible;transform:none;transition-delay:0s}.nav__cta{transition:opacity .3s,visibility .3s}.sticky-on .nav__cta{opacity:0;visibility:hidden}}
 @media (orientation:landscape) and (max-height:500px){.sticky{display:none!important}}
 /* ---------- doladění pro mobil a UX ---------- */
+#lead > .frow:first-of-type{margin-top:0}
+@media (pointer:coarse){.btn--sm{height:48px}}
+@media (max-width:600px){.plan__cell .when{font-size:13px}.fcontact span{font-size:13px}}
+.faq summary,details.more summary,.fsubmit .btn{text-wrap:balance}
+.fld .touched:invalid{border-color:var(--zare-t)}
+.fld .touched:invalid ~ .err{display:block}
+.fmsg{scroll-margin:120px}
 #ceny .h2{max-width:21em}
 h1,h2,h3,.h1,.h2,.h3,.step__verb,.start__pain{text-wrap:balance}
 p,li,figcaption,.lead{text-wrap:pretty}
@@ -493,7 +500,7 @@ details.more[open]{padding-bottom:18px}
 <header class="nav" id="nav">
   <a class="nav__brand" href="#top" aria-label="Brightbox Group pro gastro podniky, úvod"><img src="/assets/logos/kit/bb-group-color.svg" alt="" width="165" height="38"></a>
   <nav class="nav__links" aria-label="Sekce stránky">
-    <a href="#site">Sítě</a><a href="#ukazky">Ukázky</a><a href="#web">Web</a><a href="#tisk">Tisk</a><a href="#ceny">Ceny</a><a href="#otazky">Otázky</a>
+    <a href="#ukazky">Ukázky</a><a href="#ceny">Ceny</a><a href="#site">Sítě</a><a href="#web">Web</a><a href="#tisk">Tisk</a><a href="#otazky">Otázky</a>
   </nav>
   <a class="btn btn--ink btn--sm nav__cta" href="#form-box">Chci nabídku</a>
 </header>
@@ -536,6 +543,34 @@ details.more[open]{padding-bottom:18px}
           </div></div>
         </div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CESTA HOSTA -->
+<section class="sec sec--tight" id="cesta">
+  <div class="wrap">
+    <p class="rubrika rv">Pro gastro<span>Cesta hosta</span></p>
+    <h2 class="h2 rv">Než host přijde,<span class="l2">uvidí vás v&nbsp;telefonu.</span></h2>
+    <div class="steps">
+      <article class="panel step rv">
+        <div class="step__top"><span class="step__n">1</span><img src="/assets/logos/sparkee-color.webp" alt="Sparkee" style="width:96px;height:auto"></div>
+        <h3 class="step__verb">Uvidí vás.</h3>
+        <p class="muted">Na Instagramu, TikToku a Facebooku. Videa a příspěvky, u kterých zastaví scroll.</p>
+        <div class="chips"><span class="chip">Reels</span><span class="chip">Příspěvky</span><span class="chip">Influenceři</span></div>
+      </article>
+      <article class="panel step rv">
+        <div class="step__top"><span class="step__n">2</span><img src="/assets/logos/weblantis-color.svg" alt="Weblantis" style="width:104px;height:auto"></div>
+        <h3 class="step__verb">Najdou vás.</h3>
+        <p class="muted">Na webu s jídelním lístkem, denním menu a rezervací. Menu si měníte sami.</p>
+        <div class="chips"><span class="chip">Web</span><span class="chip">Denní menu</span><span class="chip">Rezervace</span></div>
+      </article>
+      <article class="panel step rv">
+        <div class="step__top"><span class="step__n">3</span><img src="/assets/logos/p4-blue.svg" alt="Print4You" style="width:150px;height:auto"></div>
+        <h3 class="step__verb">Vrátí se.</h3>
+        <p class="muted">Věrnostní kartičky, dárkové poukazy a lístky, které host drží v ruce. U stolu, ve výloze i s sebou.</p>
+        <div class="chips"><span class="chip">Lístky</span><span class="chip">Poukazy</span><span class="chip">Polepy</span></div>
+      </article>
     </div>
   </div>
 </section>
@@ -600,34 +635,6 @@ details.more[open]{padding-bottom:18px}
   </div>
 </section>
 
-<!-- CESTA HOSTA -->
-<section class="sec sec--tight" id="cesta">
-  <div class="wrap">
-    <p class="rubrika rv">Pro gastro<span>Cesta hosta</span></p>
-    <h2 class="h2 rv">Než host přijde,<span class="l2">uvidí vás v&nbsp;telefonu.</span></h2>
-    <div class="steps">
-      <article class="panel step rv">
-        <div class="step__top"><span class="step__n">1</span><img src="/assets/logos/sparkee-color.webp" alt="Sparkee" style="width:96px;height:auto"></div>
-        <h3 class="step__verb">Uvidí vás.</h3>
-        <p class="muted">Na Instagramu, TikToku a Facebooku. Videa a příspěvky, u kterých zastaví scroll.</p>
-        <div class="chips"><span class="chip">Reels</span><span class="chip">Příspěvky</span><span class="chip">Influenceři</span></div>
-      </article>
-      <article class="panel step rv">
-        <div class="step__top"><span class="step__n">2</span><img src="/assets/logos/weblantis-color.svg" alt="Weblantis" style="width:104px;height:auto"></div>
-        <h3 class="step__verb">Najdou vás.</h3>
-        <p class="muted">Na webu s jídelním lístkem, denním menu a rezervací. Menu si měníte sami.</p>
-        <div class="chips"><span class="chip">Web</span><span class="chip">Denní menu</span><span class="chip">Rezervace</span></div>
-      </article>
-      <article class="panel step rv">
-        <div class="step__top"><span class="step__n">3</span><img src="/assets/logos/p4-blue.svg" alt="Print4You" style="width:150px;height:auto"></div>
-        <h3 class="step__verb">Vrátí se.</h3>
-        <p class="muted">Věrnostní kartičky, dárkové poukazy a lístky, které host drží v ruce. U stolu, ve výloze i s sebou.</p>
-        <div class="chips"><span class="chip">Lístky</span><span class="chip">Poukazy</span><span class="chip">Polepy</span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
 <!-- SPARKEE -->
 <section class="sec" id="site">
   <div class="glow glow--a" style="right:-10%;bottom:10%;width:50vw;height:40vw"></div>
@@ -667,6 +674,7 @@ details.more[open]{padding-bottom:18px}
       </div>
       <div class="rv">
         <p class="label">Během roku</p>
+        <p class="small reels-hint" style="margin-top:6px">Posouvejte do strany.</p>
         <div class="months">
           <div class="mo"><p class="m">Leden</p><p class="e">Zabijačkové hody</p></div>
           <div class="mo"><p class="m">Únor</p><p class="e">Valentýnské menu</p></div>
@@ -859,7 +867,17 @@ details.more[open]{padding-bottom:18px}
     </div>
     <div class="form" id="form-box">
       <form id="lead" action="/api/gastro-lead" method="post" novalidate>
-        <fieldset class="fgroup">
+
+        <div class="frow frow--1">
+          <div class="fld"><label for="f-podnik">Název podniku</label><input id="f-podnik" name="podnik" type="text" required autocomplete="organization" enterkeyhint="next" maxlength="120"><p class="err">Vyplňte název podniku.</p></div>
+        </div>
+        <div class="frow">
+          <div class="fld"><label for="f-jmeno">Jméno a příjmení</label><input id="f-jmeno" name="jmeno" type="text" required autocomplete="name" enterkeyhint="next" maxlength="120"><p class="err">Vyplňte jméno.</p></div>
+          <div class="fld"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" required autocomplete="tel" inputmode="tel" enterkeyhint="done" pattern="[+\(\)\-\s]*(\d[\(\)\-\s]*){9,15}" maxlength="20"><p class="err">Zadejte telefon, třeba +420 777 123 456.</p></div>
+        </div>
+        <details class="more">
+          <summary>Další údaje (nepovinné)<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <fieldset class="fgroup">
           <legend>Co vás zajímá? <i>Můžete vybrat víc.</i></legend>
           <div class="toggles">
             <label class="toggle"><input type="checkbox" name="zajem" value="socialni-site"><span>Sociální sítě</span></label>
@@ -868,16 +886,6 @@ details.more[open]{padding-bottom:18px}
             <label class="toggle"><input type="checkbox" name="zajem" value="nevim"><span>Zatím nevím, poraďte</span></label>
           </div>
         </fieldset>
-
-        <div class="frow frow--1">
-          <div class="fld"><label for="f-podnik">Název podniku</label><input id="f-podnik" name="podnik" type="text" required autocomplete="organization" enterkeyhint="next" maxlength="120"><p class="err">Vyplňte název podniku.</p></div>
-        </div>
-        <div class="frow">
-          <div class="fld"><label for="f-jmeno">Jméno a příjmení</label><input id="f-jmeno" name="jmeno" type="text" required autocomplete="name" enterkeyhint="next" maxlength="120"><p class="err">Vyplňte jméno.</p></div>
-          <div class="fld"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" required autocomplete="tel" inputmode="tel" enterkeyhint="done" pattern="[+0-9 \(\)\-]{9,20}" maxlength="20"><p class="err">Zadejte telefon, třeba +420 777 123 456.</p></div>
-        </div>
-        <details class="more">
-          <summary>Doplnit podrobnosti (nepovinné)<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
           <div class="frow">
             <div class="fld"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="160"><p class="err">Zadejte platný e-mail.</p></div>
             <div class="fld"><label for="f-typ">Typ podniku</label>
@@ -900,12 +908,12 @@ details.more[open]{padding-bottom:18px}
         <div class="hp" aria-hidden="true"><label for="f-hp">Nevyplňujte</label><input id="f-hp" name="web_hp" type="text" tabindex="-1" autocomplete="off"></div>
         <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="ref"><input type="hidden" name="stranka">
 
-        <p class="consent">Odesláním formuláře nám předáte údaje, abychom vás mohli kontaktovat a připravit nabídku. Jak s nimi zacházíme, popisují <a href="https://www.brightbox.cz/cs/ochrana-osobnich-udaju/" target="_blank" rel="noopener">zásady ochrany osobních údajů</a>.</p>
+        <p class="consent">Odesláním berete na vědomí <a href="https://www.brightbox.cz/cs/ochrana-osobnich-udaju/" target="_blank" rel="noopener">zásady ochrany osobních údajů</a>.</p>
+        <div class="fmsg fmsg--err" id="f-error" role="alert" tabindex="-1" hidden></div>
         <div class="fsubmit">
-          <button class="btn btn--ink" type="submit" id="f-submit">Chci nabídku pro svůj podnik <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <button class="btn btn--ink" type="submit" id="f-submit">Chci nabídku <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
           <span class="small">Zdarma a nezávazně. Cenu znáte před podpisem.</span>
         </div>
-        <div class="fmsg fmsg--err" id="f-error" role="alert" hidden></div>
       </form>
 
       <div class="fdone" id="f-done" hidden tabindex="-1">
@@ -965,11 +973,11 @@ details.more[open]{padding-bottom:18px}
 <script>
 (function(){
   /* Česká sazba: nezlomitelné mezery po jednopísmenných předložkách, mezi číslem a jednotkou */
-  var NB=' ', one=/(^|[\s(„])([vVsSkKzZoOuUaAiI])\s+/g, num=/(\d)\s+(\d{3})(?!\d)/g, unit=/(\d)\s+(%|Kč|ks|h|dní|dnů|let)(?![\p{L}])/gu;
+  var NB='\u00A0', one=/([vVsSkKzZoOuUaAiI])[ \t\r\n]+/g, oneFix=function(m,c,o,str){return (o===0||/[\s(„]/.test(str.charAt(o-1)))?c+NB:m}, odDo=/(^|\s)(od|do)\s+(?=\d)/g, num=/(\d)\s+(\d{3})(?!\d)/g, unit=/(\d)\s+(%|Kč|ks|h|dní|dnů|let)(?![\p{L}])/gu;
   var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
   while((n=w.nextNode())){
     var p=n.parentNode; if(!n.nodeValue.trim()||p.closest('script,style,textarea,option'))continue;
-    n.nodeValue=n.nodeValue.replace(one,'$1$2'+NB).replace(one,'$1$2'+NB).replace(num,'$1'+NB+'$2').replace(unit,'$1'+NB+'$2');
+    n.nodeValue=n.nodeValue.replace(one,oneFix).replace(odDo,'$1$2'+NB).replace(num,'$1'+NB+'$2').replace(unit,'$1'+NB+'$2');
   }
 
   /* navigace po scrollu */
@@ -987,10 +995,12 @@ details.more[open]{padding-bottom:18px}
   /* mobilní lišta: jen když hero výzva není vidět a formulář ještě není na obrazovce */
   var sticky=document.getElementById('sticky'), heroCta=document.getElementById('hero-cta'), formSec=document.getElementById('formular');
   if('IntersectionObserver' in window){
-    var heroVis=true, formVis=false;
-    var upd=function(){var on=!heroVis&&!formVis;sticky.classList.toggle('on',on);document.documentElement.classList.toggle('sticky-on',on)};
+    var heroVis=true, formVis=false, footVis=false;
+    var upd=function(){var can=getComputedStyle(sticky).display!=='none';var on=can&&!heroVis&&!formVis&&!footVis;sticky.classList.toggle('on',on);document.documentElement.classList.toggle('sticky-on',on)};
+    window.addEventListener('resize',upd);
     new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;upd()}).observe(heroCta);
     new IntersectionObserver(function(e){formVis=e[0].isIntersecting;upd()},{threshold:.05}).observe(formSec);
+    new IntersectionObserver(function(e){footVis=e[0].isIntersecting;upd()}).observe(document.querySelector('.foot'));
   }
 
   /* ukázky videí: přehrát po klepnutí, vždy jen jedno, šipky posouvají karusel */
@@ -998,7 +1008,8 @@ details.more[open]{padding-bottom:18px}
   var SM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
   var setPosters=function(){reelsEl.querySelectorAll('video[data-poster]').forEach(function(v){v.poster=v.dataset.poster;v.removeAttribute('data-poster')})};
   if('IntersectionObserver' in window){
-    var rio=new IntersectionObserver(function(es){if(es[0].isIntersecting){setPosters();rio.disconnect()}},{rootMargin:'1200px 0px'});rio.observe(reelsEl);
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting&&v.dataset.poster){v.poster=v.dataset.poster;v.removeAttribute('data-poster');cio.unobserve(v)}})},{root:reelsEl,rootMargin:'0px 60% 0px 0px'});
+    var rio=new IntersectionObserver(function(es){if(es[0].isIntersecting){reelsEl.querySelectorAll('video[data-poster]').forEach(function(v){cio.observe(v)});rio.disconnect()}},{rootMargin:'300px 0px'});rio.observe(reelsEl);
     var vio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting&&!e.target.paused)e.target.pause()})},{threshold:.35});
     reelsEl.querySelectorAll('video').forEach(function(v){vio.observe(v)});
   } else setPosters();
@@ -1019,18 +1030,18 @@ details.more[open]{padding-bottom:18px}
   form.elements.stranka.value=location.origin+location.pathname;
   if(q.get('ref')&&!form.elements.doporucil.value)form.elements.doporucil.value=q.get('ref').replace(/[-_]+/g,' ').slice(0,120);
   /* Enter v textovém poli posune na další pole místo odeslání */
-  form.addEventListener('keydown',function(e){if(e.key!=='Enter'||e.target.tagName!=='INPUT')return;var f=[].slice.call(form.querySelectorAll('.fld input:not([type=hidden]),.fld select,.fld textarea')).filter(function(x){return x.offsetParent!==null});var i=f.indexOf(e.target);if(i>-1&&i<f.length-1){e.preventDefault();f[i+1].focus()}});
+  form.addEventListener('keydown',function(e){if(e.key!=='Enter'||e.target.tagName!=='INPUT')return;var f=[].slice.call(form.querySelectorAll('.fld input:not([type=hidden]),.fld select,.fld textarea')).filter(function(x){return x.offsetParent!==null&&!x.closest('details:not([open])')});var i=f.indexOf(e.target);if(i>-1&&i<f.length-1){e.preventDefault();f[i+1].focus()}});
   var pre=(q.get('zajem')||'').split(',');
   var check=function(val){var cb=form.querySelector('input[name=zajem][value="'+val+'"]');if(cb)cb.checked=true};
   pre.forEach(check);
   document.querySelectorAll('[data-zajem]').forEach(function(a){a.addEventListener('click',function(){check(a.dataset.zajem)})});
 
   form.addEventListener('submit',function(e){
-    e.preventDefault(); errBox.hidden=true;
+    e.preventDefault(); errBox.hidden=true; errBox.textContent='';
     if(!form.checkValidity()){
       form.querySelectorAll(':invalid').forEach(function(el){el.classList.add('touched')});
       var bad=form.querySelector(':invalid'); if(bad){var d=bad.closest('details');if(d)d.open=true;}
-      form.reportValidity(); return;
+      if(bad){bad.focus({preventScroll:true});bad.scrollIntoView({block:'center',behavior:SM})} return;
     }
     if(form.elements.web_hp.value){showDone();return}
     var fd=new FormData(form), data={};
@@ -1042,7 +1053,7 @@ details.more[open]{padding-bottom:18px}
       .then(showDone)
       .catch(function(){
         errBox.innerHTML='Odeslání se nepovedlo. Zkuste to prosím znovu, nebo nám napište na <a href="mailto:info@brightbox.cz">info@brightbox.cz</a> či zavolejte na <a href="tel:+420602426377">+420&nbsp;602&nbsp;426&nbsp;377</a>.';
-        errBox.hidden=false;
+        errBox.hidden=false; errBox.focus({preventScroll:true}); errBox.scrollIntoView({block:'nearest',behavior:SM});
       })
       .finally(function(){btn.disabled=false;btn.innerHTML=label});
   });
