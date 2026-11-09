@@ -14,7 +14,7 @@ const INTERESTS = {
   tisk: 'Tisk a reklamní předměty (Print4You)',
   nevim: 'Zatím neví, chce poradit',
 };
-const REQUIRED = { podnik: 'název podniku', mesto: 'město', jmeno: 'jméno', telefon: 'telefon', email: 'e-mail' };
+const REQUIRED = { podnik: 'název podniku', jmeno: 'jméno', telefon: 'telefon' };
 const LIMITS = { podnik: 120, typ: 60, mesto: 80, jmeno: 120, telefon: 20, email: 160, odkaz: 200, zprava: 2000, doporucil: 120, utm_source: 120, utm_medium: 120, utm_campaign: 120, ref: 120, stranka: 300 };
 
 function clean(value, max) {
@@ -41,10 +41,10 @@ function buildText(d, interests) {
     `Zájem: ${interests.length ? interests.join(', ') : 'nevyplněno'}`,
     '',
     `Podnik: ${d.podnik}${d.typ ? ` (${d.typ})` : ''}`,
-    `Město: ${d.mesto}`,
+    d.mesto ? `Město: ${d.mesto}` : null,
     `Kontakt: ${d.jmeno}`,
     `Telefon: ${d.telefon}`,
-    `E-mail: ${d.email}`,
+    `E-mail: ${d.email || 'nevyplněno'}`,
     d.odkaz ? `Web / Instagram: ${d.odkaz}` : null,
     d.doporucil ? `Doporučil: ${d.doporucil}` : null,
     '',
@@ -88,11 +88,11 @@ module.exports = async function handler(req, res) {
 
   const missing = Object.keys(REQUIRED).filter((k) => !d[k]);
   if (missing.length) return res.status(422).json({ ok: false, error: 'missing_fields', fields: missing });
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) return res.status(422).json({ ok: false, error: 'invalid_email' });
+  if (d.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) return res.status(422).json({ ok: false, error: 'invalid_email' });
   if ((d.telefon.match(/\d/g) || []).length < 9) return res.status(422).json({ ok: false, error: 'invalid_phone' });
 
   const text = buildText(d, interests);
-  const subject = `Gastro poptávka: ${d.podnik}, ${d.mesto}`;
+  const subject = `Gastro poptávka: ${d.podnik}${d.mesto ? `, ${d.mesto}` : ''}`;
   const jobs = [];
 
   if (process.env.RESEND_API_KEY) {
@@ -104,7 +104,7 @@ module.exports = async function handler(req, res) {
         body: JSON.stringify({
           from: process.env.LEAD_FROM || 'Brightbox gastro <onboarding@resend.dev>',
           to,
-          reply_to: d.email,
+          ...(d.email ? { reply_to: d.email } : {}),
           subject,
           text,
         }),
