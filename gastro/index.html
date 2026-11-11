@@ -530,6 +530,145 @@ details.more[open]{padding-bottom:18px}
   .hero__peek-txt svg{width:16px;height:16px;flex:none}
   .hero__note{margin-top:18px}
 }
+/* ---------- úvod: story ---------- */
+.story{position:relative;margin-left:auto;height:min(620px,calc(100svh - var(--nav) - 96px));min-height:420px;max-width:100%;aspect-ratio:4/5;border-radius:36px;overflow:hidden;background:#0F0B1E;color:#fff}
+.story > img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.story::before{content:"";position:absolute;z-index:1;left:0;right:0;top:0;height:40%;background:linear-gradient(180deg,rgba(15,11,30,.72),rgba(15,11,30,0))}
+.story__bars{position:absolute;z-index:2;left:22px;right:22px;top:20px;display:flex;gap:6px}
+.story__bars i{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.4);overflow:hidden}
+.story__bars i:first-child::after{content:"";display:block;height:100%;background:#fff;transform-origin:0 50%;animation:storyfill 6s linear infinite}
+@keyframes storyfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.story__bars i:first-child::after{animation:none}}
+.story__who{position:absolute;z-index:2;left:22px;top:38px;display:flex;align-items:center;gap:10px;font-size:15px}
+.story__who .av{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;font:600 12px/1 Sora,system-ui,sans-serif}
+.story__who b{font-weight:700}
+.story__who em{font-style:normal;opacity:.8}
+.story__sticker{position:absolute;z-index:2;right:22px;bottom:28px;transform:rotate(-5deg);display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 22px;border-radius:999px;background:#fff;color:var(--sp-ink);font:700 17px/1 Geist,system-ui,sans-serif;border:2px solid var(--sp-ink);box-shadow:4px 4px 0 var(--sp-ink);white-space:nowrap}
+.story__sticker svg{width:18px;height:18px}
+/* ---------- sparkee: průběh spolupráce a maskot ---------- */
+.sp-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px 20px}
+.sp-flow li{display:flex;flex-direction:column;gap:6px}
+.sp-flow b{font:600 12px/1.2 Geist,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#A5EDC5}
+.sp-flow span{font-weight:500;line-height:1.3}
+.sp-hero{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sp-masc{flex:none;height:clamp(120px,14vw,180px);width:auto}
+@media (max-width:600px){.sp-flow{grid-template-columns:1fr;gap:10px}.sp-flow li{flex-direction:row;align-items:baseline;justify-content:space-between;gap:12px}.sp-flow span{text-align:right}.sp-masc{height:112px}}
+/* ---------- kalendář: formát a nápad na obsah ---------- */
+.mo{display:flex;flex-direction:column;min-height:136px}
+.mo__top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:24px}
+.mo .k{height:24px;padding:0 10px;border-radius:999px;background:var(--mlha);font:600 12px/24px Geist,system-ui,sans-serif;color:var(--ink70);white-space:nowrap}
+.mo .d{margin-top:auto;padding-top:12px;font-size:15px;line-height:1.35;color:var(--ink70)}
+.mo--hi .d{color:var(--sp-ink)}
+.mo--hi .k{background:#fff;color:var(--sp-ink)}
+/* ---------- editor: kliknutí na Uložit ---------- */
+.editor .save{position:relative;overflow:hidden}
+.editor .save::before,.editor .save::after{content:"";position:absolute;top:50%;border-radius:50%}
+.editor .save::before{right:2.75em;width:2.5em;height:2.5em;margin-top:-1.25em;background:#EF4660}
+.editor .save::after{right:3.35em;width:1.3em;height:1.3em;margin-top:-.65em;background:#F5778A}
+.editor .cur{position:absolute;right:8.63em;bottom:2.2em;width:4em;height:4em}
+/* ---------- plán: časová osa s mini ukázkami ---------- */
+.tl{margin-top:clamp(32px,4.5vw,60px)}
+.tl__ags{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-left:60px;margin-bottom:10px}
+.tl__ags div{display:flex;align-items:center;height:48px;padding-left:12px}
+.tl__phase{position:relative;display:grid;grid-template-columns:60px minmax(0,1fr);padding-bottom:32px}
+.tl__phase:last-of-type{padding-bottom:0}
+.tl__phase:not(:last-of-type)::before{content:"";position:absolute;left:17px;top:44px;bottom:4px;width:6px;border-radius:6px;background:#DDD5F3}
+.tl__n{position:relative;width:40px;height:40px;border-radius:50%;background:var(--soumrak);color:#fff;display:grid;place-items:center;font:600 17px/1 Sora,system-ui,sans-serif}
+.tl__phase--hi .tl__n{background:var(--zare)}
+.tl__hd{min-height:40px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 16px;padding-top:5px}
+.tl__hd b{font:600 clamp(22px,2.2vw,30px)/1.1 Sora,system-ui,sans-serif;letter-spacing:-.03em}
+.tl__hd span{color:var(--ink70)}
+.tl__cards{margin-top:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tc{background:#fff;border-radius:24px;padding:12px;min-width:0}
+.tc__artwrap{container-type:inline-size}
+.tc__art{--u:calc(100cqi/33);position:relative;aspect-ratio:33/21.6;border-radius:12px;overflow:hidden;background:var(--mlha);display:flex}
+.tc__lg{display:none}
+.tc__cap{margin:12px 6px 4px;font-weight:500;line-height:1.35}
+.tl__note{margin-top:24px}
+@media (max-width:760px){
+  .tl__ags{display:none}
+  .tl__phase{grid-template-columns:46px minmax(0,1fr);padding-bottom:28px}
+  .tl__n{width:34px;height:34px;font-size:15px}
+  .tl__phase:not(:last-of-type)::before{left:14px;top:38px}
+  .tl__hd{min-height:34px;padding-top:3px}
+  .tl__cards{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:76%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-right:calc(-1*var(--gut));padding-right:var(--gut);padding-bottom:4px}
+  .tl__cards::-webkit-scrollbar{display:none}
+  .tc{scroll-snap-align:start;border-radius:20px;padding:10px}
+  .tc__art{border-radius:10px}
+  .tc__lg{display:block;height:24px;width:auto;margin:12px 6px 0}
+  .tc__lg--p4{height:11px;margin-top:17px}
+  .tc__cap{margin-top:6px}
+}
+/* sítě: story, reel, příspěvky */
+.a-story{background:var(--holo);flex-direction:column;align-items:center;justify-content:flex-end;padding:calc(1.8*var(--u));color:var(--sp-ink)}
+.a-story .bars{position:absolute;left:calc(1.8*var(--u));right:calc(1.8*var(--u));top:calc(1.8*var(--u));display:flex;gap:calc(0.8*var(--u))}
+.a-story .bars i{flex:1;height:calc(0.7*var(--u));border-radius:calc(0.7*var(--u));background:#fff}
+.a-story .bars i + i{background:#8FA6BE}
+.a-story .who{position:absolute;left:calc(1.8*var(--u));top:calc(3.7*var(--u));display:flex;align-items:center;gap:calc(1.1*var(--u));font:700 calc(1.976*var(--u))/1 Geist,system-ui,sans-serif}
+.a-story .who i{width:calc(3.2*var(--u));height:calc(3.2*var(--u));border-radius:50%;background:#fff}
+.a-story .stick{width:100%;border-radius:calc(1.4*var(--u));background:#fff;padding:calc(1.7*var(--u)) calc(2*var(--u)) calc(1.8*var(--u));display:flex;flex-direction:column;gap:calc(1*var(--u))}
+.a-story .stick small{font:600 calc(1.976*var(--u))/1 Geist,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink70)}
+.a-story .stick b{font:600 calc(4.586*var(--u))/1 Sora,system-ui,sans-serif;letter-spacing:-.04em}
+.a-reel{background:#0F0B1E center/cover no-repeat;align-items:center;justify-content:center}
+.a-reel::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:linear-gradient(180deg,rgba(15,11,30,.2),rgba(15,11,30,.45))}
+.a-reel .pl{position:relative;z-index:1;width:calc(7.6*var(--u));height:calc(7.6*var(--u));border-radius:50%;background:#fff;display:grid;place-items:center}
+.a-reel .pl svg{width:calc(3.2*var(--u));height:calc(3.2*var(--u));margin-left:calc(0.4*var(--u))}
+.a-tag{position:absolute;z-index:1;left:calc(1.8*var(--u));top:calc(1.8*var(--u));height:calc(4.2*var(--u));padding:0 calc(1.8*var(--u));border-radius:calc(99*var(--u));background:#1B1432;color:#fff;font:600 calc(1.976*var(--u))/calc(4.2*var(--u)) Geist,system-ui,sans-serif}
+.a-tag--r{left:auto;right:calc(1.8*var(--u))}
+.a-feed{background:none;border-radius:0;overflow:visible;gap:calc(1.2*var(--u))}
+.a-feed i{flex:1;border-radius:calc(1.8*var(--u));background:#0F0B1E center/cover no-repeat}
+/* web: rámeček je okno prohlížeče */
+.a-web{flex-direction:column;background:#fff;box-shadow:inset 0 0 0 calc(0.3*var(--u)) #DCD5EC}
+.wbar{flex:none;height:calc(3.6*var(--u));display:flex;align-items:center;gap:calc(0.7*var(--u));padding:0 calc(1.8*var(--u));background:#EFEAF8}
+.wbar i{width:calc(0.95*var(--u));height:calc(0.95*var(--u));border-radius:50%;background:#C3BBD8}
+.wbar span{margin-left:calc(1.2*var(--u));flex:1;height:calc(2.2*var(--u));border-radius:calc(99*var(--u));background:#fff}
+.wbody{flex:1;min-height:0;padding:calc(1.8*var(--u));display:flex;flex-direction:column;justify-content:center;gap:calc(1.3*var(--u))}
+.wbody h6{margin:0;font:600 calc(2.399*var(--u))/1 Sora,system-ui,sans-serif;letter-spacing:-.02em;color:var(--ink)}
+.wl-band{flex:1;border-radius:calc(1.2*var(--u));background:linear-gradient(100deg,#EA1337 8%,#F08A2C 100%);color:#fff;padding:calc(1.6*var(--u)) calc(1.9*var(--u));display:flex;flex-direction:column;justify-content:center;gap:calc(0.9*var(--u))}
+.wl-band b{font:600 calc(2.681*var(--u))/1.05 Sora,system-ui,sans-serif;letter-spacing:-.02em}
+.wl-band span{font:500 calc(2.011*var(--u))/1 Geist,system-ui,sans-serif}
+.wl-band em{margin-top:calc(0.5*var(--u));align-self:flex-start;font:600 calc(1.976*var(--u))/calc(3.7*var(--u)) Geist,system-ui,sans-serif;font-style:normal;height:calc(3.7*var(--u));padding:0 calc(1.7*var(--u));border-radius:calc(99*var(--u));background:#fff;color:var(--wl-red)}
+.mchips{display:flex;gap:calc(0.8*var(--u))}
+.mchips i{flex:1 1 auto;padding:0 calc(1.1*var(--u));text-align:center;font:500 calc(1.976*var(--u))/calc(3.9*var(--u)) Geist,system-ui,sans-serif;font-style:normal;height:calc(3.9*var(--u));border-radius:calc(99*var(--u));background:var(--c-lilac);color:var(--ink);white-space:nowrap}
+.mbtn{height:calc(4.6*var(--u));border-radius:calc(99*var(--u));background:var(--wl-red);color:#fff;font:600 calc(2.082*var(--u))/calc(4.6*var(--u)) Geist,system-ui,sans-serif;text-align:center;white-space:nowrap}
+.mrow{display:flex;justify-content:space-between;gap:calc(1.5*var(--u));font:400 calc(2.011*var(--u))/1.2 Geist,system-ui,sans-serif;color:var(--ink)}
+.mrow b{font-weight:600;white-space:nowrap}
+/* tisk: věci položené na ploše */
+.a-p4{background:var(--c-lilac);align-items:center;justify-content:center;gap:calc(2*var(--u));padding:calc(1.8*var(--u))}
+.a-p4--base{align-items:center}
+.banner{position:relative;width:calc(16*var(--u));height:calc(10.8*var(--u));border-radius:calc(1.1*var(--u));background:var(--p4);color:#fff;display:grid;place-items:center;text-align:center}
+.banner b{font:600 calc(2.082*var(--u))/1.12 Sora,system-ui,sans-serif;letter-spacing:-.01em}
+.banner i{position:absolute;width:calc(0.9*var(--u));height:calc(0.9*var(--u));border-radius:50%;background:#C9CBEA}
+.banner i:nth-child(1){left:calc(1*var(--u));top:calc(1*var(--u))}.banner i:nth-child(2){right:calc(1*var(--u));top:calc(1*var(--u))}.banner i:nth-child(3){left:calc(1*var(--u));bottom:calc(1*var(--u))}.banner i:nth-child(4){right:calc(1*var(--u));bottom:calc(1*var(--u))}
+.aboard{position:relative;width:calc(11.2*var(--u));height:calc(12.2*var(--u));margin-bottom:calc(1.6*var(--u));border-radius:calc(1.1*var(--u)) calc(1.1*var(--u)) calc(0.5*var(--u)) calc(0.5*var(--u));background:#fff;box-shadow:inset 0 0 0 calc(0.5*var(--u)) var(--p4);color:var(--p4);display:grid;place-items:center;text-align:center}
+.aboard b{font:600 calc(1.976*var(--u))/1.14 Geist,system-ui,sans-serif}
+.aboard::before,.aboard::after{content:"";position:absolute;bottom:calc(-1.6*var(--u));width:calc(0.7*var(--u));height:calc(1.9*var(--u));background:var(--p4);border-radius:0 0 calc(0.3*var(--u)) calc(0.3*var(--u))}
+.aboard::before{left:calc(1.3*var(--u))}.aboard::after{right:calc(1.3*var(--u))}
+.mstack{position:relative;width:calc(13.2*var(--u));height:100%}
+.mcard{position:absolute;left:0;top:0;width:100%;height:100%;border-radius:calc(1.2*var(--u));background:#fff;overflow:hidden;display:flex;flex-direction:column;gap:calc(1.2*var(--u))}
+.mcard b{display:block;background:var(--p4);color:#fff;font:600 calc(1.976*var(--u))/1.14 Geist,system-ui,sans-serif;padding:calc(1.5*var(--u)) calc(1.3*var(--u)) calc(1.4*var(--u))}
+.mcard i{height:calc(0.8*var(--u));margin:0 calc(1.3*var(--u));border-radius:calc(0.8*var(--u));background:#D5D0E6}
+.mcard i:last-child{width:42%}
+.mcard--l{transform:rotate(-10deg) translateX(calc(-7.2*var(--u)));box-shadow:inset 0 0 0 calc(0.3*var(--u)) #CFC8E6}
+.mcard--r{transform:rotate(10deg) translateX(calc(7.2*var(--u)));box-shadow:inset 0 0 0 calc(0.3*var(--u)) #CFC8E6}
+.menus{position:relative;width:calc(27*var(--u));height:calc(15.8*var(--u))}
+.menu{position:absolute;top:0;width:calc(13.6*var(--u));height:calc(15.8*var(--u));border-radius:calc(1.2*var(--u))}
+.menu--cover{left:calc(0.4*var(--u));background:var(--p4);color:#fff;transform:rotate(-4deg);padding:calc(2*var(--u)) calc(1.9*var(--u)) calc(2.1*var(--u));display:flex;flex-direction:column;justify-content:space-between}
+.menu--cover b{font:600 calc(2.187*var(--u))/1.16 Geist,system-ui,sans-serif;letter-spacing:0}
+.menu--cover i{width:calc(4.6*var(--u));height:calc(0.9*var(--u));border-radius:calc(0.9*var(--u));background:#8E7BF0}
+.menu--list{right:calc(0.4*var(--u));background:#fff;box-shadow:0 0 0 calc(0.3*var(--u)) #CFC8E6;transform:rotate(4deg);padding:calc(2*var(--u)) calc(1.9*var(--u));display:flex;flex-direction:column;gap:calc(1.55*var(--u))}
+.menu--list small{font:600 calc(1.976*var(--u))/1 Geist,system-ui,sans-serif;color:var(--p4)}
+.menu--list p{display:flex;justify-content:space-between;align-items:center}
+.menu--list p i{width:calc(5.8*var(--u));height:calc(0.8*var(--u));border-radius:calc(0.8*var(--u));background:#D5D0E6}
+.menu--list p:nth-child(odd) i{width:calc(4.6*var(--u))}
+.menu--list p b{width:calc(2.3*var(--u));height:calc(0.8*var(--u));border-radius:calc(0.8*var(--u));background:var(--p4)}
+.poster{position:relative;flex:1;height:100%;border-radius:calc(1.2*var(--u));background:var(--p4);color:#fff;padding:calc(1.5*var(--u)) calc(1.4*var(--u));display:flex;flex-direction:column;justify-content:flex-end;gap:calc(0.9*var(--u));overflow:hidden}
+.poster::before{content:"";position:absolute;right:calc(-1.6*var(--u));top:calc(-1.6*var(--u));width:calc(7*var(--u));height:calc(7*var(--u));border-radius:50%;background:#8E7BF0}
+.poster small{position:relative;font:500 calc(1.976*var(--u))/1.1 Geist,system-ui,sans-serif}
+.poster b{position:relative;font:600 calc(2.223*var(--u))/1.05 Sora,system-ui,sans-serif;letter-spacing:-.02em}
+.poster--l{background:#fff;color:var(--p4);box-shadow:inset 0 0 0 calc(0.4*var(--u)) var(--p4)}
+.poster--l::before{background:#F5B8DC}
+
 </style>
 </head>
 <body>
@@ -588,20 +727,12 @@ details.more[open]{padding-bottom:18px}
         </div>
       </div>
       <div class="hero__visual" aria-hidden="true">
-        <div class="stage"><div class="stage__in">
-          <div class="stage__glow"></div>
-          <div class="phone"><div class="phone__screen phone__screen--photo" style="background-image:url(/gastro/img/cover-brunch.jpg)">
-            <div class="st-bars"><i></i><i></i><i></i></div>
-            <div class="st-head"><span class="av">VP</span><span>vas.podnik</span><span class="t">2 h</span></div>
-            <span class="st-sticker">Rezervovat stůl <svg viewBox="0 0 24 24" fill="none" stroke="#2C303C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-          </div></div>
-          <div class="tent"><div class="tent__card">
-            <p class="tent__eyebrow">Každý pátek</p>
-            <p class="tent__title">Brunch</p>
-            <p class="tent__time">od&nbsp;9:00 do&nbsp;13:00</p>
-            <div class="tent__band">Rezervace na&nbsp;našem webu.</div>
-          </div></div>
-        </div></div>
+        <div class="story">
+          <img src="/gastro/img/cover-brunch.jpg" alt="" width="1080" height="1920" fetchpriority="high">
+          <div class="story__bars"><i></i><i></i><i></i></div>
+          <div class="story__who"><span class="av">VP</span><b>vas.podnik</b><em>2 h</em></div>
+          <span class="story__sticker">Rezervovat stůl <svg viewBox="0 0 24 24" fill="none" stroke="#2C303C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
       </div>
     </div>
   </div>
@@ -725,7 +856,8 @@ details.more[open]{padding-bottom:18px}
       </div>
       <div class="sp-panel rv">
         <div class="sp-panel__top"><img class="sp-word" src="/gastro/img/sparkee-white.svg" alt="Sparkee" width="624" height="154"><span class="pill-holo">Social Media with a Spark</span></div>
-        <div><p class="holo-num">14 dní</p><p class="cap">od podpisu do prvního zveřejněného obsahu</p></div>
+        <ul class="sp-flow"><li><b>Na startu</b><span>Onboarding zdarma</span></li><li><b>Každý měsíc</b><span>Plán ke schválení a report</span></li><li><b>Po 3 měsících</b><span>Společné vyhodnocení</span></li></ul>
+        <div class="sp-hero"><div><p class="holo-num">14 dní</p><p class="cap">od podpisu do prvního zveřejněného obsahu</p></div><img class="sp-masc" src="/gastro/img/sparkee-maskot-telefon.svg" alt="" width="264" height="427" loading="lazy"></div>
         <div><p class="sp-price">od 14&nbsp;900&nbsp;Kč</p><p class="cap">měsíčně bez DPH. Paušál bez hodin navíc.</p><p class="cap">S natáčením u vás od 24&nbsp;900&nbsp;Kč.</p></div>
         <a class="btn btn--holo" href="#form-box" data-zajem="socialni-site">Chci nabídku na sítě <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
@@ -793,18 +925,18 @@ details.more[open]{padding-bottom:18px}
         <p class="label">Během roku</p>
         <p class="small reels-hint" style="margin-top:6px">Posouvejte do strany.</p>
         <div class="months">
-          <div class="mo"><p class="m">Leden</p><p class="e">Zabijačkové hody</p></div>
-          <div class="mo"><p class="m">Únor</p><p class="e">Valentýnské menu</p></div>
-          <div class="mo"><p class="m">Březen</p><p class="e">Jarní karta</p></div>
-          <div class="mo"><p class="m">Duben</p><p class="e">Velikonoce</p></div>
-          <div class="mo mo--hi"><p class="m">Květen</p><p class="e">Otevíráme zahrádku</p></div>
-          <div class="mo"><p class="m">Červen</p><p class="e">Grilovací sezóna</p></div>
-          <div class="mo"><p class="m">Červenec</p><p class="e">Letní drinky a limonády</p></div>
-          <div class="mo"><p class="m">Srpen</p><p class="e">Houbová jídla</p></div>
-          <div class="mo"><p class="m">Září</p><p class="e">Burčák</p></div>
-          <div class="mo"><p class="m">Říjen</p><p class="e">Zvěřinové hody</p></div>
-          <div class="mo"><p class="m">Listopad</p><p class="e">Svatomartinská husa</p></div>
-          <div class="mo"><p class="m">Prosinec</p><p class="e">Večírky a poukazy</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Leden</p><span class="k">Reel</span></div><p class="e">Zabijačkové hody</p><p class="d">Reel z příprav v kuchyni</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Únor</p><span class="k">Příspěvek</span></div><p class="e">Valentýnské menu</p><p class="d">Pozvánka na večer ve dvou</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Březen</p><span class="k">Reel</span></div><p class="e">Jarní karta</p><p class="d">Nová jídla zblízka</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Duben</p><span class="k">Příspěvek</span></div><p class="e">Velikonoce</p><p class="d">Sváteční menu a otevírací doba</p></div>
+          <div class="mo mo--hi"><div class="mo__top"><p class="m">Květen</p><span class="k">Reel</span></div><p class="e">Otevíráme zahrádku</p><p class="d">Odpočet a první směna venku</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Červen</p><span class="k">Reel</span></div><p class="e">Grilovací sezóna</p><p class="d">Od grilu rovnou na talíř</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Červenec</p><span class="k">Reel</span></div><p class="e">Letní drinky a limonády</p><p class="d">Video z baru</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Srpen</p><span class="k">Příspěvek</span></div><p class="e">Houbová jídla</p><p class="d">Příběh jedné suroviny</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Září</p><span class="k">Příspěvek</span></div><p class="e">Burčák</p><p class="d">Pozvánka na víkend</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Říjen</p><span class="k">Reel</span></div><p class="e">Zvěřinové hody</p><p class="d">Šéfkuchař představuje menu</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Listopad</p><span class="k">Příspěvek</span></div><p class="e">Svatomartinská husa</p><p class="d">Rezervace na víkend</p></div>
+          <div class="mo"><div class="mo__top"><p class="m">Prosinec</p><span class="k">Příspěvek</span></div><p class="e">Večírky a poukazy</p><p class="d">Poukazy jako dárek</p></div>
         </div>
       </div>
     </div>
@@ -839,8 +971,8 @@ details.more[open]{padding-bottom:18px}
               <div class="field"><span>Cena</span><div>189 Kč</div></div>
             </div>
             <div class="save">Uložit</div>
+            <svg class="cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 7.5-6.2 1.6L10 18.5 5 3Z" fill="#1B1432" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
           </div>
-          <svg class="cursor" viewBox="0 0 24 24"><path d="M5 3l14 7.5-6.2 1.6L10 18.5 5 3Z" fill="#1B1432" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
         </div></div>
       </div>
       <div>
@@ -900,29 +1032,46 @@ details.more[open]{padding-bottom:18px}
   <div class="wrap">
     <p class="rubrika rv">Dohromady<span>Ukázkový plán</span></p>
     <h2 class="h2 rv">Jedna zahrádka, tři agentury.<span class="l2">Vy se staráte o hosty.</span></h2>
-    <div class="panel plan rv">
-      <div class="plan__grid">
-        <span class="sp-empty"></span>
-        <span class="plan__hd">Dva týdny předem</span>
-        <span class="plan__hd plan__hd--hi">V den otevření</span>
-        <span class="plan__hd">Celé léto</span>
-
-        <span class="plan__ag"><img src="/assets/logos/sparkee-color.webp" alt="Sparkee" style="width:104px;height:auto"></span>
-        <span class="plan__cell"><span class="when">Dva týdny předem</span>Stories s odpočtem do otevření</span>
-        <span class="plan__cell plan__cell--hi"><span class="when">V den otevření</span>Reel z první směny na zahrádce</span>
-        <span class="plan__cell"><span class="when">Celé léto</span>Příspěvky a akce každý týden</span>
-
-        <span class="plan__ag"><img src="/assets/logos/weblantis-color.svg" alt="Weblantis" style="width:110px;height:auto"></span>
-        <span class="plan__cell"><span class="when">Dva týdny předem</span>Banner na webu s datem otevření</span>
-        <span class="plan__cell plan__cell--hi"><span class="when">V den otevření</span>Rezervace stolů venku</span>
-        <span class="plan__cell"><span class="when">Celé léto</span>Letní menu na webu</span>
-
-        <span class="plan__ag"><img src="/assets/logos/p4-blue.svg" alt="Print4You" style="width:150px;height:auto"></span>
-        <span class="plan__cell"><span class="when">Dva týdny předem</span>Plachta na plot a áčko na chodník</span>
-        <span class="plan__cell plan__cell--hi"><span class="when">V den otevření</span>Nové nápojové lístky na stoly</span>
-        <span class="plan__cell"><span class="when">Celé léto</span>Plakáty na letní akce</span>
+    <div class="tl rv">
+      <div class="tl__ags">
+        <div><img src="/assets/logos/sparkee-color.webp" alt="Sparkee" style="height:44px;width:auto" loading="lazy"></div>
+        <div><img src="/assets/logos/weblantis-color.svg" alt="Weblantis" style="height:32px;width:auto" loading="lazy"></div>
+        <div><img src="/assets/logos/p4-blue.svg" alt="Print4You" style="height:16px;width:auto" loading="lazy"></div>
       </div>
-      <p class="small plan__note">Ukázkový plán, u Sparkee odpovídá balíčku Glow. Rozsah a termíny domluvíme podle vašeho podniku.</p>
+      <div class="tl__phase">
+        <span class="tl__n">1</span>
+        <div class="tl__main">
+          <div class="tl__hd"><b>Dva týdny předem</b><span>Lidé se dozvědí, že otevíráte.</span></div>
+          <div class="tl__cards">
+            <div class="tc"><div class="tc__artwrap" aria-hidden="true"><div class="tc__art a-story"><div class="bars"><i></i><i></i><i></i></div><div class="who"><i></i>vas.podnik</div><div class="stick"><small>Otevíráme za</small><b>14 dní</b></div></div></div><img class="tc__lg" src="/assets/logos/sparkee-color.webp" alt="Sparkee" loading="lazy"><p class="tc__cap">Stories s odpočtem do otevření</p></div>
+            <div class="tc"><div class="tc__artwrap" aria-hidden="true"><div class="tc__art a-web"><div class="wbar"><i></i><i></i><i></i><span></span></div><div class="wbody"><div class="wl-band"><b>Zahrádka otevírá</b><span>v sobotu od 15:00</span><em>Rezervovat</em></div></div></div></div><img class="tc__lg" src="/assets/logos/weblantis-color.svg" alt="Weblantis" loading="lazy"><p class="tc__cap">Banner na webu s datem otevření</p></div>
+            <div class="tc"><div class="tc__artwrap" aria-hidden="true"><div class="tc__art a-p4 a-p4--base"><div class="banner"><i></i><i></i><i></i><i></i><b>Zahrádka<br>otevřena</b></div><div class="aboard"><b>Dnes<br>otevřeno</b></div></div></div><img class="tc__lg tc__lg--p4" src="/assets/logos/p4-blue.svg" alt="Print4You" loading="lazy"><p class="tc__cap">Plachta na plot a áčko</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="tl__phase tl__phase--hi">
+        <span class="tl__n">2</span>
+        <div class="tl__main">
+          <div class="tl__hd"><b>V den otevření</b><span>Najdou vás a zarezervují si stůl.</span></div>
+          <div class="tl__cards">
+            <div class="tc"><div class="tc__artwrap" aria-hidden="true"><div class="tc__art a-reel" style="background-image:url(/gastro/video/snidane-praha.jpg);background-position:50% 40%"><span class="a-tag">Reel</span><span class="a-tag a-tag--r">0:22</span><span class="pl"><svg viewBox="0 0 24 24" fill="#1B1432"><path d="M7 4.5v15l12.5-7.5z"/></svg></span></div></div><img class="tc__lg" src="/assets/logos/sparkee-color.webp" alt="Sparkee" loading="lazy"><p class="tc__cap">Reel z první směny na zahrádce</p></div>
+            <div class="tc"><div class="tc__artwrap" aria-hidden="true"><div class="tc__art a-web"><div class="wbar"><i></i><i></i><i></i><span></span></div><div class="wbody"><h6>Rezervace</h6><div class="mchips"><i>Zahrádka</i><i>4 osoby</i><i>18:00</i></div><div class="mbtn">Rezervovat stůl</div></div></div></div><img class="tc__lg" src="/assets/logos/weblantis-color.svg" alt="Weblantis" loading="lazy"><p class="tc__cap">Rezervace stolů venku</p></div>
+            <div class="tc"><div class="tc__artwrap" aria-hidden="true"><div class="tc__art a-p4"><div class="menus"><div class="menu menu--cover"><b>Nápojový<br>lístek</b><i></i></div><div class="menu menu--list"><small>Limonády</small><p><i></i><b></b></p><p><i></i><b></b></p><p><i></i><b></b></p><p><i></i><b></b></p></div></div></div></div><img class="tc__lg tc__lg--p4" src="/assets/logos/p4-blue.svg" alt="Print4You" loading="lazy"><p class="tc__cap">Nové nápojové lístky na stoly</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="tl__phase">
+        <span class="tl__n">3</span>
+        <div class="tl__main">
+          <div class="tl__hd"><b>Celé léto</b><span>Mají důvod přijít znovu.</span></div>
+          <div class="tl__cards">
+            <div class="tc"><div class="tc__artwrap" aria-hidden="true"><div class="tc__art a-feed"><i style="background-image:url(/gastro/video/farina.jpg);background-position:50% 75%"></i><i style="background-image:url(/gastro/video/cube-burger.jpg)"></i><i style="background-image:url(/gastro/video/detail-jidla.jpg);background-position:50% 40%"></i></div></div><img class="tc__lg" src="/assets/logos/sparkee-color.webp" alt="Sparkee" loading="lazy"><p class="tc__cap">Příspěvky a akce každý týden</p></div>
+            <div class="tc"><div class="tc__artwrap" aria-hidden="true"><div class="tc__art a-web"><div class="wbar"><i></i><i></i><i></i><span></span></div><div class="wbody"><h6>Letní menu</h6><p class="mrow"><span>Domácí limonáda</span><b>69 Kč</b></p><p class="mrow"><span>Grilovaný hermelín</span><b>159 Kč</b></p><p class="mrow"><span>Zmrzlinový pohár</span><b>89 Kč</b></p></div></div></div><img class="tc__lg" src="/assets/logos/weblantis-color.svg" alt="Weblantis" loading="lazy"><p class="tc__cap">Letní menu na webu</p></div>
+            <div class="tc"><div class="tc__artwrap" aria-hidden="true"><div class="tc__art a-p4"><div class="poster"><small>Každou sobotu</small><b>Letní grilování</b></div><div class="poster poster--l"><small>Každý pátek</small><b>Živá hudba</b></div></div></div><img class="tc__lg tc__lg--p4" src="/assets/logos/p4-blue.svg" alt="Print4You" loading="lazy"><p class="tc__cap">Plakáty na letní akce</p></div>
+          </div>
+        </div>
+      </div>
+      <p class="small tl__note">Ukázkový plán, u Sparkee odpovídá balíčku Glow. Rozsah a termíny domluvíme podle vašeho podniku.</p>
     </div>
   </div>
 </section>
@@ -939,7 +1088,6 @@ details.more[open]{padding-bottom:18px}
           <div class="stat"><b>200+</b><span>firem, pro které jsme pracovali</span></div>
           <div class="stat"><b>2</b><span>kanceláře, Praha a Brno</span></div>
         </div>
-        <p class="small src">Zdroj: Brightbox Group, 2026</p>
         <p class="lead">Brightbox Group spojuje strategickou agenturu Brightbox a specializované agentury. Pro gastro podniky máme tři: Sparkee na sítě, Weblantis na weby a Print4You na tisk.</p>
       </div>
       <div class="panel gpanel rv">
@@ -1046,7 +1194,7 @@ details.more[open]{padding-bottom:18px}
         <p>Ozveme se vám na uvedený telefon, probereme, co podnik potřebuje, a pošleme nabídku s cenou. Spěcháte? Zavolejte nám.</p>
         <div class="row">
           <a class="btn btn--ink" href="tel:+420602426377">Zavolat +420&nbsp;602&nbsp;426&nbsp;377</a>
-          <a class="btn btn--light" href="/gastro/brightbox-gastro.pdf" download>Prezentace v PDF <svg aria-hidden="true"><use href="#i-down"/></svg></a>
+          <a class="btn btn--light" href="/gastro/brightbox-gastro.pdf" download>Brožura v PDF <svg aria-hidden="true"><use href="#i-down"/></svg></a>
         </div>
       </div>
     </div>
@@ -1081,7 +1229,7 @@ details.more[open]{padding-bottom:18px}
         <p><a href="mailto:info@brightbox.cz">info@brightbox.cz</a></p>
         <p><a href="tel:+420602426377">+420 602 426 377</a></p>
         <p><a href="https://www.brightbox.cz" target="_blank" rel="noopener">brightbox.cz</a></p>
-        <p><a href="/gastro/brightbox-gastro.pdf" download>Prezentace v PDF</a></p>
+        <p><a href="/gastro/brightbox-gastro.pdf" download>Brožura v PDF</a></p>
       </div>
       <div class="foot__col">
         <p>Lomnického 1705/9, Praha 4</p>
@@ -1101,7 +1249,7 @@ details.more[open]{padding-bottom:18px}
   var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
   while((n=w.nextNode())){
     var p=n.parentNode; if(!n.nodeValue.trim()||p.closest('script,style,textarea,option'))continue;
-    n.nodeValue=n.nodeValue.replace(one,oneFix).replace(odDo,'$1$2'+NB).replace(num,'$1'+NB+'$2').replace(unit,'$1'+NB+'$2');
+    n.nodeValue=n.nodeValue.replace(one,oneFix).replace(odDo,'$1$2'+NB).replace(num,'$1'+NB+'$2').replace(unit,'$1'+NB+'$2').replace(/(^|[\s(„])(na|do|po|za|ke|ve|ze|od|ku|pro|při|bez|nad|pod|před|přes)[ \t\r\n]+(?=\S)/gi,'$1$2'+NB);
   }
 
   /* navigace po scrollu */
