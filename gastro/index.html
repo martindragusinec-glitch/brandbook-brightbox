@@ -22,7 +22,7 @@
 <link rel="preload" href="/assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/sora-latin-ext-wght.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/geist-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/gastro/img/cover-brunch.jpg" as="image">
+<link rel="preload" href="/gastro/img/cover-livance.jpg" as="image" media="(min-width:601px)">
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -532,7 +532,7 @@ details.more[open]{padding-bottom:18px}
 }
 /* ---------- úvod: story ---------- */
 .story{position:relative;margin-left:auto;height:min(620px,calc(100svh - var(--nav) - 96px));min-height:420px;max-width:100%;aspect-ratio:4/5;border-radius:36px;overflow:hidden;background:#0F0B1E;color:#fff}
-.story > img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.story > img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
 .story::before{content:"";position:absolute;z-index:1;left:0;right:0;top:0;height:40%;background:linear-gradient(180deg,rgba(15,11,30,.72),rgba(15,11,30,0))}
 .story__bars{position:absolute;z-index:2;left:22px;right:22px;top:20px;display:flex;gap:6px}
 .story__bars i{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.4);overflow:hidden}
@@ -669,6 +669,20 @@ details.more[open]{padding-bottom:18px}
 .poster--l{background:#fff;color:var(--p4);box-shadow:inset 0 0 0 calc(0.4*var(--u)) var(--p4)}
 .poster--l::before{background:#F5B8DC}
 
+/* ---------- navigace po sekcích ---------- */
+.nav__links a.is-active{background:rgba(27,20,50,.08);color:var(--ink)}
+.subnav{display:none}
+@media (max-width:900px){
+  .subnav{position:fixed;left:0;right:0;top:var(--nav);z-index:99;display:flex;gap:6px;padding:4px var(--gut) 10px;overflow-x:auto;scrollbar-width:none;background:rgba(244,241,250,.92);-webkit-backdrop-filter:saturate(1.4) blur(18px);backdrop-filter:saturate(1.4) blur(18px);transform:translateY(-120%);visibility:hidden;transition:transform .45s var(--ease),visibility 0s .45s}
+  .subnav::-webkit-scrollbar{display:none}
+  .subnav.on{transform:none;visibility:visible;transition:transform .45s var(--ease)}
+  .subnav a{flex:none;display:inline-flex;align-items:center;height:44px;padding:0 16px;border-radius:999px;background:#fff;font:500 15px/1 Geist,system-ui,sans-serif;color:var(--ink70);text-decoration:none}
+  .subnav a.is-active{background:var(--ink);color:var(--mlha)}
+  html.subnav-on{scroll-padding-top:calc(var(--nav) + 74px)}
+}
+@media (prefers-reduced-motion:reduce){.subnav,.subnav.on{transition:none}}
+.pkg-help a{display:inline-block;padding:11px 0;margin:-11px 0}
+.fpick{margin-top:18px;font-weight:500}
 </style>
 </head>
 <body>
@@ -689,6 +703,9 @@ details.more[open]{padding-bottom:18px}
   </nav>
   <a class="btn btn--ink btn--sm nav__cta" href="#form-box">Chci nabídku</a>
 </header>
+<nav class="subnav" id="subnav" aria-label="Sekce stránky">
+  <a href="#ukazky">Ukázky</a><a href="#ceny">Ceny</a><a href="#site">Sítě</a><a href="#web">Web</a><a href="#tisk">Tisk</a><a href="#plan">Plán</a><a href="#otazky">Otázky</a>
+</nav>
 
 <main id="obsah">
 <!-- HERO -->
@@ -728,7 +745,7 @@ details.more[open]{padding-bottom:18px}
       </div>
       <div class="hero__visual" aria-hidden="true">
         <div class="story">
-          <img src="/gastro/img/cover-brunch.jpg" alt="" width="1080" height="1920" fetchpriority="high">
+          <img src="/gastro/img/cover-livance.jpg" alt="" width="1080" height="1920" fetchpriority="high">
           <div class="story__bars"><i></i><i></i><i></i></div>
           <div class="story__who"><span class="av">VP</span><b>vas.podnik</b><em>2 h</em></div>
           <span class="story__sticker">Rezervovat stůl <svg viewBox="0 0 24 24" fill="none" stroke="#2C303C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
@@ -1180,6 +1197,7 @@ details.more[open]{padding-bottom:18px}
         <div class="hp" aria-hidden="true"><label for="f-hp">Nevyplňujte</label><input id="f-hp" name="web_hp" type="text" tabindex="-1" autocomplete="off"></div>
         <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="ref"><input type="hidden" name="stranka">
 
+        <p class="fpick" id="f-pick" hidden></p>
         <p class="consent">Odesláním berete na vědomí <a href="https://www.brightbox.cz/cs/ochrana-osobnich-udaju/" target="_blank" rel="noopener">zásady ochrany osobních údajů</a>.</p>
         <div class="fmsg fmsg--err" id="f-error" role="alert" tabindex="-1" hidden></div>
         <div class="fsubmit">
@@ -1252,6 +1270,15 @@ details.more[open]{padding-bottom:18px}
     n.nodeValue=n.nodeValue.replace(one,oneFix).replace(odDo,'$1$2'+NB).replace(num,'$1'+NB+'$2').replace(unit,'$1'+NB+'$2').replace(/(^|[\s(„])(na|do|po|za|ke|ve|ze|od|ku|pro|při|bez|nad|pod|před|přes)[ \t\r\n]+(?=\S)/gi,'$1$2'+NB);
   }
 
+  /* aktivní sekce v navigaci a v liště sekcí */
+  (function(){
+    var bar=document.getElementById('subnav'), links=[].slice.call(document.querySelectorAll('.nav__links a, .subnav a'));
+    var setActive=function(id){links.forEach(function(a){var on=a.getAttribute('href')==='#'+id;a.classList.toggle('is-active',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');if(on&&bar&&a.parentNode===bar){var l=Math.max(0,a.offsetLeft-20);if(Math.abs(bar.scrollLeft-l)>4)bar.scrollTo({left:l,behavior:'smooth'})}})};
+    if(!('IntersectionObserver' in window))return;
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setActive(e.target.id)})},{rootMargin:'-45% 0px -50% 0px'});
+    ['top','ukazky','ceny','site','web','tisk','plan','otazky','formular'].forEach(function(id){var el=document.getElementById(id);if(el)spy.observe(el)});
+  })();
+
   /* navigace po scrollu */
   var nav=document.getElementById('nav');
   var onScroll=function(){nav.classList.toggle('is-scrolled',window.scrollY>12)};
@@ -1268,7 +1295,7 @@ details.more[open]{padding-bottom:18px}
   var sticky=document.getElementById('sticky'), heroCta=document.getElementById('hero-cta'), formSec=document.getElementById('formular');
   if('IntersectionObserver' in window){
     var heroVis=true, formVis=false, footVis=false;
-    var upd=function(){var can=getComputedStyle(sticky).display!=='none';var on=can&&!heroVis&&!formVis&&!footVis;sticky.classList.toggle('on',on);document.documentElement.classList.toggle('sticky-on',on)};
+    var sub=document.getElementById('subnav');var upd=function(){if(sub){sub.classList.toggle('on',!heroVis);document.documentElement.classList.toggle('subnav-on',!heroVis)}var can=getComputedStyle(sticky).display!=='none';var on=can&&!heroVis&&!formVis&&!footVis;sticky.classList.toggle('on',on);document.documentElement.classList.toggle('sticky-on',on)};
     window.addEventListener('resize',upd);
     new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;upd()}).observe(heroCta);
     new IntersectionObserver(function(e){formVis=e[0].isIntersecting;upd()},{threshold:.05}).observe(formSec);
@@ -1304,7 +1331,10 @@ details.more[open]{padding-bottom:18px}
   /* Enter v textovém poli posune na další pole místo odeslání */
   form.addEventListener('keydown',function(e){if(e.key!=='Enter'||e.target.tagName!=='INPUT')return;var f=[].slice.call(form.querySelectorAll('.fld input:not([type=hidden]),.fld select,.fld textarea')).filter(function(x){return x.offsetParent!==null&&!x.closest('details:not([open])')});var i=f.indexOf(e.target);if(i>-1&&i<f.length-1){e.preventDefault();f[i+1].focus()}});
   var pre=(q.get('zajem')||'').split(',');
-  var check=function(val){var cb=form.querySelector('input[name=zajem][value="'+val+'"]');if(cb)cb.checked=true};
+  var pick=document.getElementById('f-pick');
+  var note=function(){var t=[].map.call(form.querySelectorAll('input[name=zajem]:checked'),function(c){return c.parentNode.textContent.trim()});pick.hidden=!t.length;pick.textContent=t.length?'Váš zájem: '+t.join(', '):''};
+  form.addEventListener('change',note);
+  var check=function(val){var cb=form.querySelector('input[name=zajem][value="'+val+'"]');if(cb)cb.checked=true;note()};
   pre.forEach(check);
   document.querySelectorAll('[data-zajem]').forEach(function(a){a.addEventListener('click',function(){check(a.dataset.zajem)})});
 
