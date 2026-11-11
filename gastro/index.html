@@ -358,10 +358,18 @@ ul,ol{padding:0;list-style:none}
 .fsteps{margin-top:36px;display:flex;flex-direction:column;gap:16px}
 .fsteps li{display:flex;align-items:center;gap:16px;color:rgba(255,255,255,.9)}
 .fsteps b{flex:none;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;font:600 17px/1 Sora,system-ui,sans-serif}
-.fcontact{margin-top:40px;display:flex;flex-wrap:wrap;gap:20px 40px}
-.fcontact span{display:block;font:600 12px/1 Geist,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:2px}
-.fcontact a{display:inline-flex;align-items:center;min-height:44px;font:500 19px/1.2 Geist,system-ui,sans-serif;color:#fff;text-decoration:none}
-.fcontact a:hover{text-decoration:underline}
+.fwho{margin-top:40px;max-width:520px;display:grid;grid-template-columns:132px minmax(0,1fr);gap:22px;align-items:center;padding:8px;border-radius:20px;background:rgba(255,255,255,.1)}
+.fwho__ph{align-self:stretch;min-height:165px;border-radius:12px;overflow:hidden;background:#56575C}
+.fwho__ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.2);transform-origin:50% 30%}
+.fwho__tx{min-width:0;padding:10px 14px 6px 0;display:flex;flex-direction:column;align-items:flex-start}
+.fwho__lead{font:400 15px/1.4 Geist,system-ui,sans-serif;color:rgba(255,255,255,.82)}
+.fwho__name{margin-top:14px;font:600 22px/1.1 Sora,system-ui,sans-serif;letter-spacing:-.03em;color:#fff}
+.fwho__role{margin-top:3px;font:400 15px/1.3 Geist,system-ui,sans-serif;color:rgba(255,255,255,.82)}
+.fwho__tel,.fwho__mail{display:inline-flex;align-items:center;min-height:44px;color:#fff;text-decoration:none;max-width:100%;overflow-wrap:anywhere}
+.fwho__tel{margin-top:6px;font:600 24px/1.1 Sora,system-ui,sans-serif;letter-spacing:-.035em;white-space:nowrap}
+.fwho__mail{font:500 17px/1.2 Geist,system-ui,sans-serif}
+.fwho__tel:hover,.fwho__mail:hover{text-decoration:underline}
+@media (max-width:480px){.fwho{grid-template-columns:92px minmax(0,1fr);grid-template-areas:"ph lead" "ph name" "ph role" "tel tel" "mail mail";gap:0 16px;padding:8px 8px 10px;align-items:start}.fwho__tx{display:contents}.fwho__ph{grid-area:ph;min-height:0}.fwho__ph img{transform:scale(1.1)}.fwho__lead{grid-area:lead;padding:8px 8px 0 0}.fwho__name{grid-area:name}.fwho__role{grid-area:role;padding-bottom:8px}.fwho__tel{grid-area:tel;margin-top:10px;padding-left:8px}.fwho__mail{grid-area:mail;padding-left:8px}}
 
 .form{background:#fff;color:var(--ink);border-radius:var(--r);padding:clamp(24px,3.4vw,48px)}
 .fgroup{border:0;margin:0;padding:0}
@@ -444,7 +452,7 @@ ul,ol{padding:0;list-style:none}
 /* ---------- doladění pro mobil a UX ---------- */
 #lead > .frow:first-of-type{margin-top:0}
 @media (pointer:coarse){.btn--sm{height:48px}}
-@media (max-width:600px){.plan__cell .when{font-size:13px}.fcontact span{font-size:13px}}
+@media (max-width:600px){.plan__cell .when{font-size:13px}}
 .faq summary,details.more summary,.fsubmit .btn{text-wrap:balance}
 .fld .touched:invalid{border-color:var(--zare-t)}
 .fld .touched:invalid ~ .err{display:block}
@@ -515,7 +523,7 @@ details.more[open]{padding-bottom:18px}
 .checks--light li::before{background-color:#5C5E96}
 .pkg-help{margin-top:22px;font-weight:600;line-height:1.45;max-width:46em}
 .pkg-help a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
-@media (min-width:901px) and (max-height:740px){.hero{padding-top:calc(var(--nav) + 28px)}.hero .lead{margin-top:20px}.hero__cta{margin-top:26px}}
+@media (min-width:901px) and (max-height:740px){.hero{padding-top:calc(var(--nav) + 28px)}.hero .lead{margin-top:20px}.hero__cta{margin-top:26px}.hero__proof{margin-top:14px}.hero__note{margin-top:10px}}
 .fld .hint{margin-top:6px;font-size:14px;color:var(--ink50)}
 @media (max-width:900px){.checks{grid-template-columns:1fr 1fr}.checks--col{grid-template-columns:1fr}}
 @media (max-width:600px){
@@ -735,7 +743,7 @@ details.more[open]{padding-bottom:18px}
           </span>
           <span class="hero__peek-txt"><svg aria-hidden="true"><use href="#i-play"/></svg>Pustit 9 ukázek videí se zvukem</span>
         </a>
-        <p class="small hero__note"><a href="#ceny">Web za 10&nbsp;000&nbsp;Kč, sociální sítě od 14&nbsp;900&nbsp;Kč měsíčně, tisk s&nbsp;dopravou zdarma. Ceny bez DPH.</a></p>
+        <p class="small hero__note"><a href="#ceny">Web za 10&nbsp;000&nbsp;Kč, sítě z&nbsp;vašich fotek a&nbsp;videí od 14&nbsp;900&nbsp;Kč měsíčně, tisk s&nbsp;dopravou zdarma. Ceny bez DPH.</a></p>
         <div class="hero__ags">
           <p class="label">Tři specializované agentury, jeden kontakt</p>
           <img class="ag-logo--sp" src="/assets/logos/sparkee-color.webp" alt="Sparkee" width="1137" height="584">
@@ -823,7 +831,7 @@ details.more[open]{padding-bottom:18px}
         <div class="start__logo"><img class="ag-logo--sp" src="/assets/logos/sparkee-color.webp" alt="Sparkee" width="1137" height="584"></div>
         <h3 class="start__pain">Na sítích o vás skoro nikdo neví.</h3>
         <p class="muted">Převezmeme vaše profily a každý měsíc ukážeme čísla.</p>
-        <div class="start__price"><b>od 14&nbsp;900&nbsp;Kč</b><span>měsíčně bez DPH, z vašich podkladů<br>s natáčením u vás od 24&nbsp;900&nbsp;Kč</span></div>
+        <div class="start__price"><b>od 14&nbsp;900&nbsp;Kč</b><span>měsíčně bez DPH, z vašich fotek a videí<br>s natáčením u vás od 24&nbsp;900&nbsp;Kč</span></div>
         <a class="btn btn--ink btn--sm" href="#form-box" data-zajem="socialni-site">Chci nabídku na sítě <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </article>
       <article class="panel start rv">
@@ -875,7 +883,7 @@ details.more[open]{padding-bottom:18px}
         <div class="sp-panel__top"><img class="sp-word" src="/gastro/img/sparkee-white.svg" alt="Sparkee" width="624" height="154"><span class="pill-holo">Social Media with a Spark</span></div>
         <ul class="sp-flow"><li><b>Na startu</b><span>Onboarding zdarma</span></li><li><b>Každý měsíc</b><span>Plán ke schválení a report</span></li><li><b>Po 3 měsících</b><span>Společné vyhodnocení</span></li></ul>
         <div class="sp-hero"><div><p class="holo-num">14 dní</p><p class="cap">od podpisu do prvního zveřejněného obsahu</p></div><img class="sp-masc" src="/gastro/img/sparkee-maskot-telefon.svg" alt="" width="264" height="427" loading="lazy"></div>
-        <div><p class="sp-price">od 14&nbsp;900&nbsp;Kč</p><p class="cap">měsíčně bez DPH. Paušál bez hodin navíc.</p><p class="cap">S natáčením u vás od 24&nbsp;900&nbsp;Kč.</p></div>
+        <div><p class="sp-price">od 14&nbsp;900&nbsp;Kč</p><p class="cap">měsíčně bez DPH, z vašich fotek a videí.</p><p class="cap">S natáčením u vás od 24&nbsp;900&nbsp;Kč. Paušál bez hodin navíc.</p></div>
         <a class="btn btn--holo" href="#form-box" data-zajem="socialni-site">Chci nabídku na sítě <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
@@ -1130,7 +1138,7 @@ details.more[open]{padding-bottom:18px}
       <details><summary>Musím si objednat všechno najednou?<span class="pm"><svg width="18" height="18" aria-hidden="true"><use href="#i-plus"/></svg></span></summary>
         <p>Ne. Web, sociální sítě i tisk objednáte každý zvlášť. Začněte tím, co vás pálí nejvíc, a další služby přidáte, až budete chtít.</p></details>
       <details><summary>Kolik to stojí?<span class="pm"><svg width="18" height="18" aria-hidden="true"><use href="#i-plus"/></svg></span></summary>
-        <p>Web do 5 podstránek za 10&nbsp;000&nbsp;Kč jednorázově a správa 400&nbsp;Kč měsíčně při roční platbě. Správa sociálních sítí od 14&nbsp;900&nbsp;Kč měsíčně z vašich podkladů, s natáčením u vás od 24&nbsp;900&nbsp;Kč. Tisk naceníme podle zakázky, doprava je zdarma od jakéhokoli počtu kusů. Všechny ceny jsou bez DPH a cenu znáte před podpisem.</p></details>
+        <p>Web do 5 podstránek za 10&nbsp;000&nbsp;Kč jednorázově a správa 400&nbsp;Kč měsíčně při roční platbě. Správa sociálních sítí od 14&nbsp;900&nbsp;Kč měsíčně z vašich fotek a videí, s natáčením u vás od 24&nbsp;900&nbsp;Kč. Tisk naceníme podle zakázky, doprava je zdarma od jakéhokoli počtu kusů. Všechny ceny jsou bez DPH a cenu znáte před podpisem.</p></details>
       <details><summary>Kdy uvidím na sítích výsledky?<span class="pm"><svg width="18" height="18" aria-hidden="true"><use href="#i-plus"/></svg></span></summary>
         <p>První změny v pravidelnosti, kvalitě a zapojení sledujících uvidíte během prvního měsíce. Stabilní růst dosahu a sledujících přichází typicky za 3 až 6 měsíců. Každý měsíc dostanete report s&nbsp;čísly.</p></details>
       <details><summary>Jak rychle to bude hotové?<span class="pm"><svg width="18" height="18" aria-hidden="true"><use href="#i-plus"/></svg></span></summary>
@@ -1219,12 +1227,18 @@ details.more[open]{padding-bottom:18px}
     <div class="form-aside">
       <ol class="fsteps">
         <li><b>1</b>Vyplníte krátký formulář.</li>
-        <li><b>2</b>Ozveme se a probereme, co potřebujete.</li>
+        <li><b>2</b>Ozveme se a&nbsp;probereme, co&nbsp;potřebujete.</li>
         <li><b>3</b>Pošleme nabídku s cenou. Nezávazně.</li>
       </ol>
-      <div class="fcontact">
-        <div><span>E-mail</span><a href="mailto:info@brightbox.cz">info@brightbox.cz</a></div>
-        <div><span>Telefon</span><a href="tel:+420602426377">+420 602 426 377</a></div>
+      <div class="fwho">
+        <div class="fwho__ph"><img src="/gastro/img/jakub-stehno.jpg" alt="Jakub Stehno" width="640" height="800" loading="lazy" decoding="async"></div>
+        <div class="fwho__tx">
+          <p class="fwho__lead">Tři specializované agentury Brightbox&nbsp;Group, jeden kontakt.</p>
+          <p class="fwho__name">Jakub Stehno</p>
+          <p class="fwho__role">CEO a zakladatel</p>
+          <a class="fwho__tel" href="tel:+420602426377">+420&nbsp;602&nbsp;426&nbsp;377</a>
+          <a class="fwho__mail" href="mailto:jakub.stehno@brightbox.cz">jakub.stehno@brightbox.cz</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1244,7 +1258,7 @@ details.more[open]{padding-bottom:18px}
         </div>
       </div>
       <div class="foot__col">
-        <p><a href="mailto:info@brightbox.cz">info@brightbox.cz</a></p>
+        <p><a href="mailto:jakub.stehno@brightbox.cz">jakub.stehno@brightbox.cz</a></p>
         <p><a href="tel:+420602426377">+420 602 426 377</a></p>
         <p><a href="https://www.brightbox.cz" target="_blank" rel="noopener">brightbox.cz</a></p>
         <p><a href="/gastro/brightbox-gastro.pdf" download>Brožura v PDF</a></p>
@@ -1354,7 +1368,7 @@ details.more[open]{padding-bottom:18px}
       .then(function(r){return r.json().catch(function(){return {}}).then(function(j){if(!r.ok||!j.ok)throw new Error(j.error||('HTTP '+r.status));})})
       .then(showDone)
       .catch(function(){
-        errBox.innerHTML='Odeslání se nepovedlo. Zkuste to prosím znovu, nebo nám napište na <a href="mailto:info@brightbox.cz">info@brightbox.cz</a> či zavolejte na <a href="tel:+420602426377">+420&nbsp;602&nbsp;426&nbsp;377</a>.';
+        errBox.innerHTML='Odeslání se nepovedlo. Zkuste to prosím znovu, nebo napište na <a href="mailto:jakub.stehno@brightbox.cz">jakub.stehno@brightbox.cz</a> či zavolejte na <a href="tel:+420602426377">+420&nbsp;602&nbsp;426&nbsp;377</a>.';
         errBox.hidden=false; errBox.focus({preventScroll:true}); errBox.scrollIntoView({block:'nearest',behavior:SM});
       })
       .finally(function(){btn.disabled=false;btn.innerHTML=label});
